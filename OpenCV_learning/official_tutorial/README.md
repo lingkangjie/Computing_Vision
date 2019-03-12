@@ -111,7 +111,6 @@ EVENT_RBUTTONUP, EVENT__MBUTTONDOWN
 4. Use fillPoly() to fill mask Mat with 1, and mask(bitwise_and() function) source image
 
 ## dbt_face_detection.cpp
-Goal: use LBP(local binary pattern) features and cascade classifier for face detection
 ### Backgound Knowledge of LBP
 LBP is a type of visual descriptor used for classification in computer vision. The basic idea of LBP is, as "local" meaning
 indicates, LBP will be applied to cells(e.g. 16X16 pixels for each cell) of image. For each pixel in a cell, LBP compares the
@@ -123,24 +122,78 @@ seen as a 256-dimensional feature vector. So a cell will has a feature vector co
 histograms of all cells as final features for the image.  
 ### LBP Cascade Classifier
 1. **LBP Labelling**: A label as a string of binary numbers is assigned to each pixel of each image.
-2. ** Feature Vector**: Image is divided into sub-regions and for each
+2. **Feature Vector**: Image is divided into sub-regions and for each
 sub-region, histogram of labels is constructed. Then a feature vector is
 formed by concatenating the sub-region histograms into a large histogram.
 3. **AdaBoost Learning**: Strong classifier is constructed using gentle
 AdaBoost to remove redundant information from feature vector.
-4. ** Cascade of Classifier**: The cascades of classifier are formed from the
+4. **Cascade of Classifier**: The cascades of classifier are formed from the
 features obtained by the gentle AdaBoost algorithm. Sub-regions of the image
 is evaluated starting from simpler classifier to strong classifier. If on any
 stage classifier fails, that region will be discarded from further iterations.
 Only the facial region will pass all the stages of the classifier.  
+### the Pros and Cons of LBP
 Pros: Computationally simply and fast, robust to local illumination changes
 and occlusion.  
 Cons: Less accurate, and high false positive rate.  
+
+### source code analysis
+Goal: use LBP(local binary pattern) features and cascade classifier for face detection
 1. Read pre-train LBP feature for human face, in official OpenCV project, are
 located in /data/lbpcascades/lobcascade_frontalface.xml
 2. Make a Adapter class for DetectionBasedTracker::IDetector and
 CascadeClassifier.
 3. More...(to do)
+
+## delaunay2.cpp
+Goal: demonstrates itetative construction delaunny triangulation and voronoi
+tessellation.
+**Background**: Given a set of points in a 2D plane, we want many triangles
+with the points as vertices to divide the plane into many sub-plane. This
+process called triangulation, and delaunny triangulation is a kind of such
+triangulation. A set of points can have many possible triangulations, but
+Delaunay triangulation stands out because it has some nice properties. In a
+Delaunay triangulation, triangles are chosen such that no point is inside the
+circumcircle of any triangle. What is a Voronoi diagram? Given a set of
+points, a Voronoi diagram partitions the space such that the boundary lines
+are equidistant from neighboring points. That is to say that every boundary
+line passes through the center of two points. If you connect the points in
+neighboring Voronoi regions, you get a Delaunay triangulation.  
+1. Subdiv2D: A clss used to perform various planar subdivision on a set of 2D
+points(represented as vector of Point2f)
+2. Subdiv2D.locate: Return the location of a point with a Delaunay
+triangulation.
+3. draw_subdiv_point(): print a point(two number) as a circle to visualize.
+4. draw_subdiv(): Given a Subdiv2D object, extract all triangles in
+it(triangleList),for each point in a triangle, draw line between them.
+5. paint_voronoi():Given a Subdiv2D object, extract all Voronoi facets( output
+form is std::vector<std::vector<Point2f> >) and its center(Voronoi facets
+center points). For each small facets, use polylines() to fill the facet area.
+For each Voronoi center point, use circle() to visualize. 
+
+## demhist.cpp
+Goal: demonstrates the use of calcHist() -- histogram creation, and how to
+change the image brightness and contrast.
+1. A help function, read image, show image.
+2. A Trackbar to control values from user, and these values are global values
+called _brightness and _contrast respectively.
+3. A callback function: updateBrightnessConstrast() to deal with event.
+4. Brightness and contrast: new_pixel_value = a(brightness) times old_value
+plus b(contrast).
+5. updateBrightnessConstrast(): Mat::convertTo(): convert source values to the target data type with a scale,
+here is used to map original image to new image with new brightness and
+contrast.
+6. updateBrightnessConstrast(): calcHist(),normalize(),cvRound() -- Rounds
+floating-point number to nearest integer
+7. updateBrightnessConstrast(): use rectangle() to draw histogram bins to an
+new image Mat called histImage. Very fundamental and elaborately, as
+calcHist() function just outputs *hist* variable, not visualize. It is a good
+example for us to learn plot histogram.
+
+## detect_blob.cpp
+Goal: SimpleBlobDetector to detect blob in image  
+What is blob?A Blob is a group of connected pixels in an image that share some common property ( E.g grayscale value ). The goal of blob detection is to identify and mark these regions.  
+1. 
 
 
 
