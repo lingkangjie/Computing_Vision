@@ -192,8 +192,113 @@ example for us to learn plot histogram.
 
 ## detect_blob.cpp
 Goal: SimpleBlobDetector to detect blob in image  
-What is blob?A Blob is a group of connected pixels in an image that share some common property ( E.g grayscale value ). The goal of blob detection is to identify and mark these regions.  
-1. 
+What is blob? A Blob is a group of connected pixels in an image that share some common property ( E.g grayscale value ). The goal of blob detection is to identify and mark these regions.  
+1. An CommandLineParser, check files, read image, determinate whether image is
+empty.
+2. SimpleBlobDetector: set default parameters, generate a vector(pBlob) for
+containing params blob and generate an iterator for this array.
+3. Generate a total of 65536 vectors containing Vec3b object(vector< Vec3b>) for color
+palette, and the color is initialized by random.
+4.How to change the parameter blob? Firstly, push_back the default parameter
+blob(pDefaultsBLOB) to pBlob(a vector),then use vector::back() to get it and set another parameter
+elements. 
+5. Generate an iterator for descriptor array for BLOB(typeDesc, just a vector
+containing 6 "BLOB" strings),and iterates it for handling each parameter
+setting in loop.
+6. A Legende() function outputs a label to describe each params setting blob:
+how to cast num to str in SimpleBlobDetector? String s = static_cast< const
+ostringstream&>(ostringstream() << inputParamBlob.param_element).str(). Note
+that Legende() called by reference.
+7. SimpleBlobDetector::create(): input is params, called by reference: return
+a pointer to params
+8. drawKeypints(): Draw keypoints in imge.
+9. sbd->detect(img,KeyImg,Mat()): KeyImage, a vector contains KeyPoint( has
+point coordinate and circle size) 
+
+## dft.cpp
+Goal: demonstrates the use of Discrete Fourier Transform(DFT)
+1. Basic using: getOptimalDFTSize(), copyMakeBorder(),
+merge(),dft(),split(),magnitude(),log(),normalize()
+
+## distrans.cpp
+Goal: demonstrates the use of distance transform function between edge images
+1. A global variable(distType0) to save keyboard input. Keyboard
+input:'c','1','2','5','5','0','v','p',''(space key).And the Space control a
+loop through all the modes.
+2. In Trackbar callback function(onTrackbar()), deals with the distType0
+variable.
+3. cv::distanceTransform calculates the approximate or precise distance from
+every binary image pixel to the nearest zero pixel. The ouput is a 8-bit or
+32-bit floating-point single-channel image of the same size as src.
+
+## drawing.cpp
+Goal: demonstrates OpenCV drawing and text output functions
+1. How to generate random color(customized randomColor()), random point location.
+1. line():line(img,Point pt1, Point pt2, color,int thickness,int line_type,int
+shfit)
+2. arrowedLine():draws a arrow segment pointing fromthe first point to the
+second one.
+3. rectangle(), drawMarker(): loop 100 times.
+4. Loop ellipse() 100 times.
+5. Loop polylines() 100 times: draws polygonal curves.
+6. Loop fillPloy() 100 times: fills the area bounded by one or more polygons.
+7. Loop circel() 100 times.
+8. Loop putText() 100 times: put the text in image.
+9. Fade-out features: make two Mat, image2 = image - Scalar::all(i),then
+display and update image2.
+
+## edge.cpp
+Goal: edge detection using Canny detector with Sobel gradient and Canny detector with custom
+gradient(Scharr)
+1. Two trackbar and one callback function(onTrackbar)
+2. In callback function: preform Canny operation, show results
+
+## em.cpp
+Goal: use Expectation Maximization(EM) algorithm to classification. From OpenCV Machine Learning
+Library. I found that Lib is more isolated from OpenCV core lib, That is a
+good lib for us to implement ML algorithms from scratch.
+1. As in OpenCV, the basic data structure is Mat. For ML algorithms,matrices
+are more common. So we need a new aspect view to watch Mat. In OpenCV ML, from
+the aspect of *rowRange()* segmentation,I
+found OpenCV team use "channel" to represent "column" in general ML
+concepts(like in MATLAB). So em.cpp first generate a *samples* Mat, its row
+represents samples, col represents dim. Then reshape *samples* using
+*samples.reshape(2,0)*: reshape(cn,rows),cn(new number of channels, if is
+0,the number of channels remains the same), rows(new number of rows,if is 0,
+the number of rows remains the same). After reshape, *samples* becomes
+(row2=100,cols=1). After segmentation done, *reshape(1,0)*, *samples*
+becomes(rows=100,cols=2).
+2. Then split samples into 4 parts(from row aspect), represents 4 class input
+data(*sample_part*). For each class, fill *sample_part* with random(*randn*).
+3. Reshape *samples* to (rows=100,cols=2) 
+4. When train done, use the EM model to classify every image pixel for
+visualizing.
+5. Draw 100 samples(2 dims) location sample by sample.
+
+## example.cpp
+Goal: draw text on video
+1. Open video input stream: VideoCaputer::open(0): video_stream >> *image*: Then
+draw something on *image*, and show *image*.
+
+## facedetect.cpp
+Goal: cascade face detection based on Haar or LBP features.  
+**cascade**: the primary trained classifier such as frontal face.  
+**nested-cascade**: an optional secondary classifier such eyes.
+1. Make two CascadeClassifier called *cascade* and *nestedCascade*,and load
+cascade from file using *CascadeClassifier::load*.
+2. Check whether success for open camera, loading files, etc.
+3. detectAndDraw():input the image frame, two CascadeClassifier, image scale,
+whether to flip. Convert image to gray, resize it(as we use *scale* variable),
+equalizeHist() it.
+4. detectAndDraw(): time tick: *(double)getTickCount()*
+5. detectAndDraw(): if flip opened, the *face2* from flipped image will be
+push bach to *faces*(not flip).
+6. detectAndDraw(): If detect faces(vector in vector,(x,y,width,height)),draw
+circle or rectangle to denote where is the face location. And use this area as
+the input to *nestedCascade.detectMultiScale()*, at last ,draw the results(eye(s)) from *nestedCascade*.
+
+## facial_features.cpp
+Goal:
 
 
 
