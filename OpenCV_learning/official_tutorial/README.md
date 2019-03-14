@@ -298,7 +298,237 @@ circle or rectangle to denote where is the face location. And use this area as
 the input to *nestedCascade.detectMultiScale()*, at last ,draw the results(eye(s)) from *nestedCascade*.
 
 ## facial_features.cpp
-Goal:
+Goal: A program to detect facial feature points using Haarcascade classifiers
+for face, eyes, nost and mouth.
+1. Two functions: detectFaces(), detectFacialFeatures(). When we has detected
+face, stored them in *faces* variable (vector< Rect_<int> >), and passed it to
+detectFacialFeatures() to detect eye, nose, mouth.
+2. In detectFacialFeatures(), will call detectEyes(), detectNose(),
+detectMouth() under the conditions of user inputs( check the inputs, whether
+*eye_cascade.empty()*, *nose_cascade.empty()*, *mouth_cascade.empty()*)
 
+## falsecolor.cpp
+Goal: demonstrates the use applyColorMap function. OpenCV colormap: Autumn,
+Bone, Jet, Winter, Rainbow, Ocean, Summer, Spring, Cool, HSV, Hot, Parula, and
+user defined.
+1. read image, show it (Gray image), and apply colormap to it.
+2. A struct ParamColorMap has two members: int iColormap, Mat img;
+3. A callback function: TrackColorMap: if we reach the end of trackbar, then
+draw colormap with random, else, draw colormap with pre-defined colormap name.
+4. The core function is: applyColorMap(InputArray src, OutputArray dst, int
+colormap): src -- The source image, grayscale of colored of type CV_8UC1 or
+CV_8UC3. dst -- the result is colormapped source image. 
 
+## fback.cpp
+Goal: demonstrates dense optical flow algorithm by Gunnar Farneback from video camera, and draw
+the result on camera frame.
+**Background**: What is optical flow? Optical flow is the pattern of apparent
+motion of image objects between two consecutive frames caused by the
+movement of object or camera. It is 2D vector field where vector is a
+displacement vector showing the movement of point from first frame to second.  
+Reference: https://docs.opencv.org/3.3.1/d7/d8b/tutorial_py_lucas_kanade.html
+1. Core function: calcOpticalFlowFarneback()
 
+## ffilldemo.cpp
+Goal: demonstrates the use of floodFill(): Fills a connected component
+starting from the seed point with specified color (fills c connected component
+with the given color)
+
+## filestorage.cpp
+Goal: Outputfile above can have many different extensions. This program demonstrates the use of FileStorage for serialization, that is in use << and >>  in OpenCV For example, how to create a class and have it serialize, but also how to use it to read and write matrices. FileStorage allows you to serialize to various formats specified by the file end type. You should try using different file extensions.(e.g. yaml yml xml xml.gz yaml.gz etc...)
+1. I think it looks like Python yaml.dump and yaml.load.
+
+## fitellipse.cpp
+ * This program is demonstration for ellipse fitting. Program finds contours and approximate it by ellipses using three methods.
+ * 1: OpenCV's original method fitEllipse which implements Fitzgibbon 1995 method.
+ * 2: The Approximate Mean Square (AMS) method fitEllipseAMS  proposed by Taubin 1991
+ * 3: The Direct least square (Direct) method fitEllipseDirect proposed by Fitzgibbon1999.
+
+## grabcut.cpp
+Goal: program demonstrates GrabCut segmentation -- select an object in a
+region and then grabcut will attempt to segment it out.  
+
+## image.cpp
+Goal: This program shows how to use cv::Mat and IplImages converting back and forth. It shows reading of images, converting to planes and merging back, color conversion and also iterating through pixels.
+
+## image_alignment.cpp
+
+## imagelist_creator.cpp, imagelist_reader.cpp
+Goal: imagelist_creator, creates a yaml or xml list of files from the command line args.
+Usage: .exe imagelist.yaml *.png. imagelist_reader, read images from a list in
+a file.
+
+## inpaint.cpp
+Goal: Inpainting repairs damage to images by floodfilling the damage with
+surrounding image areas.
+
+## kalman,cpp
+## kmeans.cpp
+## lapace.cpp
+Goal: demonstrates Laplace point/edge detection using OpenCV function
+Laplacian()
+
+## leter_recog.cpp
+Goal: The sample demonstrates how to train Random Trees classifier (or
+Boosting classifier, or MLP, or Knearest, or Nbayes, or Support Vector
+Machines - see main()) using the provided dataset. It is a good example to
+learn OpenCV machine learning algorithms.
+
+## lkdemo.cpp
+Goal: a demo of Lukas-Kanade optical flow using calcOpticalFlowPyrLK()
+When add a point to camera frame, the demo will track it.
+
+## logistic_regression.cpp
+
+## lsd_lines.cpp
+Goal: line segment detector, fine lines in the input image.
+1. Basic class: LIneSegmentDetetor
+
+## mask_tmpl.cpp
+Goal: demonstrates the use of template matching with mask.
+1. Core function: matchTemplate(InputArray image, InputArray templ,
+OutputArray result, int method, InputArray mask=noArray()): compares a
+template against overlapped image regions, the function slides through image,
+compares the overlapped patches of size against templ using specified method
+and stores the comparison results in result.
+
+## matchmethod_orb_akaze_brisk.cpp
+Goal: This program demonstrates how to detect compute and match ORB BRISK and
+AKAZE descriptors.  
+
+## minarea.cpp
+Goal:This program demonstrates finding the minimum enclosing box, triangle or
+circle of a set.  
+1. Core function: minAreaRect(), minEnclosingTriangle(), minEnclosingCircle() 
+
+## morphology2.cpp
+Goal: show off image morphology, erosion, dialation, open and close.
+1. Core function: getStructuringElement(), morphologyEx(), erode(), dilate()
+
+## neural_network.cpp
+Goal: data preparing, create the neural network and train it, predicts
+1. OpenCV machine learing library: #include **<opencv2/ml/ml.hpp>**
+
+## npr_demo.cpp
+Goal: This tutorial demonstrates how to use OpenCV Non-Photorealistic Rendering Module.
+1. Edge Preserve Smoothing: using Normalized Convolution Filter, using
+Recursive Filter.
+2. Detail Enhancement
+3. Pencil Sketch/Color Pencil Drawing
+4. Stylization
+5. Core functions: edgPreservingFilter(), detialEnhance(), pencilSketch(),
+stylization()
+
+## opencv_version.cpp
+Goal: outputs OpenCV version and build configuration
+
+## pca.cpp
+Goal: This program demonstrates how to use OpenCV PCA with a specified amount of variance to retain. The effect is illustrated further by using a trackbar to change the value for retained varaince.  
+
+## peopledetect.cpp
+Goal: use HoG descriptor and Daimler detector to detect people.
+1. Core functions and classes: HOGDeacriptor, HOGDeacriptor::setSVMDetector(),
+HOGDeacriptor::detectMultiScale()
+
+## points_classifier.cpp
+Goal: classifies points using a set algorithms, including KNN,
+NormalBayerClassifier, KNN2, SVM, DT, RF, ANN, EM, etc.
+1. An interface for user to draw positive points and negative points.
+2. Core functions and Classes: NormalBayerClassifier, KNearest, SVM, DTrees,
+Boost, RTrees, ANN_MLP, EM, 
+3. It is a good example for us to learn classification in OpenCV using ML
+library.
+
+## polar_transforms.cpp
+Goal: Illustrates Linear-Polar and Log-Polar image transforms
+1. Do Linear-Ploar, Log-Polor, Recovered Linear-Polar and Recovered Log-Polar.
+
+## qrcode.cpp
+Goal: detect QR-codes from camera or image using OpenCV library and decode it at the same time.
+
+## segment_objects.cpp
+Goal: This program demonstrated a simple method of connected components clean
+up of background subtraction, When the program starts, it begins learning the background.
+
+## select3object.cpp
+
+## shape_example.cpp
+Goal: This program demonstrates a method for shape comparison based on Shape Context
+
+## smiledetect.cpp
+Goal: demonstrates the smile detector
+1. Face detector: haarcascade_frontalface_atl.xml
+2. Smile detector: harrcascade_smile.xml
+
+## squares.cpp
+Goal: A program using pyramid scaling, Canny, contours and contour
+simplification to find squares in a list of images 
+
+## stereo_calib.cpp
+Goal: Calibrate the cameras and display the rectified results along with the
+computed disparity images.
+
+ ## stereo_match.cpp
+Goal: demo stereo matching converting L and R images into disparity and point
+clouds
+
+## train_svmsgd.cpp
+Goal: train SVM based on SGD online
+1. Use mouse EVENT_LBUTTONUP and EVENT_RBUTTONDOWN to draw points in an image,
+then the demo will train the dataset online.
+
+## travelsalesman.cpp
+Goal: solve travel sale man problem based on simulated annealing algorithm.
+1. Core functions and Classes: simulatedAnnealingSolver()
+
+## tree_engine.cpp
+Goal: This sample demonstrates how to use different decision trees and forests
+including boosting and random trees.
+1. Prt<TrainData> data = cv::ml::TrainDate::loadFromCSV()
+2. data -> setTrainTestSplitRatio()
+3. data -> getNTestSamples()
+4. data -> getNtrainSamples()
+5. DTrees::create()
+6. data -> getClassLabels()
+7. Boost::create()
+8. RTrees::create()
+9. data -> getTestSampleIdx()
+10. more ...
+
+## videocapture_basic.cpp
+
+## videocapture_camera.cpp
+
+## videocapture_gphoto2_autofocus.cpp
+Goal: This program demonstrates usage of gPhoto2 VideoCapture.With OpenCV build without gPhoto2 library support it will do nothing special, just capture.
+
+## videocapture_gstreamer_pipeline.cpp
+
+## videocapture_image_sequence.cpp
+Goal: read a sequence of images using the VideoCapture interface
+
+## videocapture_intelperc.cpp
+Goal: This program demonstrates usage of camera supported\nby Intel Perceptual
+computing SDK.
+
+## videocapture_openni.cpp
+Goal: This program demonstrates usage of depth sensors (Kinect, XtionPRO,...).
+
+## videocapture_starter.cpp
+Goal: The program captures frames from a video file, image sequence (01.jpg,
+02.jpg ... 10.jpg) or camera connected to your computer.
+
+## videostab.cpp
+Goal: OpenCV video stabilizer
+
+## videowriter_basic.cpp
+Goal: A very basic sample for using VideoWriter and VideoCapture
+
+## warpPerspective_demo.cpp
+Goal: a demo program shows how perspective transformation applied on an image.
+
+## watershed.cpp
+Goal: This program demonstrates the famous watershed segmentation algorithm in
+OpenCV.  
+1. Core function: watershed(): performs a marker-based image segmentation
+using watershed algorithm.
