@@ -155,32 +155,34 @@ effort for future generations of Intel processors.
 # Caffe building system profile based on Make
 1. file structrue:
 ```
-├── caffe.cloc               
-├── cmake
-├── CMakeLists.txt
-├── CONTRIBUTING.md
-├── CONTRIBUTORS.md
-├── data
-├── distribute
-├── docker
-├── docs
-├── examples
-├── include
-├── INSTALL.md
-├── LICENSE
-├── Makefile
-├── Makefile.config
-├── Makefile.config.example
-├── matlab
-├── models
-├── python
-├── README.md
-├── scripts
-├── src
-└── tools
+./caffe/
+    ├── caffe.cloc               
+    ├── cmake
+    ├── CMakeLists.txt
+    ├── CONTRIBUTING.md
+    ├── CONTRIBUTORS.md
+    ├── data
+    ├── distribute
+    ├── docker
+    ├── docs
+    ├── examples
+    ├── include
+    ├── INSTALL.md
+    ├── LICENSE
+    ├── Makefile
+    ├── Makefile.config
+    ├── Makefile.config.example
+    ├── matlab
+    ├── models
+    ├── python
+    ├── README.md
+    ├── scripts
+    ├── src
+    └── tools
 ```
 src folder:
 ```
+./src/
 ├── caffe
 │   ├── blob.cpp
 │   ├── CMakeLists.txt
@@ -268,5 +270,5 @@ include folder:
 ```
 1. Two files: `Makefile`, and `Makefile.config`.
 2. Notes on Makefile
-- As `DEBUG` maybe be set in file `Makefile.config', so use `?=` to set
+- As `DEBUG` maybe be set in file `Makefile.config`, so use `?=` to set
 `DEBUG` when it is not already set.
