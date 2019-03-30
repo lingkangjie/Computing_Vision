@@ -24,7 +24,7 @@ $ ./data/mnist/get_mnist.sh
 $ ./examples/mnist/create_mnist.sh
 $ ./examples/mnist/train_lenet.sh
 ```
-# Caffe profile for CMakeList.txt
+# Caffe building system profile based on CMake
 1. File structure
 ```
 │── CMakeList.txt
@@ -146,8 +146,127 @@ operations such as vector addition, scalar multiplication, dot products,
 linear combinations, and matrix multiplication. `Atlas`, Automatically 
 Tuned Linear Algebra Software (ATLAS) is a software library for linear algebra.
 `OpenBLAS`is an optimized BLAS library. `MKL`, called Intel Math Kernel 
-Library (Intel MKL) is a library of optimized math routines for science,
+Library (Intel MKL), is a library of optimized math routines for science,
 engineering, and financial applications. MKL optimizes code with minimal 
 effort for future generations of Intel processors.
 14. Python, Matlab: an interface for Caffe
 15. Doxygen: a tool for writing software reference documentation.
+
+# Caffe building system profile based on Make
+1. file structrue:
+```
+├── caffe.cloc               
+├── cmake
+├── CMakeLists.txt
+├── CONTRIBUTING.md
+├── CONTRIBUTORS.md
+├── data
+├── distribute
+├── docker
+├── docs
+├── examples
+├── include
+├── INSTALL.md
+├── LICENSE
+├── Makefile
+├── Makefile.config
+├── Makefile.config.example
+├── matlab
+├── models
+├── python
+├── README.md
+├── scripts
+├── src
+└── tools
+```
+src folder:
+```
+├── caffe
+│   ├── blob.cpp
+│   ├── CMakeLists.txt
+│   ├── common.cpp
+│   ├── data_transformer.cpp
+│   ├── internal_thread.cpp
+│   ├── layer.cpp
+│   ├── layer_factory.cpp
+│   │── layers
+│   │    │ ... ...
+│   │    │── absval_layer.cpp
+│   │    │── absval_layer.cu
+│   │    │── accuracy_layer.cpp
+│   │    │── accuracy_layer.cu
+│   │    │ ... ...
+│   ├── net.cpp
+│   ├── parallel.cpp
+│   ├── proto
+│   │     └── caffe.proto
+│   ├── solver.cpp
+│   ├── solvers
+│   │    │ ... ...
+│   │    ├── adadelta_solver.cpp
+│   │    ├── adadelta_solver.cu
+│   │    │ ... ...
+│   ├── syncedmem.cpp
+│   ├── test
+│   │    ├── CMakeLists.txt
+│   │    ├── test_convolution_layer.cpp
+│   │    ├── test_crop_layer.cpp
+│   │    | ... ...
+│   │    ├── test_data
+│   │    │   ├── generate_sample_data.py
+│   │    │   ├── sample_data_2_gzip.h5
+│   │    │   ├── sample_data.h5
+│   │    │   ├── sample_data_list.txt
+│   │    │   ├── solver_data.h5
+│   │    │   └── solver_data_list.txt
+│   │    │ ... ...
+│   │    └── 
+│   └── util
+│       ├── benchmark.cpp
+│       ├── blocking_queue.cpp
+│       ├── cudnn.cpp
+│       ├── db.cpp
+│       ├── db_leveldb.cpp
+│       ├── db_lmdb.cpp
+│       ├── hdf5.cpp
+│       ├── im2col.cpp
+│       ├── im2col.cu
+│       ├── insert_splits.cpp
+│       ├── io.cpp
+│       ├── math_functions.cpp
+│       ├── math_functions.cu
+│       ├── signal_handler.cpp
+│       └── upgrade_proto.cpp
+│
+└── gtest
+    ├── CMakeLists.txt
+    ├── gtest-all.cpp
+    ├── gtest.h
+    └── gtest_main.cc
+```
+include folder:
+```
+./include/
+└── caffe
+    ├── blob.hpp
+    ├── caffe.hpp
+    ├── common.hpp
+    ├── data_transformer.hpp
+    ├── filler.hpp
+    ├── internal_thread.hpp
+    ├── layer_factory.hpp
+    ├── layer.hpp
+    ├── layers
+    ├── net.hpp
+    ├── parallel.hpp
+    ├── sgd_solvers.hpp
+    ├── solver_factory.hpp
+    ├── solver.hpp
+    ├── syncedmem.hpp
+    ├── test
+    └── util
+```
+1. Two files: `Makefile`, and `Makefile.config`.
+2. Notes on Makefile
+- As `DEBUG` maybe be set in file `Makefile.config', so use `?=` to set
+`DEBUG` when it is not already set.
