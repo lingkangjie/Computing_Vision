@@ -158,7 +158,7 @@ $ cd build
 $ cmake --graphviz=caffe_dependencies.dot ..
 $ dot -T png caffe_dependencies.dot -o caffe_dependencies.png
 ```
-![caffe dependencies](./imgs/caffe_dependencies)
+![caffe dependencies](./imgs/caffe_dependencies.png)
 
 
 # Caffe building system profile based on Make
