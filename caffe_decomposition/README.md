@@ -286,3 +286,19 @@ include folder:
 [documents](https://caffe.berkeleyvision.org/doxygen/index.html)  
 To generate the documentation, run `$CAFFE_ROOT/scripts/build_docs.sh`.
 
+
+## Caffe files profile
+Optimal: add system and global ctag files:
+```
+$ ctags -I __THROW –file-scope=yes –langmap=c:+.h –languages=c,c++ –links=yes –c-kinds=+p --fields=+S -R -f ~/.vim/systags /usr/include /usr/local/include
+
+```
+If generates ctags file in Caffe project root path, then `/.vimrc` setting as:
+```
+set hlsearch
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set tags+=/home/lkj/deeplearning/caffe/tags
+```
+
