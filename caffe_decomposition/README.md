@@ -534,3 +534,11 @@ set shiftwidth=4
 set tags+=/home/lkj/deeplearning/caffe/tags
 ```
 
+## A profile for Lenet debugging
+###  Start the debug environment
+```
+$ gdb ./build/tools/caffe-d
+$ (gdb) break main
+$ (gdb) run train --solver=examples/mnist/lenet_solver.prototxt 
+```
+
