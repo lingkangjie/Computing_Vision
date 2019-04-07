@@ -542,3 +542,23 @@ $ (gdb) break main
 $ (gdb) run train --solver=examples/mnist/lenet_solver.prototxt 
 ```
 
+
+## My thoughts on C++ project
+1. For a project, first we define functions ( also call features) what we want. The features
+will affect how and how many the classes and functions we intend to design.
+2. Design the Class, decide how many classed we want, decide the class member and behaviour,
+decide how many functions we want, decide the API for function, decide which function will
+call which function, etc. (Core)
+3. distribute classes and functions in different files, decide which file will contain which
+classes and functions
+4. decide source files distribution
+5. write CMake files to build
+Maybe you also need to write Test code to test your project, and CMake files for Installation.
+
+
+## The source file I read
+1. Blob.hpp and Blob.cpp
+2. math_function.hpp and math_function.cpp
+3. syncedmem.hpp and syncedmem.cpp
+4. layer.hpp and layer.cpp
+

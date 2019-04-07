@@ -1,3 +1,6 @@
+/* This file has two functions: CaffeMallocHost(), CaffeFreeHost()
+ * and one class: SyncedMemory
+ */
 #ifndef CAFFE_SYNCEDMEM_HPP_
 #define CAFFE_SYNCEDMEM_HPP_
 
@@ -19,7 +22,9 @@ namespace caffe {
 inline void CaffeMallocHost(void** ptr, size_t size, bool* use_cuda) {
 #ifndef CPU_ONLY
   if (Caffe::mode() == Caffe::GPU) {
-    CUDA_CHECK(cudaMallocHost(ptr, size));
+    // allocates page-locked memory on the host
+    // ptr: pointer to allocated host memory
+    CUDA_CHECK(cudaMallocHost(ptr, size)); 
     *use_cuda = true;
     return;
   }
@@ -36,7 +41,7 @@ inline void CaffeMallocHost(void** ptr, size_t size, bool* use_cuda) {
 inline void CaffeFreeHost(void* ptr, bool use_cuda) {
 #ifndef CPU_ONLY
   if (use_cuda) {
-    CUDA_CHECK(cudaFreeHost(ptr));
+    CUDA_CHECK(cudaFreeHost(ptr)); // free host memory
     return;
   }
 #endif
@@ -58,9 +63,12 @@ class SyncedMemory {
  public:
   SyncedMemory();
   explicit SyncedMemory(size_t size);
-  ~SyncedMemory();
+  ~SyncedMemory(); // use CaffeFreeHost() to free CPU data, use cudaFree() to free GPU data
+  // get the pointer point to synchronized data in CPU
   const void* cpu_data();
   void set_cpu_data(void* data);
+  // get the pointer point to synchronized data in GPU
+  const void* cpu_data();
   const void* gpu_data();
   void set_gpu_data(void* data);
   void* mutable_cpu_data();

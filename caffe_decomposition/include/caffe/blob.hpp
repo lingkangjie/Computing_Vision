@@ -116,10 +116,10 @@ class Blob {
    *        Dies on out of range index.
    */
   inline int CanonicalAxisIndex(int axis_index) const {
-    CHECK_GE(axis_index, -num_axes())
+    CHECK_GE(axis_index, -num_axes()) // CHECK_GE, meams >=, from glog
         << "axis " << axis_index << " out of range for " << num_axes()
         << "-D Blob with shape " << shape_string();
-    CHECK_LT(axis_index, num_axes())
+    CHECK_LT(axis_index, num_axes()) //CHECK_LE, means <, -num_axes()<= axis_index< num_axes()
         << "axis " << axis_index << " out of range for " << num_axes()
         << "-D Blob with shape " << shape_string();
     if (axis_index < 0) {
@@ -150,6 +150,7 @@ class Blob {
     return shape(index);
   }
 
+  // calculate offset in a form of offset(n, c, h, w)
   inline int offset(const int n, const int c = 0, const int h = 0,
       const int w = 0) const {
     CHECK_GE(n, 0);
@@ -163,6 +164,7 @@ class Blob {
     return ((n * channels() + c) * height() + h) * width() + w;
   }
 
+  // calculate offset in a form of vector
   inline int offset(const vector<int>& indices) const {
     CHECK_LE(indices.size(), num_axes());
     int offset = 0;
@@ -190,7 +192,7 @@ class Blob {
 
   inline Dtype data_at(const int n, const int c, const int h,
       const int w) const {
-    return cpu_data()[offset(n, c, h, w)];
+    return cpu_data()[offset(n, c, h, w)]; // cpu_date() will return a pointer pointe to Dtype
   }
 
   inline Dtype diff_at(const int n, const int c, const int h,
@@ -269,9 +271,9 @@ class Blob {
  protected:
   shared_ptr<SyncedMemory> data_;
   shared_ptr<SyncedMemory> diff_;
-  shared_ptr<SyncedMemory> shape_data_;
-  vector<int> shape_;
-  int count_;
+  shared_ptr<SyncedMemory> shape_data_; // old version
+  vector<int> shape_; // new version of caffe
+  int count_; // (n,c,h,w), count_ = n*c*h*w
   int capacity_;
 
   DISABLE_COPY_AND_ASSIGN(Blob);

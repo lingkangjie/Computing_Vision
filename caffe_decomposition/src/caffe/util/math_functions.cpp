@@ -9,6 +9,12 @@
 
 namespace caffe {
 
+// C = alpha*A*B + beta*C
+// A,B,C is storaged in 1D format
+// A: (M x K) B:(K x N) C: (M x N)
+// lda, ldb, ldc: colums of A, B, C, here is K, N, N
+// if A, B is transformed, then lda=M, ldb=K
+// CblasRowMajor: means 2D array is storaged in 1D format by Row
 template<>
 void caffe_cpu_gemm<float>(const CBLAS_TRANSPOSE TransA,
     const CBLAS_TRANSPOSE TransB, const int M, const int N, const int K,
@@ -20,6 +26,7 @@ void caffe_cpu_gemm<float>(const CBLAS_TRANSPOSE TransA,
       ldb, beta, C, N);
 }
 
+// double precision
 template<>
 void caffe_cpu_gemm<double>(const CBLAS_TRANSPOSE TransA,
     const CBLAS_TRANSPOSE TransB, const int M, const int N, const int K,
@@ -31,6 +38,9 @@ void caffe_cpu_gemm<double>(const CBLAS_TRANSPOSE TransA,
       ldb, beta, C, N);
 }
 
+// y = alpha*A*x + bete *y
+// x, y is vector, A is matrix, format (M x N)
+// 1, 1: incX, inxY, stride within x, y respectively
 template <>
 void caffe_cpu_gemv<float>(const CBLAS_TRANSPOSE TransA, const int M,
     const int N, const float alpha, const float* A, const float* x,
@@ -45,6 +55,8 @@ void caffe_cpu_gemv<double>(const CBLAS_TRANSPOSE TransA, const int M,
   cblas_dgemv(CblasRowMajor, TransA, M, N, alpha, A, N, x, 1, beta, y, 1);
 }
 
+// Y = alpha*X + Y
+// N: the element number in X, Y
 template <>
 void caffe_axpy<float>(const int N, const float alpha, const float* X,
     float* Y) { cblas_saxpy(N, alpha, X, 1, Y, 1); }
@@ -53,6 +65,7 @@ template <>
 void caffe_axpy<double>(const int N, const double alpha, const double* X,
     double* Y) { cblas_daxpy(N, alpha, X, 1, Y, 1); }
 
+// using constant variable alpha to initializes Y vector
 template <typename Dtype>
 void caffe_set(const int N, const Dtype alpha, Dtype* Y) {
   if (alpha == 0) {
@@ -68,6 +81,7 @@ template void caffe_set<int>(const int N, const int alpha, int* Y);
 template void caffe_set<float>(const int N, const float alpha, float* Y);
 template void caffe_set<double>(const int N, const double alpha, double* Y);
 
+// plus a constant variable ( float alpha) to each elements in Y vector
 template <>
 void caffe_add_scalar(const int N, const float alpha, float* Y) {
   for (int i = 0; i < N; ++i) {
@@ -82,6 +96,7 @@ void caffe_add_scalar(const int N, const double alpha, double* Y) {
   }
 }
 
+// copy N elements in X to Y
 template <typename Dtype>
 void caffe_copy(const int N, const Dtype* X, Dtype* Y) {
   if (X != Y) {
@@ -104,6 +119,8 @@ template void caffe_copy<unsigned int>(const int N, const unsigned int* X,
 template void caffe_copy<float>(const int N, const float* X, float* Y);
 template void caffe_copy<double>(const int N, const double* X, double* Y);
 
+// X = alpha * X
+// N: the element number of X
 template <>
 void caffe_scal<float>(const int N, const float alpha, float *X) {
   cblas_sscal(N, alpha, X, 1);
@@ -114,6 +131,7 @@ void caffe_scal<double>(const int N, const double alpha, double *X) {
   cblas_dscal(N, alpha, X, 1);
 }
 
+// Y = alpha*X + beta*Y
 template <>
 void caffe_cpu_axpby<float>(const int N, const float alpha, const float* X,
                             const float beta, float* Y) {
@@ -126,6 +144,7 @@ void caffe_cpu_axpby<double>(const int N, const double alpha, const double* X,
   cblas_daxpby(N, alpha, X, 1, beta, Y, 1);
 }
 
+// y[i] = a[i] + b[i]
 template <>
 void caffe_add<float>(const int n, const float* a, const float* b,
     float* y) {
@@ -138,6 +157,7 @@ void caffe_add<double>(const int n, const double* a, const double* b,
   vdAdd(n, a, b, y);
 }
 
+// y[i] = a[i] - b[i]
 template <>
 void caffe_sub<float>(const int n, const float* a, const float* b,
     float* y) {
@@ -150,6 +170,7 @@ void caffe_sub<double>(const int n, const double* a, const double* b,
   vdSub(n, a, b, y);
 }
 
+// y[i] = a[i] * b[i]
 template <>
 void caffe_mul<float>(const int n, const float* a, const float* b,
     float* y) {
@@ -162,6 +183,7 @@ void caffe_mul<double>(const int n, const double* a, const double* b,
   vdMul(n, a, b, y);
 }
 
+// y[i] = a[i] / b[i]
 template <>
 void caffe_div<float>(const int n, const float* a, const float* b,
     float* y) {
@@ -174,6 +196,7 @@ void caffe_div<double>(const int n, const double* a, const double* b,
   vdDiv(n, a, b, y);
 }
 
+// y[i] = a[i]^ b
 template <>
 void caffe_powx<float>(const int n, const float* a, const float b,
     float* y) {
@@ -186,6 +209,7 @@ void caffe_powx<double>(const int n, const double* a, const double b,
   vdPowx(n, a, b, y);
 }
 
+// y[i] = a[i] ^2
 template <>
 void caffe_sqr<float>(const int n, const float* a, float* y) {
   vsSqr(n, a, y);
@@ -206,6 +230,7 @@ void caffe_sqrt<double>(const int n, const double* a, double* y) {
   vdSqrt(n, a, y);
 }
 
+// y[i] = exp(a[i])
 template <>
 void caffe_exp<float>(const int n, const float* a, float* y) {
   vsExp(n, a, y);
@@ -216,6 +241,7 @@ void caffe_exp<double>(const int n, const double* a, double* y) {
   vdExp(n, a, y);
 }
 
+// y[i] = log(a[i])
 template <>
 void caffe_log<float>(const int n, const float* a, float* y) {
   vsLn(n, a, y);
@@ -226,6 +252,7 @@ void caffe_log<double>(const int n, const double* a, double* y) {
   vdLn(n, a, y);
 }
 
+// y[i] = abs(a[i])
 template <>
 void caffe_abs<float>(const int n, const float* a, float* y) {
     vsAbs(n, a, y);
@@ -240,6 +267,9 @@ unsigned int caffe_rng_rand() {
   return (*caffe_rng())();
 }
 
+// in 32-bit float system:
+// nextafter(1.F,999) is 1.00000012
+// nextafter(0.1F,10) is 0.100000009
 template <typename Dtype>
 Dtype caffe_nextafter(const Dtype b) {
   return boost::math::nextafter<Dtype>(
@@ -252,6 +282,7 @@ float caffe_nextafter(const float b);
 template
 double caffe_nextafter(const double b);
 
+// reurn: pointer r points to random uniform data in a range of [a,b], total n elements
 template <typename Dtype>
 void caffe_rng_uniform(const int n, const Dtype a, const Dtype b, Dtype* r) {
   CHECK_GE(n, 0);
@@ -273,6 +304,8 @@ template
 void caffe_rng_uniform<double>(const int n, const double a, const double b,
                                double* r);
 
+// generates gaussian distribution
+// a: mean parameter
 template <typename Dtype>
 void caffe_rng_gaussian(const int n, const Dtype a,
                         const Dtype sigma, Dtype* r) {
@@ -315,6 +348,7 @@ void caffe_rng_bernoulli<double>(const int n, const double p, int* r);
 template
 void caffe_rng_bernoulli<float>(const int n, const float p, int* r);
 
+// generate integer number of bernolli distribution
 template <typename Dtype>
 void caffe_rng_bernoulli(const int n, const Dtype p, unsigned int* r) {
   CHECK_GE(n, 0);
@@ -335,6 +369,8 @@ void caffe_rng_bernoulli<double>(const int n, const double p, unsigned int* r);
 template
 void caffe_rng_bernoulli<float>(const int n, const float p, unsigned int* r);
 
+// from Matlab perspective, y = x[1:incx:end] .* y[1:incy:end]
+// incx, incy: the stride of x, y to calculate dot
 template <>
 float caffe_cpu_strided_dot<float>(const int n, const float* x, const int incx,
     const float* y, const int incy) {
@@ -347,6 +383,7 @@ double caffe_cpu_strided_dot<double>(const int n, const double* x,
   return cblas_ddot(n, x, incx, y, incy);
 }
 
+// inner product
 template <typename Dtype>
 Dtype caffe_cpu_dot(const int n, const Dtype* x, const Dtype* y) {
   return caffe_cpu_strided_dot(n, x, 1, y, 1);
@@ -358,6 +395,7 @@ float caffe_cpu_dot<float>(const int n, const float* x, const float* y);
 template
 double caffe_cpu_dot<double>(const int n, const double* x, const double* y);
 
+// x = abs(x[0]) + abs(x[1]) + ... + abs(x[n-1])
 template <>
 float caffe_cpu_asum<float>(const int n, const float* x) {
   return cblas_sasum(n, x, 1);
@@ -368,6 +406,7 @@ double caffe_cpu_asum<double>(const int n, const double* x) {
   return cblas_dasum(n, x, 1);
 }
 
+// y = alpha *x
 template <>
 void caffe_cpu_scale<float>(const int n, const float alpha, const float *x,
                             float* y) {
