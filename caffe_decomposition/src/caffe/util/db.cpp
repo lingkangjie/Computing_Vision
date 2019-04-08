@@ -6,6 +6,9 @@
 
 namespace caffe { namespace db {
 
+    //DB is a virtual class, defined in db.hpp
+    //LevelDB() is defined in db_leveldb.hpp, inherits from
+    //DB class 
 DB* GetDB(DataParameter::DB backend) {
   switch (backend) {
 #ifdef USE_LEVELDB

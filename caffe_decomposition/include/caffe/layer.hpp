@@ -445,6 +445,9 @@ inline Dtype Layer<Dtype>::Forward(const vector<Blob<Dtype>*>& bottom,
       const Dtype* data = top[top_id]->cpu_data();
       // as in SetLossWeights(), we set loss in cpu_diff blob
       // WHAT IS the meanning of loss variable here in BP algorithm? (TO DO)
+      // A hypothesis: 
+      // \Delta_i^{(l)} = (\sum_{j=1}^{S_{l+1} W_{ji}^{(l)} \Delta_j^{(l+1)}) f^{'}(Z_i^{(l)}
+      // here, update loss, means update W * delta, loss means delta? 
       const Dtype* loss_weights = top[top_id]->cpu_diff();
       loss += caffe_cpu_dot(count, data, loss_weights);
     }

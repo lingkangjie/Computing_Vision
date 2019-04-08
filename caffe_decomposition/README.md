@@ -552,13 +552,20 @@ call which function, etc. (Core)
 3. distribute classes and functions in different files, decide which file will contain which
 classes and functions
 4. decide source files distribution
-5. write CMake files to build
+5. write CMake files to build  
 Maybe you also need to write Test code to test your project, and CMake files for Installation.
 
 
 ## The source file I read
-1. Blob.hpp and Blob.cpp
-2. math_function.hpp and math_function.cpp
-3. syncedmem.hpp and syncedmem.cpp
-4. layer.hpp and layer.cpp
+* Blob.hpp and Blob.cpp
+* common.hpp and common.cpp
+* math_function.hpp and math_function.cpp
+* syncedmem.hpp and syncedmem.cpp
+* layer.hpp and layer.cpp
+* data_layer.hpp and data_layer.cpp, base_data_layer.hpp and base_data_layer.cpp, and
+data_tranformer.hpp and data_transformer.cpp
+* db.hpp and db.cpp, db_leveldb.hpp, db_lmdb.hpp
+* memory_data_layer.hpp and meory_data_layer.cpp, image_data_layer.hpp and image_data_layer.cpp,
+hdf5_data_layer.hpp and hdf5_data_layer.cpp, window_data_layer.hpp and window_data_layer.cpp, 
+dummy_data_layer.hpp and dummy_data_layer.cpp
 

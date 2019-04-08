@@ -8,6 +8,7 @@
 
 namespace caffe {
 
+// The most important function here is DataLayerSetUp()
 template <typename Dtype>
 void MemoryDataLayer<Dtype>::DataLayerSetUp(const vector<Blob<Dtype>*>& bottom,
      const vector<Blob<Dtype>*>& top) {

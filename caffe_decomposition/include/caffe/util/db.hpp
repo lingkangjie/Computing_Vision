@@ -8,6 +8,9 @@
 
 namespace caffe { namespace db {
 
+// Each enumerator becomes a named constant of
+// the enumeration's type (that is, name)
+// Mode m = READ; //m is a variable, OK
 enum Mode { READ, WRITE, NEW };
 
 class Cursor {
@@ -44,6 +47,20 @@ class DB {
 
   DISABLE_COPY_AND_ASSIGN(DB);
 };
+
+/* in caffe.proto
+ * message DataParameter{
+ * enum DB { LEVELDB=0;LMDB=1;}
+ * ...}
+ * DB* GetDB is a stand-along function, NOT belongs to DB class.
+ * But its return type is relationship with DB class.
+ * in db.cpp file, we will implemente these two function, to get
+ * which of database we want, LevelDB? or LDMB? As db_leveldb.hpp
+ * and db_lmdb.hpp 'inherits' db.hpp, that is to say, LevelDB and LMDB
+ * class inherits DB class, so the return type DB* of GetDB() function
+ * absolutely has ability to point to DB() or LevelDB() or LMDB() by
+ * type upcast and downcast
+ */
 
 DB* GetDB(DataParameter::DB backend);
 DB* GetDB(const string& backend);

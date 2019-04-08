@@ -1,3 +1,5 @@
+// data_layer inherites from base_data_layer
+// base_data_layer.hpp is included in data_layer.hpp
 #ifdef USE_OPENCV
 #include <opencv2/core/core.hpp>
 #endif  // USE_OPENCV
@@ -11,6 +13,9 @@
 
 namespace caffe {
 
+// BasePrefetchingDataLayer from base_data_layer.hpp
+// db_ from data_layer.hpp, is a pointer point to
+// DB class object, shared_ptr<db::DB> db_;
 template <typename Dtype>
 DataLayer<Dtype>::DataLayer(const LayerParameter& param)
   : BasePrefetchingDataLayer<Dtype>(param),
