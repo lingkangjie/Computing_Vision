@@ -5,6 +5,7 @@
 
 namespace caffe {
 
+// formula: y = max(0,x) + negative_slope * min(0,x)
 template <typename Dtype>
 void ReLULayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,
     const vector<Blob<Dtype>*>& top) {

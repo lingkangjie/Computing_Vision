@@ -557,6 +557,7 @@ Maybe you also need to write Test code to test your project, and CMake files for
 
 
 ## The source file I read
+* caffe.proto, caffe.ph.h, caffe.ph.cc
 * Blob.hpp and Blob.cpp
 * common.hpp and common.cpp
 * math_function.hpp and math_function.cpp
@@ -568,4 +569,7 @@ data_tranformer.hpp and data_transformer.cpp
 * memory_data_layer.hpp and meory_data_layer.cpp, image_data_layer.hpp and image_data_layer.cpp,
 hdf5_data_layer.hpp and hdf5_data_layer.cpp, window_data_layer.hpp and window_data_layer.cpp, 
 dummy_data_layer.hpp and dummy_data_layer.cpp
+* base_conv_layer.hpp and base_conv_layer.cpp, conv_layer.hpp and conv_layer.cpp, im2col.hpp and
+im2col.cpp.
+* neuron_layer.hpp and neuron_layer.cpp, relu_layer.hpp and relu_layer.cpp
 

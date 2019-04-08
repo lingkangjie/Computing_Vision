@@ -11,10 +11,70 @@ namespace caffe {
 // therefore its value is always lower than 0x800... where casting
 // negative value of a parameter converts it to value higher than 0x800...
 // The casting allows to use one condition instead of two.
-inline bool is_a_ge_zero_and_a_lt_b(int a, int b) {
+//
+// if 0<a<b, return true
+inline bool is_a_ge_zero_and_a_lt_b(int a, int b) { 
   return static_cast<unsigned>(a) < static_cast<unsigned>(b);
 }
 
+/* 1. what is dilation?
+ * dialation is a way to enlarge receptive field.
+ * '#': the input image pixel to be observed
+ * 'O': the input image pixel to be ignored
+ * general kernal (dialation=0)|dialation=2 |dialation=3
+ *          ###                | #O#O#O     |#OO#OO#
+ *          ###                | #O#O#O     |#OO#OO#
+ *          ###                | #O#O#O     |#OO#OO#
+ * So, the new kernal size = dilation_h * (original_kernel_h -1) + 1
+ * Original ouput formula: (image_height + 2 * padding_height - kernal_hight)/stride_h +1
+ * Now the kernal_hight is replaced by new kernal_hight
+ *
+ * 2. why we need im2col()?
+ * A breif anwser: we want computation faster.
+ * In ordinary convolutional operation, the kernel and input image is storaged in
+ * such a way that is not suitable to convolve, e.g.
+ *   INPUT IMAGE        storage by row
+ *   1 2 3 4 5   -----> 1 2 3 4 5 6 7 8 9 0
+ *   6 7 8 9 0
+ *
+ *   KERNEL             storage by row
+ *   1 2        ------> 1 2 3 4
+ *   3 4
+ * If calculate the first conv, 
+ *  1 2  (conv) 1 2  -----> 1*2 + 2*2 + 6*3 + 7*4
+ *  6 7         3 4
+ *  We must move the pointer from ->1, ->2, ->6, ->7 in the input image,
+ *  and ->1, ->2, ->3, ->4 in the kernel,
+ *  which are slower as we have to move the pointers noncontinuously.
+ * So, we create a function im2col(), image to column for the pointer moves faster.
+ * im2col() means we re-layout the receptive field to column.
+ * Dtype* data_im: input image
+ * Dtype* data_col: ouput image, (kw*kh, output_w*output_h)
+ * method: suppose data_im has form of (n, c,w, h), kernel has form of (m, c, kw, kh),
+ * here m means m kernels, each kernel has c channels as like data_im.
+ * we first calculate the output feature map size (m, output_w, output_h).
+ *
+ * Example: kenel size is 3*3, stride is 1, no padding
+ *  Input Image    receptive field            im2col()
+ *  1 2 3 4 5      1 2 3   2 3 4  3 4 5      1 2
+ *  6 7 8 9 7 ---->6 7 8   7 8 9  8 9 7      2 3
+ *  0 0 1 1 2      0 0 1   0 1 1  1 1 2      3 4
+ *  3 3 4 4 5                          ----->6 . ..
+ *                 6 7 8   7 8 9  8 9 7      7 ....
+ *                 0 0 1   0 1 1  1 1 2      8
+ *                 3 3 4   3 4 4  4 4 5      0
+ *                                           0
+ *                                           1
+ *
+ *                                           ^
+ *                                           |
+ *                                       recptive field 1
+ * There are total 6 recptive fields, output_w = (5-2*0-3)/1+1=3,
+ * output_h = (4-2*0-3)/1+1 =2, recptive files = output_w * output_h
+ * So the row size of data_col is kw*kh
+ *
+ * im2col(): pros:faster, cons: more memory
+ */
 template <typename Dtype>
 void im2col_cpu(const Dtype* data_im, const int channels,
     const int height, const int width, const int kernel_h, const int kernel_w,
