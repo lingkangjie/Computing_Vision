@@ -15,6 +15,12 @@ $ cd build
 $ cmake ..
 $ make all -j8
 ```
+optionals:
+```
+$ make pycaffe
+$ make test
+$ make runtest
+```
 
 3. verify installation
 
@@ -537,6 +543,11 @@ set tags+=/home/lkj/deeplearning/caffe/tags
 ## A profile for Lenet debugging
 ###  Start the debug environment
 ```
+$ cd CAFFE_ROOT
+$ mkdir -p build
+$ cd build
+$ cmake -DCMAKE_BUILD_TYPE=Debug ..
+$ make all -j8
 $ gdb ./build/tools/caffe-d
 $ (gdb) break main
 $ (gdb) run train --solver=examples/mnist/lenet_solver.prototxt 
@@ -572,4 +583,6 @@ dummy_data_layer.hpp and dummy_data_layer.cpp
 * base_conv_layer.hpp and base_conv_layer.cpp, conv_layer.hpp and conv_layer.cpp, im2col.hpp and
 im2col.cpp.
 * neuron_layer.hpp and neuron_layer.cpp, relu_layer.hpp and relu_layer.cpp
+* net.hpp and net.cpp
+* solver.hpp and solver.cpp
 

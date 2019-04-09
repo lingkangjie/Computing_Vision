@@ -1,0 +1,2880 @@
+lkj@lkj:~/deeplearning/caffe/build$ make pycaffe
+[  3%] Built target caffeproto
+[ 98%] Built target caffe
+[100%] Built target pycaffe
+lkj@lkj:~/deeplearning/caffe/build$ make test
+lkj@lkj:~/deeplearning/caffe/build$ make runtest
+[  2%] Built target caffeproto
+Scanning dependencies of target gtest
+[  2%] Building CXX object src/gtest/CMakeFiles/gtest.dir/gtest-all.cpp.o
+[  3%] Linking CXX static library ../../lib/libgtest.a
+[  3%] Built target gtest
+[ 60%] Built target caffe
+Scanning dependencies of target test.testbin
+[ 60%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_accuracy_layer.cpp.o
+[ 62%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_argmax_layer.cpp.o
+[ 62%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_batch_norm_layer.cpp.o
+[ 63%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_batch_reindex_layer.cpp.o
+[ 63%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_benchmark.cpp.o
+[ 64%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_bias_layer.cpp.o
+[ 64%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_blob.cpp.o
+[ 65%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_caffe_main.cpp.o
+[ 65%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_common.cpp.o
+[ 66%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_concat_layer.cpp.o
+[ 66%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_contrastive_loss_layer.cpp.o
+[ 67%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_convolution_layer.cpp.o
+[ 67%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_crop_layer.cpp.o
+[ 68%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_data_layer.cpp.o
+[ 68%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_data_transformer.cpp.o
+[ 70%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_db.cpp.o
+[ 70%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_deconvolution_layer.cpp.o
+[ 71%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_dummy_data_layer.cpp.o
+[ 71%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_eltwise_layer.cpp.o
+[ 72%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_embed_layer.cpp.o
+[ 72%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_euclidean_loss_layer.cpp.o
+[ 73%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_filler.cpp.o
+[ 73%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_filter_layer.cpp.o
+[ 74%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_flatten_layer.cpp.o
+[ 74%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_gradient_based_solver.cpp.o
+[ 75%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_hdf5_output_layer.cpp.o
+[ 75%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_hdf5data_layer.cpp.o
+[ 77%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_hinge_loss_layer.cpp.o
+[ 77%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_im2col_layer.cpp.o
+[ 78%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_image_data_layer.cpp.o
+[ 78%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_infogain_loss_layer.cpp.o
+[ 79%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_inner_product_layer.cpp.o
+[ 79%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_internal_thread.cpp.o
+[ 80%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_io.cpp.o
+[ 80%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_layer_factory.cpp.o
+[ 80%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_lrn_layer.cpp.o
+[ 81%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_lstm_layer.cpp.o
+[ 81%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_math_functions.cpp.o
+[ 82%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_maxpool_dropout_layers.cpp.o
+[ 82%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_memory_data_layer.cpp.o
+[ 83%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_multinomial_logistic_loss_layer.cpp.o
+[ 83%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_mvn_layer.cpp.o
+[ 85%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_net.cpp.o
+[ 85%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_neuron_layer.cpp.o
+[ 86%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_platform.cpp.o
+[ 86%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_pooling_layer.cpp.o
+[ 87%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_power_layer.cpp.o
+[ 87%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_protobuf.cpp.o
+[ 88%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_random_number_generator.cpp.o
+[ 88%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_reduction_layer.cpp.o
+[ 89%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_reshape_layer.cpp.o
+[ 89%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_rnn_layer.cpp.o
+[ 90%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_scale_layer.cpp.o
+[ 90%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_sigmoid_cross_entropy_loss_layer.cpp.o
+[ 91%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_slice_layer.cpp.o
+[ 91%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_softmax_layer.cpp.o
+[ 93%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_softmax_with_loss_layer.cpp.o
+[ 93%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_solver.cpp.o
+[ 94%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_solver_factory.cpp.o
+[ 94%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_split_layer.cpp.o
+[ 95%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_spp_layer.cpp.o
+[ 95%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_stochastic_pooling.cpp.o
+[ 96%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_syncedmem.cpp.o
+[ 96%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_tanh_layer.cpp.o
+[ 97%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_threshold_layer.cpp.o
+[ 97%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_tile_layer.cpp.o
+[ 98%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_upgrade_proto.cpp.o
+[ 98%] Building CXX object src/caffe/test/CMakeFiles/test.testbin.dir/test_util_blas.cpp.o
+[100%] Linking CXX executable ../../../test/test.testbin
+[100%] Built target test.testbin
+Scanning dependencies of target runtest
+Note: Google Test filter = -*GPU*
+Note: Randomizing tests' orders with a seed of 96673 .
+[==========] Running 1162 tests from 152 test cases.
+[----------] Global test environment set-up.
+[----------] 4 tests from SoftmaxWithLossLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] SoftmaxWithLossLayerTest/1.TestGradientIgnoreLabel
+[       OK ] SoftmaxWithLossLayerTest/1.TestGradientIgnoreLabel (38 ms)
+[ RUN      ] SoftmaxWithLossLayerTest/1.TestGradientUnnormalized
+[       OK ] SoftmaxWithLossLayerTest/1.TestGradientUnnormalized (17 ms)
+[ RUN      ] SoftmaxWithLossLayerTest/1.TestForwardIgnoreLabel
+[       OK ] SoftmaxWithLossLayerTest/1.TestForwardIgnoreLabel (0 ms)
+[ RUN      ] SoftmaxWithLossLayerTest/1.TestGradient
+[       OK ] SoftmaxWithLossLayerTest/1.TestGradient (18 ms)
+[----------] 4 tests from SoftmaxWithLossLayerTest/1 (73 ms total)
+
+[----------] 3 tests from BlobMathTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] BlobMathTest/1.TestAsum
+[       OK ] BlobMathTest/1.TestAsum (0 ms)
+[ RUN      ] BlobMathTest/1.TestScaleData
+[       OK ] BlobMathTest/1.TestScaleData (0 ms)
+[ RUN      ] BlobMathTest/1.TestSumOfSquares
+[       OK ] BlobMathTest/1.TestSumOfSquares (0 ms)
+[----------] 3 tests from BlobMathTest/1 (0 ms total)
+
+[----------] 5 tests from ImageDataLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] ImageDataLayerTest/1.TestRead
+[       OK ] ImageDataLayerTest/1.TestRead (201 ms)
+[ RUN      ] ImageDataLayerTest/1.TestReshape
+[       OK ] ImageDataLayerTest/1.TestReshape (34 ms)
+[ RUN      ] ImageDataLayerTest/1.TestResize
+[       OK ] ImageDataLayerTest/1.TestResize (138 ms)
+[ RUN      ] ImageDataLayerTest/1.TestShuffle
+[       OK ] ImageDataLayerTest/1.TestShuffle (116 ms)
+[ RUN      ] ImageDataLayerTest/1.TestSpace
+[       OK ] ImageDataLayerTest/1.TestSpace (34 ms)
+[----------] 5 tests from ImageDataLayerTest/1 (524 ms total)
+
+[----------] 6 tests from MSRAFillerTest/1, where TypeParam = double
+[ RUN      ] MSRAFillerTest/1.TestFillFanIn
+[       OK ] MSRAFillerTest/1.TestFillFanIn (121 ms)
+[ RUN      ] MSRAFillerTest/1.TestFill2D
+[       OK ] MSRAFillerTest/1.TestFill2D (0 ms)
+[ RUN      ] MSRAFillerTest/1.TestFillAverage
+[       OK ] MSRAFillerTest/1.TestFillAverage (104 ms)
+[ RUN      ] MSRAFillerTest/1.TestFill5D
+[       OK ] MSRAFillerTest/1.TestFill5D (0 ms)
+[ RUN      ] MSRAFillerTest/1.TestFill1D
+[       OK ] MSRAFillerTest/1.TestFill1D (0 ms)
+[ RUN      ] MSRAFillerTest/1.TestFillFanOut
+[       OK ] MSRAFillerTest/1.TestFillFanOut (128 ms)
+[----------] 6 tests from MSRAFillerTest/1 (360 ms total)
+
+[----------] 3 tests from PaddingLayerUpgradeTest
+[ RUN      ] PaddingLayerUpgradeTest.TestSimple
+[       OK ] PaddingLayerUpgradeTest.TestSimple (3 ms)
+[ RUN      ] PaddingLayerUpgradeTest.TestImageNet
+[       OK ] PaddingLayerUpgradeTest.TestImageNet (1 ms)
+[ RUN      ] PaddingLayerUpgradeTest.TestTwoTops
+[       OK ] PaddingLayerUpgradeTest.TestTwoTops (1 ms)
+[----------] 3 tests from PaddingLayerUpgradeTest (7 ms total)
+
+[----------] 3 tests from DummyDataLayerTest/0, where TypeParam = float
+[ RUN      ] DummyDataLayerTest/0.TestOneTopConstant
+[       OK ] DummyDataLayerTest/0.TestOneTopConstant (0 ms)
+[ RUN      ] DummyDataLayerTest/0.TestThreeTopConstantGaussianConstant
+[       OK ] DummyDataLayerTest/0.TestThreeTopConstantGaussianConstant (0 ms)
+[ RUN      ] DummyDataLayerTest/0.TestTwoTopConstant
+[       OK ] DummyDataLayerTest/0.TestTwoTopConstant (0 ms)
+[----------] 3 tests from DummyDataLayerTest/0 (4 ms total)
+
+[----------] 7 tests from CPUMathFunctionsTest/0, where TypeParam = float
+[ RUN      ] CPUMathFunctionsTest/0.TestNothing
+[       OK ] CPUMathFunctionsTest/0.TestNothing (3 ms)
+[ RUN      ] CPUMathFunctionsTest/0.TestSign
+[       OK ] CPUMathFunctionsTest/0.TestSign (4 ms)
+[ RUN      ] CPUMathFunctionsTest/0.TestCopy
+[       OK ] CPUMathFunctionsTest/0.TestCopy (4 ms)
+[ RUN      ] CPUMathFunctionsTest/0.TestScale
+[       OK ] CPUMathFunctionsTest/0.TestScale (4 ms)
+[ RUN      ] CPUMathFunctionsTest/0.TestAsum
+[       OK ] CPUMathFunctionsTest/0.TestAsum (5 ms)
+[ RUN      ] CPUMathFunctionsTest/0.TestSgnbit
+[       OK ] CPUMathFunctionsTest/0.TestSgnbit (6 ms)
+[ RUN      ] CPUMathFunctionsTest/0.TestFabs
+[       OK ] CPUMathFunctionsTest/0.TestFabs (5 ms)
+[----------] 7 tests from CPUMathFunctionsTest/0 (39 ms total)
+
+[----------] 11 tests from AdaDeltaSolverTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] AdaDeltaSolverTest/0.TestAdaDeltaLeastSquaresUpdateWithHalfMomentum
+[       OK ] AdaDeltaSolverTest/0.TestAdaDeltaLeastSquaresUpdateWithHalfMomentum (225 ms)
+[ RUN      ] AdaDeltaSolverTest/0.TestSnapshotShare
+[       OK ] AdaDeltaSolverTest/0.TestSnapshotShare (35 ms)
+[ RUN      ] AdaDeltaSolverTest/0.TestAdaDeltaLeastSquaresUpdateWithEverythingShare
+[       OK ] AdaDeltaSolverTest/0.TestAdaDeltaLeastSquaresUpdateWithEverythingShare (85 ms)
+[ RUN      ] AdaDeltaSolverTest/0.TestLeastSquaresUpdateWithEverythingAccumShare
+[       OK ] AdaDeltaSolverTest/0.TestLeastSquaresUpdateWithEverythingAccumShare (5 ms)
+[ RUN      ] AdaDeltaSolverTest/0.TestLeastSquaresUpdateWithMomentumMultiIter
+[       OK ] AdaDeltaSolverTest/0.TestLeastSquaresUpdateWithMomentumMultiIter (80 ms)
+[ RUN      ] AdaDeltaSolverTest/0.TestSnapshot
+[       OK ] AdaDeltaSolverTest/0.TestSnapshot (25 ms)
+[ RUN      ] AdaDeltaSolverTest/0.TestAdaDeltaLeastSquaresUpdate
+[       OK ] AdaDeltaSolverTest/0.TestAdaDeltaLeastSquaresUpdate (17 ms)
+[ RUN      ] AdaDeltaSolverTest/0.TestLeastSquaresUpdateWithEverythingAccum
+[       OK ] AdaDeltaSolverTest/0.TestLeastSquaresUpdateWithEverythingAccum (4 ms)
+[ RUN      ] AdaDeltaSolverTest/0.TestAdaDeltaLeastSquaresUpdateWithMomentum
+[       OK ] AdaDeltaSolverTest/0.TestAdaDeltaLeastSquaresUpdateWithMomentum (39 ms)
+[ RUN      ] AdaDeltaSolverTest/0.TestAdaDeltaLeastSquaresUpdateWithWeightDecay
+[       OK ] AdaDeltaSolverTest/0.TestAdaDeltaLeastSquaresUpdateWithWeightDecay (15 ms)
+[ RUN      ] AdaDeltaSolverTest/0.TestAdaDeltaLeastSquaresUpdateWithEverything
+[       OK ] AdaDeltaSolverTest/0.TestAdaDeltaLeastSquaresUpdateWithEverything (78 ms)
+[----------] 11 tests from AdaDeltaSolverTest/0 (621 ms total)
+
+[----------] 3 tests from BatchNormLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] BatchNormLayerTest/0.TestGradient
+[       OK ] BatchNormLayerTest/0.TestGradient (220 ms)
+[ RUN      ] BatchNormLayerTest/0.TestForward
+[       OK ] BatchNormLayerTest/0.TestForward (0 ms)
+[ RUN      ] BatchNormLayerTest/0.TestForwardInplace
+[       OK ] BatchNormLayerTest/0.TestForwardInplace (0 ms)
+[----------] 3 tests from BatchNormLayerTest/0 (223 ms total)
+
+[----------] 26 tests from IOTest
+[ RUN      ] IOTest.TestReadImageToDatum
+[       OK ] IOTest.TestReadImageToDatum (6 ms)
+[ RUN      ] IOTest.TestReadImageToDatumResizedSquare
+[       OK ] IOTest.TestReadImageToDatumResizedSquare (7 ms)
+[ RUN      ] IOTest.TestReadImageToCVMatGray
+[       OK ] IOTest.TestReadImageToCVMatGray (3 ms)
+[ RUN      ] IOTest.TestDecodeDatumToCVMatContentNative
+[       OK ] IOTest.TestDecodeDatumToCVMatContentNative (15 ms)
+[ RUN      ] IOTest.TestDecodeDatumToCVMatNativeGray
+[       OK ] IOTest.TestDecodeDatumToCVMatNativeGray (2 ms)
+[ RUN      ] IOTest.TestReadImageToDatumResized
+[       OK ] IOTest.TestReadImageToDatumResized (5 ms)
+[ RUN      ] IOTest.TestReadImageToDatumReference
+[       OK ] IOTest.TestReadImageToDatumReference (14 ms)
+[ RUN      ] IOTest.TestReadImageToDatumResizedGray
+[       OK ] IOTest.TestReadImageToDatumResizedGray (4 ms)
+[ RUN      ] IOTest.TestDecodeDatumToCVMatContent
+[       OK ] IOTest.TestDecodeDatumToCVMatContent (15 ms)
+[ RUN      ] IOTest.TestReadImageToDatumGray
+[       OK ] IOTest.TestReadImageToDatumGray (4 ms)
+[ RUN      ] IOTest.TestReadImageToCVMatResized
+[       OK ] IOTest.TestReadImageToCVMatResized (5 ms)
+[ RUN      ] IOTest.TestReadFileToDatum
+[       OK ] IOTest.TestReadFileToDatum (0 ms)
+[ RUN      ] IOTest.TestDecodeDatum
+[       OK ] IOTest.TestDecodeDatum (15 ms)
+[ RUN      ] IOTest.TestCVMatToDatum
+[       OK ] IOTest.TestCVMatToDatum (6 ms)
+[ RUN      ] IOTest.TestDecodeDatumNative
+[       OK ] IOTest.TestDecodeDatumNative (15 ms)
+[ RUN      ] IOTest.TestDecodeDatumToCVMat
+[       OK ] IOTest.TestDecodeDatumToCVMat (8 ms)
+[ RUN      ] IOTest.TestDecodeDatumNativeGray
+[       OK ] IOTest.TestDecodeDatumNativeGray (7 ms)
+[ RUN      ] IOTest.TestCVMatToDatumContent
+[       OK ] IOTest.TestCVMatToDatumContent (13 ms)
+[ RUN      ] IOTest.TestReadImageToDatumReferenceResized
+[       OK ] IOTest.TestReadImageToDatumReferenceResized (11 ms)
+[ RUN      ] IOTest.TestReadImageToDatumContent
+[       OK ] IOTest.TestReadImageToDatumContent (14 ms)
+[ RUN      ] IOTest.TestCVMatToDatumReference
+[       OK ] IOTest.TestCVMatToDatumReference (15 ms)
+[ RUN      ] IOTest.TestDecodeDatumToCVMatNative
+[       OK ] IOTest.TestDecodeDatumToCVMatNative (5 ms)
+[ RUN      ] IOTest.TestReadImageToCVMat
+[       OK ] IOTest.TestReadImageToCVMat (5 ms)
+[ RUN      ] IOTest.TestReadImageToCVMatResizedSquare
+[       OK ] IOTest.TestReadImageToCVMatResizedSquare (5 ms)
+[ RUN      ] IOTest.TestReadImageToDatumContentGray
+[       OK ] IOTest.TestReadImageToDatumContentGray (8 ms)
+[ RUN      ] IOTest.TestReadImageToCVMatResizedGray
+[       OK ] IOTest.TestReadImageToCVMatResizedGray (4 ms)
+[----------] 26 tests from IOTest (238 ms total)
+
+[----------] 5 tests from SPPLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] SPPLayerTest/0.TestEqualOutputDims2
+[       OK ] SPPLayerTest/0.TestEqualOutputDims2 (0 ms)
+[ RUN      ] SPPLayerTest/0.TestEqualOutputDims
+[       OK ] SPPLayerTest/0.TestEqualOutputDims (0 ms)
+[ RUN      ] SPPLayerTest/0.TestSetup
+[       OK ] SPPLayerTest/0.TestSetup (0 ms)
+[ RUN      ] SPPLayerTest/0.TestForwardBackward
+[       OK ] SPPLayerTest/0.TestForwardBackward (0 ms)
+[ RUN      ] SPPLayerTest/0.TestGradient
+[       OK ] SPPLayerTest/0.TestGradient (3142 ms)
+[----------] 5 tests from SPPLayerTest/0 (3149 ms total)
+
+[----------] 5 tests from DBTest/0, where TypeParam = caffe::TypeLevelDB
+[ RUN      ] DBTest/0.TestGetDB
+[       OK ] DBTest/0.TestGetDB (43 ms)
+[ RUN      ] DBTest/0.TestKeyValue
+[       OK ] DBTest/0.TestKeyValue (79 ms)
+[ RUN      ] DBTest/0.TestSeekToFirst
+[       OK ] DBTest/0.TestSeekToFirst (84 ms)
+[ RUN      ] DBTest/0.TestNext
+[       OK ] DBTest/0.TestNext (94 ms)
+[ RUN      ] DBTest/0.TestWrite
+[       OK ] DBTest/0.TestWrite (86 ms)
+[----------] 5 tests from DBTest/0 (390 ms total)
+
+[----------] 20 tests from BiasLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] BiasLayerTest/1.TestForwardEltwiseInPlace
+[       OK ] BiasLayerTest/1.TestForwardEltwiseInPlace (0 ms)
+[ RUN      ] BiasLayerTest/1.TestForwardBroadcastEnd
+[       OK ] BiasLayerTest/1.TestForwardBroadcastEnd (0 ms)
+[ RUN      ] BiasLayerTest/1.TestForwardBroadcastMiddleInPlace
+[       OK ] BiasLayerTest/1.TestForwardBroadcastMiddleInPlace (0 ms)
+[ RUN      ] BiasLayerTest/1.TestForwardBiasAxis2
+[       OK ] BiasLayerTest/1.TestForwardBiasAxis2 (0 ms)
+[ RUN      ] BiasLayerTest/1.TestForwardEltwiseWithParam
+[       OK ] BiasLayerTest/1.TestForwardEltwiseWithParam (0 ms)
+[ RUN      ] BiasLayerTest/1.TestBackwardBroadcastMiddleInPlace
+[       OK ] BiasLayerTest/1.TestBackwardBroadcastMiddleInPlace (0 ms)
+[ RUN      ] BiasLayerTest/1.TestForwardBroadcastMiddle
+[       OK ] BiasLayerTest/1.TestForwardBroadcastMiddle (0 ms)
+[ RUN      ] BiasLayerTest/1.TestForwardBias
+[       OK ] BiasLayerTest/1.TestForwardBias (0 ms)
+[ RUN      ] BiasLayerTest/1.TestBackwardEltwiseInPlace
+[       OK ] BiasLayerTest/1.TestBackwardEltwiseInPlace (0 ms)
+[ RUN      ] BiasLayerTest/1.TestForwardBroadcastMiddleWithParam
+[       OK ] BiasLayerTest/1.TestForwardBroadcastMiddleWithParam (0 ms)
+[ RUN      ] BiasLayerTest/1.TestGradientBroadcastMiddle
+[       OK ] BiasLayerTest/1.TestGradientBroadcastMiddle (120 ms)
+[ RUN      ] BiasLayerTest/1.TestGradientEltwise
+[       OK ] BiasLayerTest/1.TestGradientEltwise (4 ms)
+[ RUN      ] BiasLayerTest/1.TestGradientEltwiseWithParam
+[       OK ] BiasLayerTest/1.TestGradientEltwiseWithParam (225 ms)
+[ RUN      ] BiasLayerTest/1.TestGradientBroadcastEnd
+[       OK ] BiasLayerTest/1.TestGradientBroadcastEnd (151 ms)
+[ RUN      ] BiasLayerTest/1.TestForwardEltwise
+[       OK ] BiasLayerTest/1.TestForwardEltwise (0 ms)
+[ RUN      ] BiasLayerTest/1.TestGradientBias
+[       OK ] BiasLayerTest/1.TestGradientBias (95 ms)
+[ RUN      ] BiasLayerTest/1.TestGradientBroadcastBegin
+[       OK ] BiasLayerTest/1.TestGradientBroadcastBegin (110 ms)
+[ RUN      ] BiasLayerTest/1.TestGradientBroadcastMiddleWithParam
+[       OK ] BiasLayerTest/1.TestGradientBroadcastMiddleWithParam (117 ms)
+[ RUN      ] BiasLayerTest/1.TestGradientBiasAxis2
+[       OK ] BiasLayerTest/1.TestGradientBiasAxis2 (92 ms)
+[ RUN      ] BiasLayerTest/1.TestForwardBroadcastBegin
+[       OK ] BiasLayerTest/1.TestForwardBroadcastBegin (0 ms)
+[----------] 20 tests from BiasLayerTest/1 (937 ms total)
+
+[----------] 9 tests from AdaGradSolverTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] AdaGradSolverTest/0.TestAdaGradLeastSquaresUpdate
+[       OK ] AdaGradSolverTest/0.TestAdaGradLeastSquaresUpdate (16 ms)
+[ RUN      ] AdaGradSolverTest/0.TestAdaGradLeastSquaresUpdateWithWeightDecay
+[       OK ] AdaGradSolverTest/0.TestAdaGradLeastSquaresUpdateWithWeightDecay (16 ms)
+[ RUN      ] AdaGradSolverTest/0.TestAdaGradLeastSquaresUpdateWithEverythingShare
+[       OK ] AdaGradSolverTest/0.TestAdaGradLeastSquaresUpdateWithEverythingShare (89 ms)
+[ RUN      ] AdaGradSolverTest/0.TestLeastSquaresUpdateWithEverythingAccum
+[       OK ] AdaGradSolverTest/0.TestLeastSquaresUpdateWithEverythingAccum (4 ms)
+[ RUN      ] AdaGradSolverTest/0.TestSnapshotShare
+[       OK ] AdaGradSolverTest/0.TestSnapshotShare (32 ms)
+[ RUN      ] AdaGradSolverTest/0.TestAdaGradLeastSquaresUpdateWithEverything
+[       OK ] AdaGradSolverTest/0.TestAdaGradLeastSquaresUpdateWithEverything (78 ms)
+[ RUN      ] AdaGradSolverTest/0.TestAdaGradLeastSquaresUpdateLROneHundredth
+[       OK ] AdaGradSolverTest/0.TestAdaGradLeastSquaresUpdateLROneHundredth (16 ms)
+[ RUN      ] AdaGradSolverTest/0.TestSnapshot
+[       OK ] AdaGradSolverTest/0.TestSnapshot (24 ms)
+[ RUN      ] AdaGradSolverTest/0.TestLeastSquaresUpdateWithEverythingAccumShare
+[       OK ] AdaGradSolverTest/0.TestLeastSquaresUpdateWithEverythingAccumShare (5 ms)
+[----------] 9 tests from AdaGradSolverTest/0 (289 ms total)
+
+[----------] 8 tests from RMSPropSolverTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] RMSPropSolverTest/0.TestRMSPropLeastSquaresUpdateWithRmsDecay
+[       OK ] RMSPropSolverTest/0.TestRMSPropLeastSquaresUpdateWithRmsDecay (83 ms)
+[ RUN      ] RMSPropSolverTest/0.TestRMSPropLeastSquaresUpdateWithEverythingShare
+[       OK ] RMSPropSolverTest/0.TestRMSPropLeastSquaresUpdateWithEverythingShare (90 ms)
+[ RUN      ] RMSPropSolverTest/0.TestRMSPropLeastSquaresUpdateWithWeightDecay
+[       OK ] RMSPropSolverTest/0.TestRMSPropLeastSquaresUpdateWithWeightDecay (18 ms)
+[ RUN      ] RMSPropSolverTest/0.TestRMSPropLeastSquaresUpdateWithEverything
+[       OK ] RMSPropSolverTest/0.TestRMSPropLeastSquaresUpdateWithEverything (79 ms)
+[ RUN      ] RMSPropSolverTest/0.TestSnapshotShare
+[       OK ] RMSPropSolverTest/0.TestSnapshotShare (33 ms)
+[ RUN      ] RMSPropSolverTest/0.TestLeastSquaresUpdateWithEverythingAccum
+[       OK ] RMSPropSolverTest/0.TestLeastSquaresUpdateWithEverythingAccum (4 ms)
+[ RUN      ] RMSPropSolverTest/0.TestLeastSquaresUpdateWithEverythingAccumShare
+[       OK ] RMSPropSolverTest/0.TestLeastSquaresUpdateWithEverythingAccumShare (5 ms)
+[ RUN      ] RMSPropSolverTest/0.TestSnapshot
+[       OK ] RMSPropSolverTest/0.TestSnapshot (32 ms)
+[----------] 8 tests from RMSPropSolverTest/0 (354 ms total)
+
+[----------] 11 tests from CropLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] CropLayerTest/0.TestSetupShapeAll
+[       OK ] CropLayerTest/0.TestSetupShapeAll (0 ms)
+[ RUN      ] CropLayerTest/0.TestSetupShapeNegativeIndexing
+[       OK ] CropLayerTest/0.TestSetupShapeNegativeIndexing (0 ms)
+[ RUN      ] CropLayerTest/0.TestCropAll
+[       OK ] CropLayerTest/0.TestCropAll (0 ms)
+[ RUN      ] CropLayerTest/0.TestCrop5DGradient
+[       OK ] CropLayerTest/0.TestCrop5DGradient (1603 ms)
+[ RUN      ] CropLayerTest/0.TestCropHWGradient
+[       OK ] CropLayerTest/0.TestCropHWGradient (432 ms)
+[ RUN      ] CropLayerTest/0.TestCropAllGradient
+[       OK ] CropLayerTest/0.TestCropAllGradient (270 ms)
+[ RUN      ] CropLayerTest/0.TestCrop5D
+[       OK ] CropLayerTest/0.TestCrop5D (0 ms)
+[ RUN      ] CropLayerTest/0.TestDimensionsCheck
+[       OK ] CropLayerTest/0.TestDimensionsCheck (0 ms)
+[ RUN      ] CropLayerTest/0.TestCropHW
+[       OK ] CropLayerTest/0.TestCropHW (0 ms)
+[ RUN      ] CropLayerTest/0.TestSetupShapeDefault
+[       OK ] CropLayerTest/0.TestSetupShapeDefault (0 ms)
+[ RUN      ] CropLayerTest/0.TestCropAllOffset
+[       OK ] CropLayerTest/0.TestCropAllOffset (0 ms)
+[----------] 11 tests from CropLayerTest/0 (2318 ms total)
+
+[----------] 4 tests from ConstantFillerTest/0, where TypeParam = float
+[ RUN      ] ConstantFillerTest/0.TestFill1D
+[       OK ] ConstantFillerTest/0.TestFill1D (0 ms)
+[ RUN      ] ConstantFillerTest/0.TestFill2D
+[       OK ] ConstantFillerTest/0.TestFill2D (0 ms)
+[ RUN      ] ConstantFillerTest/0.TestFill5D
+[       OK ] ConstantFillerTest/0.TestFill5D (0 ms)
+[ RUN      ] ConstantFillerTest/0.TestFill
+[       OK ] ConstantFillerTest/0.TestFill (0 ms)
+[----------] 4 tests from ConstantFillerTest/0 (2 ms total)
+
+[----------] 2 tests from InfogainLossLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] InfogainLossLayerTest/0.TestGradient
+[       OK ] InfogainLossLayerTest/0.TestGradient (3 ms)
+[ RUN      ] InfogainLossLayerTest/0.TestInfogainLoss
+[       OK ] InfogainLossLayerTest/0.TestInfogainLoss (0 ms)
+[----------] 2 tests from InfogainLossLayerTest/0 (4 ms total)
+
+[----------] 20 tests from FilterNetTest
+[ RUN      ] FilterNetTest.TestFilterInByMinLevel2
+[       OK ] FilterNetTest.TestFilterInByMinLevel2 (0 ms)
+[ RUN      ] FilterNetTest.TestFilterInByMaxLevel2
+[       OK ] FilterNetTest.TestFilterInByMaxLevel2 (0 ms)
+[ RUN      ] FilterNetTest.TestFilterInByIncludeMultiRule
+[       OK ] FilterNetTest.TestFilterInByIncludeMultiRule (0 ms)
+[ RUN      ] FilterNetTest.TestNoFilter
+[       OK ] FilterNetTest.TestNoFilter (0 ms)
+[ RUN      ] FilterNetTest.TestFilterInByStage2
+[       OK ] FilterNetTest.TestFilterInByStage2 (1 ms)
+[ RUN      ] FilterNetTest.TestFilterOutByMultipleStage
+[       OK ] FilterNetTest.TestFilterOutByMultipleStage (1 ms)
+[ RUN      ] FilterNetTest.TestFilterOutByNotStage
+[       OK ] FilterNetTest.TestFilterOutByNotStage (0 ms)
+[ RUN      ] FilterNetTest.TestFilterInOutByIncludeMultiRule
+[       OK ] FilterNetTest.TestFilterInOutByIncludeMultiRule (0 ms)
+[ RUN      ] FilterNetTest.TestFilterOutByStage2
+[       OK ] FilterNetTest.TestFilterOutByStage2 (0 ms)
+[ RUN      ] FilterNetTest.TestFilterOutByStage
+[       OK ] FilterNetTest.TestFilterOutByStage (0 ms)
+[ RUN      ] FilterNetTest.TestFilterInByMultipleStage
+[       OK ] FilterNetTest.TestFilterInByMultipleStage (0 ms)
+[ RUN      ] FilterNetTest.TestFilterInByMultipleStage2
+[       OK ] FilterNetTest.TestFilterInByMultipleStage2 (0 ms)
+[ RUN      ] FilterNetTest.TestFilterOutByMinLevel
+[       OK ] FilterNetTest.TestFilterOutByMinLevel (0 ms)
+[ RUN      ] FilterNetTest.TestFilterInByMaxLevel
+[       OK ] FilterNetTest.TestFilterInByMaxLevel (0 ms)
+[ RUN      ] FilterNetTest.TestFilterLeNetTrainTest
+[       OK ] FilterNetTest.TestFilterLeNetTrainTest (1 ms)
+[ RUN      ] FilterNetTest.TestFilterOutByMaxLevel
+[       OK ] FilterNetTest.TestFilterOutByMaxLevel (0 ms)
+[ RUN      ] FilterNetTest.TestFilterInByNotStage
+[       OK ] FilterNetTest.TestFilterInByNotStage (0 ms)
+[ RUN      ] FilterNetTest.TestFilterInOutByExcludeMultiRule
+[       OK ] FilterNetTest.TestFilterInOutByExcludeMultiRule (0 ms)
+[ RUN      ] FilterNetTest.TestFilterInByMinLevel
+[       OK ] FilterNetTest.TestFilterInByMinLevel (0 ms)
+[ RUN      ] FilterNetTest.TestFilterInByStage
+[       OK ] FilterNetTest.TestFilterInByStage (1 ms)
+[----------] 20 tests from FilterNetTest (21 ms total)
+
+[----------] 6 tests from FlattenLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] FlattenLayerTest/0.TestSetupWithAxis
+[       OK ] FlattenLayerTest/0.TestSetupWithAxis (0 ms)
+[ RUN      ] FlattenLayerTest/0.TestSetupWithEndAxis
+[       OK ] FlattenLayerTest/0.TestSetupWithEndAxis (0 ms)
+[ RUN      ] FlattenLayerTest/0.TestSetupWithStartAndEndAxis
+[       OK ] FlattenLayerTest/0.TestSetupWithStartAndEndAxis (0 ms)
+[ RUN      ] FlattenLayerTest/0.TestForward
+[       OK ] FlattenLayerTest/0.TestForward (0 ms)
+[ RUN      ] FlattenLayerTest/0.TestGradient
+[       OK ] FlattenLayerTest/0.TestGradient (3 ms)
+[ RUN      ] FlattenLayerTest/0.TestSetup
+[       OK ] FlattenLayerTest/0.TestSetup (0 ms)
+[----------] 6 tests from FlattenLayerTest/0 (8 ms total)
+
+[----------] 4 tests from ContrastiveLossLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] ContrastiveLossLayerTest/0.TestGradientLegacy
+[       OK ] ContrastiveLossLayerTest/0.TestGradientLegacy (212 ms)
+[ RUN      ] ContrastiveLossLayerTest/0.TestForward
+[       OK ] ContrastiveLossLayerTest/0.TestForward (1 ms)
+[ RUN      ] ContrastiveLossLayerTest/0.TestGradient
+[       OK ] ContrastiveLossLayerTest/0.TestGradient (224 ms)
+[ RUN      ] ContrastiveLossLayerTest/0.TestForwardLegacy
+[       OK ] ContrastiveLossLayerTest/0.TestForwardLegacy (0 ms)
+[----------] 4 tests from ContrastiveLossLayerTest/0 (438 ms total)
+
+[----------] 11 tests from RandomNumberGeneratorTest/0, where TypeParam = float
+[ RUN      ] RandomNumberGeneratorTest/0.TestRngGaussian2
+[       OK ] RandomNumberGeneratorTest/0.TestRngGaussian2 (0 ms)
+[ RUN      ] RandomNumberGeneratorTest/0.TestRngUniform2
+[       OK ] RandomNumberGeneratorTest/0.TestRngUniform2 (0 ms)
+[ RUN      ] RandomNumberGeneratorTest/0.TestRngGaussian
+[       OK ] RandomNumberGeneratorTest/0.TestRngGaussian (1 ms)
+[ RUN      ] RandomNumberGeneratorTest/0.TestRngBernoulli2
+[       OK ] RandomNumberGeneratorTest/0.TestRngBernoulli2 (0 ms)
+[ RUN      ] RandomNumberGeneratorTest/0.TestRngGaussianTimesGaussian
+[       OK ] RandomNumberGeneratorTest/0.TestRngGaussianTimesGaussian (1 ms)
+[ RUN      ] RandomNumberGeneratorTest/0.TestRngUniformTimesBernoulli
+[       OK ] RandomNumberGeneratorTest/0.TestRngUniformTimesBernoulli (0 ms)
+[ RUN      ] RandomNumberGeneratorTest/0.TestRngBernoulli
+[       OK ] RandomNumberGeneratorTest/0.TestRngBernoulli (0 ms)
+[ RUN      ] RandomNumberGeneratorTest/0.TestRngBernoulliTimesBernoulli
+[       OK ] RandomNumberGeneratorTest/0.TestRngBernoulliTimesBernoulli (0 ms)
+[ RUN      ] RandomNumberGeneratorTest/0.TestRngUniformTimesUniform
+[       OK ] RandomNumberGeneratorTest/0.TestRngUniformTimesUniform (0 ms)
+[ RUN      ] RandomNumberGeneratorTest/0.TestRngGaussianTimesBernoulli
+[       OK ] RandomNumberGeneratorTest/0.TestRngGaussianTimesBernoulli (1 ms)
+[ RUN      ] RandomNumberGeneratorTest/0.TestRngUniform
+[       OK ] RandomNumberGeneratorTest/0.TestRngUniform (0 ms)
+[----------] 11 tests from RandomNumberGeneratorTest/0 (9 ms total)
+
+[----------] 6 tests from XavierFillerTest/0, where TypeParam = float
+[ RUN      ] XavierFillerTest/0.TestFill5D
+[       OK ] XavierFillerTest/0.TestFill5D (0 ms)
+[ RUN      ] XavierFillerTest/0.TestFill1D
+[       OK ] XavierFillerTest/0.TestFill1D (0 ms)
+[ RUN      ] XavierFillerTest/0.TestFillFanIn
+[       OK ] XavierFillerTest/0.TestFillFanIn (46 ms)
+[ RUN      ] XavierFillerTest/0.TestFillAverage
+[       OK ] XavierFillerTest/0.TestFillAverage (44 ms)
+[ RUN      ] XavierFillerTest/0.TestFillFanOut
+[       OK ] XavierFillerTest/0.TestFillFanOut (44 ms)
+[ RUN      ] XavierFillerTest/0.TestFill2D
+[       OK ] XavierFillerTest/0.TestFill2D (0 ms)
+[----------] 6 tests from XavierFillerTest/0 (139 ms total)
+
+[----------] 5 tests from DeconvolutionLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] DeconvolutionLayerTest/1.TestGradient3D
+[       OK ] DeconvolutionLayerTest/1.TestGradient3D (344 ms)
+[ RUN      ] DeconvolutionLayerTest/1.TestNDAgainst2D
+[       OK ] DeconvolutionLayerTest/1.TestNDAgainst2D (1300 ms)
+[ RUN      ] DeconvolutionLayerTest/1.TestGradient
+[       OK ] DeconvolutionLayerTest/1.TestGradient (798 ms)
+[ RUN      ] DeconvolutionLayerTest/1.TestSimpleDeconvolution
+[       OK ] DeconvolutionLayerTest/1.TestSimpleDeconvolution (0 ms)
+[ RUN      ] DeconvolutionLayerTest/1.TestSetup
+[       OK ] DeconvolutionLayerTest/1.TestSetup (0 ms)
+[----------] 5 tests from DeconvolutionLayerTest/1 (2443 ms total)
+
+[----------] 6 tests from FlattenLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] FlattenLayerTest/1.TestSetup
+[       OK ] FlattenLayerTest/1.TestSetup (0 ms)
+[ RUN      ] FlattenLayerTest/1.TestSetupWithEndAxis
+[       OK ] FlattenLayerTest/1.TestSetupWithEndAxis (0 ms)
+[ RUN      ] FlattenLayerTest/1.TestForward
+[       OK ] FlattenLayerTest/1.TestForward (1 ms)
+[ RUN      ] FlattenLayerTest/1.TestSetupWithAxis
+[       OK ] FlattenLayerTest/1.TestSetupWithAxis (0 ms)
+[ RUN      ] FlattenLayerTest/1.TestGradient
+[       OK ] FlattenLayerTest/1.TestGradient (2 ms)
+[ RUN      ] FlattenLayerTest/1.TestSetupWithStartAndEndAxis
+[       OK ] FlattenLayerTest/1.TestSetupWithStartAndEndAxis (0 ms)
+[----------] 6 tests from FlattenLayerTest/1 (4 ms total)
+
+[----------] 5 tests from MemoryDataLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] MemoryDataLayerTest/1.TestSetup
+[       OK ] MemoryDataLayerTest/1.TestSetup (0 ms)
+[ RUN      ] MemoryDataLayerTest/1.TestSetBatchSize
+[       OK ] MemoryDataLayerTest/1.TestSetBatchSize (12 ms)
+[ RUN      ] MemoryDataLayerTest/1.AddMatVectorDefaultTransform
+[       OK ] MemoryDataLayerTest/1.AddMatVectorDefaultTransform (1 ms)
+[ RUN      ] MemoryDataLayerTest/1.TestForward
+[       OK ] MemoryDataLayerTest/1.TestForward (35 ms)
+[ RUN      ] MemoryDataLayerTest/1.AddDatumVectorDefaultTransform
+[       OK ] MemoryDataLayerTest/1.AddDatumVectorDefaultTransform (1 ms)
+[----------] 5 tests from MemoryDataLayerTest/1 (50 ms total)
+
+[----------] 5 tests from DeconvolutionLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] DeconvolutionLayerTest/0.TestSetup
+[       OK ] DeconvolutionLayerTest/0.TestSetup (0 ms)
+[ RUN      ] DeconvolutionLayerTest/0.TestGradient
+[       OK ] DeconvolutionLayerTest/0.TestGradient (1196 ms)
+[ RUN      ] DeconvolutionLayerTest/0.TestGradient3D
+[       OK ] DeconvolutionLayerTest/0.TestGradient3D (350 ms)
+[ RUN      ] DeconvolutionLayerTest/0.TestSimpleDeconvolution
+[       OK ] DeconvolutionLayerTest/0.TestSimpleDeconvolution (1 ms)
+[ RUN      ] DeconvolutionLayerTest/0.TestNDAgainst2D
+[       OK ] DeconvolutionLayerTest/0.TestNDAgainst2D (1177 ms)
+[----------] 5 tests from DeconvolutionLayerTest/0 (2728 ms total)
+
+[----------] 1 test from MultinomialLogisticLossLayerTest/1, where TypeParam = double
+[ RUN      ] MultinomialLogisticLossLayerTest/1.TestGradientCPU
+[       OK ] MultinomialLogisticLossLayerTest/1.TestGradientCPU (1 ms)
+[----------] 1 test from MultinomialLogisticLossLayerTest/1 (1 ms total)
+
+[----------] 12 tests from DataTransformTest/0, where TypeParam = float
+[ RUN      ] DataTransformTest/0.TestCropTest
+[       OK ] DataTransformTest/0.TestCropTest (0 ms)
+[ RUN      ] DataTransformTest/0.TestCropTrain
+[       OK ] DataTransformTest/0.TestCropTrain (0 ms)
+[ RUN      ] DataTransformTest/0.TestMirrorTrain
+[       OK ] DataTransformTest/0.TestMirrorTrain (0 ms)
+[ RUN      ] DataTransformTest/0.TestMeanValue
+[       OK ] DataTransformTest/0.TestMeanValue (0 ms)
+[ RUN      ] DataTransformTest/0.TestEmptyTransformUniquePixels
+[       OK ] DataTransformTest/0.TestEmptyTransformUniquePixels (0 ms)
+[ RUN      ] DataTransformTest/0.TestMeanFile
+[       OK ] DataTransformTest/0.TestMeanFile (0 ms)
+[ RUN      ] DataTransformTest/0.TestEmptyTransform
+[       OK ] DataTransformTest/0.TestEmptyTransform (0 ms)
+[ RUN      ] DataTransformTest/0.TestCropSize
+[       OK ] DataTransformTest/0.TestCropSize (0 ms)
+[ RUN      ] DataTransformTest/0.TestMeanValues
+[       OK ] DataTransformTest/0.TestMeanValues (0 ms)
+[ RUN      ] DataTransformTest/0.TestCropMirrorTest
+[       OK ] DataTransformTest/0.TestCropMirrorTest (0 ms)
+[ RUN      ] DataTransformTest/0.TestCropMirrorTrain
+[       OK ] DataTransformTest/0.TestCropMirrorTrain (0 ms)
+[ RUN      ] DataTransformTest/0.TestMirrorTest
+[       OK ] DataTransformTest/0.TestMirrorTest (0 ms)
+[----------] 12 tests from DataTransformTest/0 (13 ms total)
+
+[----------] 3 tests from ThresholdLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] ThresholdLayerTest/1.Test2
+[       OK ] ThresholdLayerTest/1.Test2 (0 ms)
+[ RUN      ] ThresholdLayerTest/1.Test
+[       OK ] ThresholdLayerTest/1.Test (0 ms)
+[ RUN      ] ThresholdLayerTest/1.TestSetup
+[       OK ] ThresholdLayerTest/1.TestSetup (0 ms)
+[----------] 3 tests from ThresholdLayerTest/1 (1 ms total)
+
+[----------] 5 tests from BenchmarkTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] BenchmarkTest/1.TestTimerStart
+[       OK ] BenchmarkTest/1.TestTimerStart (0 ms)
+[ RUN      ] BenchmarkTest/1.TestTimerSeconds
+[       OK ] BenchmarkTest/1.TestTimerSeconds (302 ms)
+[ RUN      ] BenchmarkTest/1.TestTimerConstructor
+[       OK ] BenchmarkTest/1.TestTimerConstructor (0 ms)
+[ RUN      ] BenchmarkTest/1.TestTimerStop
+[       OK ] BenchmarkTest/1.TestTimerStop (0 ms)
+[ RUN      ] BenchmarkTest/1.TestTimerMilliSeconds
+[       OK ] BenchmarkTest/1.TestTimerMilliSeconds (302 ms)
+[----------] 5 tests from BenchmarkTest/1 (604 ms total)
+
+[----------] 2 tests from InfogainLossLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] InfogainLossLayerTest/1.TestInfogainLoss
+[       OK ] InfogainLossLayerTest/1.TestInfogainLoss (0 ms)
+[ RUN      ] InfogainLossLayerTest/1.TestGradient
+[       OK ] InfogainLossLayerTest/1.TestGradient (3 ms)
+[----------] 2 tests from InfogainLossLayerTest/1 (3 ms total)
+
+[----------] 8 tests from AdamSolverTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] AdamSolverTest/0.TestAdamLeastSquaresUpdateWithWeightDecay
+[       OK ] AdamSolverTest/0.TestAdamLeastSquaresUpdateWithWeightDecay (17 ms)
+[ RUN      ] AdamSolverTest/0.TestAdamLeastSquaresUpdateWithEverything
+[       OK ] AdamSolverTest/0.TestAdamLeastSquaresUpdateWithEverything (78 ms)
+[ RUN      ] AdamSolverTest/0.TestAdamLeastSquaresUpdateWithEverythingShare
+[       OK ] AdamSolverTest/0.TestAdamLeastSquaresUpdateWithEverythingShare (86 ms)
+[ RUN      ] AdamSolverTest/0.TestAdamLeastSquaresUpdate
+[       OK ] AdamSolverTest/0.TestAdamLeastSquaresUpdate (16 ms)
+[ RUN      ] AdamSolverTest/0.TestSnapshot
+[       OK ] AdamSolverTest/0.TestSnapshot (23 ms)
+[ RUN      ] AdamSolverTest/0.TestSnapshotShare
+[       OK ] AdamSolverTest/0.TestSnapshotShare (31 ms)
+[ RUN      ] AdamSolverTest/0.TestLeastSquaresUpdateWithEverythingAccumShare
+[       OK ] AdamSolverTest/0.TestLeastSquaresUpdateWithEverythingAccumShare (6 ms)
+[ RUN      ] AdamSolverTest/0.TestLeastSquaresUpdateWithEverythingAccum
+[       OK ] AdamSolverTest/0.TestLeastSquaresUpdateWithEverythingAccum (4 ms)
+[----------] 8 tests from AdamSolverTest/0 (263 ms total)
+
+[----------] 4 tests from PositiveUnitballFillerTest/0, where TypeParam = float
+[ RUN      ] PositiveUnitballFillerTest/0.TestFill2D
+[       OK ] PositiveUnitballFillerTest/0.TestFill2D (0 ms)
+[ RUN      ] PositiveUnitballFillerTest/0.TestFill5D
+[       OK ] PositiveUnitballFillerTest/0.TestFill5D (0 ms)
+[ RUN      ] PositiveUnitballFillerTest/0.TestFill1D
+[       OK ] PositiveUnitballFillerTest/0.TestFill1D (0 ms)
+[ RUN      ] PositiveUnitballFillerTest/0.TestFill
+[       OK ] PositiveUnitballFillerTest/0.TestFill (0 ms)
+[----------] 4 tests from PositiveUnitballFillerTest/0 (2 ms total)
+
+[----------] 12 tests from SGDSolverTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] SGDSolverTest/0.TestLeastSquaresUpdateLROneHundredth
+[       OK ] SGDSolverTest/0.TestLeastSquaresUpdateLROneHundredth (16 ms)
+[ RUN      ] SGDSolverTest/0.TestSnapshotShare
+[       OK ] SGDSolverTest/0.TestSnapshotShare (31 ms)
+[ RUN      ] SGDSolverTest/0.TestLeastSquaresUpdateWithWeightDecayMultiIter
+[       OK ] SGDSolverTest/0.TestLeastSquaresUpdateWithWeightDecayMultiIter (79 ms)
+[ RUN      ] SGDSolverTest/0.TestLeastSquaresUpdateWithEverythingShare
+[       OK ] SGDSolverTest/0.TestLeastSquaresUpdateWithEverythingShare (84 ms)
+[ RUN      ] SGDSolverTest/0.TestLeastSquaresUpdateWithMomentumMultiIter
+[       OK ] SGDSolverTest/0.TestLeastSquaresUpdateWithMomentumMultiIter (79 ms)
+[ RUN      ] SGDSolverTest/0.TestLeastSquaresUpdateWithWeightDecay
+[       OK ] SGDSolverTest/0.TestLeastSquaresUpdateWithWeightDecay (31 ms)
+[ RUN      ] SGDSolverTest/0.TestLeastSquaresUpdateWithEverything
+[       OK ] SGDSolverTest/0.TestLeastSquaresUpdateWithEverything (85 ms)
+[ RUN      ] SGDSolverTest/0.TestSnapshot
+[       OK ] SGDSolverTest/0.TestSnapshot (23 ms)
+[ RUN      ] SGDSolverTest/0.TestLeastSquaresUpdate
+[       OK ] SGDSolverTest/0.TestLeastSquaresUpdate (16 ms)
+[ RUN      ] SGDSolverTest/0.TestLeastSquaresUpdateWithEverythingAccum
+[       OK ] SGDSolverTest/0.TestLeastSquaresUpdateWithEverythingAccum (3 ms)
+[ RUN      ] SGDSolverTest/0.TestLeastSquaresUpdateWithEverythingAccumShare
+[       OK ] SGDSolverTest/0.TestLeastSquaresUpdateWithEverythingAccumShare (5 ms)
+[ RUN      ] SGDSolverTest/0.TestLeastSquaresUpdateWithMomentum
+[       OK ] SGDSolverTest/0.TestLeastSquaresUpdateWithMomentum (32 ms)
+[----------] 12 tests from SGDSolverTest/0 (490 ms total)
+
+[----------] 4 tests from GaussianFillerTest/0, where TypeParam = float
+[ RUN      ] GaussianFillerTest/0.TestFill1D
+[       OK ] GaussianFillerTest/0.TestFill1D (1 ms)
+[ RUN      ] GaussianFillerTest/0.TestFill
+[       OK ] GaussianFillerTest/0.TestFill (0 ms)
+[ RUN      ] GaussianFillerTest/0.TestFill5D
+[       OK ] GaussianFillerTest/0.TestFill5D (0 ms)
+[ RUN      ] GaussianFillerTest/0.TestFill2D
+[       OK ] GaussianFillerTest/0.TestFill2D (0 ms)
+[----------] 4 tests from GaussianFillerTest/0 (3 ms total)
+
+[----------] 9 tests from InnerProductLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] InnerProductLayerTest/0.TestGradient
+[       OK ] InnerProductLayerTest/0.TestGradient (130 ms)
+[ RUN      ] InnerProductLayerTest/0.TestForwardTranspose
+[       OK ] InnerProductLayerTest/0.TestForwardTranspose (0 ms)
+[ RUN      ] InnerProductLayerTest/0.TestSetUp
+[       OK ] InnerProductLayerTest/0.TestSetUp (0 ms)
+[ RUN      ] InnerProductLayerTest/0.TestSetUpTransposeFalse
+[       OK ] InnerProductLayerTest/0.TestSetUpTransposeFalse (0 ms)
+[ RUN      ] InnerProductLayerTest/0.TestGradientTranspose
+[       OK ] InnerProductLayerTest/0.TestGradientTranspose (180 ms)
+[ RUN      ] InnerProductLayerTest/0.TestBackwardTranspose
+[       OK ] InnerProductLayerTest/0.TestBackwardTranspose (0 ms)
+[ RUN      ] InnerProductLayerTest/0.TestSetUpTransposeTrue
+[       OK ] InnerProductLayerTest/0.TestSetUpTransposeTrue (1 ms)
+[ RUN      ] InnerProductLayerTest/0.TestForwardNoBatch
+[       OK ] InnerProductLayerTest/0.TestForwardNoBatch (0 ms)
+[ RUN      ] InnerProductLayerTest/0.TestForward
+[       OK ] InnerProductLayerTest/0.TestForward (0 ms)
+[----------] 9 tests from InnerProductLayerTest/0 (316 ms total)
+
+[----------] 12 tests from SGDSolverTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] SGDSolverTest/1.TestLeastSquaresUpdate
+[       OK ] SGDSolverTest/1.TestLeastSquaresUpdate (17 ms)
+[ RUN      ] SGDSolverTest/1.TestLeastSquaresUpdateWithEverything
+[       OK ] SGDSolverTest/1.TestLeastSquaresUpdateWithEverything (81 ms)
+[ RUN      ] SGDSolverTest/1.TestLeastSquaresUpdateWithMomentum
+[       OK ] SGDSolverTest/1.TestLeastSquaresUpdateWithMomentum (36 ms)
+[ RUN      ] SGDSolverTest/1.TestLeastSquaresUpdateWithWeightDecayMultiIter
+[       OK ] SGDSolverTest/1.TestLeastSquaresUpdateWithWeightDecayMultiIter (78 ms)
+[ RUN      ] SGDSolverTest/1.TestLeastSquaresUpdateWithWeightDecay
+[       OK ] SGDSolverTest/1.TestLeastSquaresUpdateWithWeightDecay (32 ms)
+[ RUN      ] SGDSolverTest/1.TestLeastSquaresUpdateWithEverythingAccumShare
+[       OK ] SGDSolverTest/1.TestLeastSquaresUpdateWithEverythingAccumShare (5 ms)
+[ RUN      ] SGDSolverTest/1.TestSnapshot
+[       OK ] SGDSolverTest/1.TestSnapshot (26 ms)
+[ RUN      ] SGDSolverTest/1.TestLeastSquaresUpdateWithEverythingShare
+[       OK ] SGDSolverTest/1.TestLeastSquaresUpdateWithEverythingShare (87 ms)
+[ RUN      ] SGDSolverTest/1.TestLeastSquaresUpdateWithEverythingAccum
+[       OK ] SGDSolverTest/1.TestLeastSquaresUpdateWithEverythingAccum (5 ms)
+[ RUN      ] SGDSolverTest/1.TestLeastSquaresUpdateWithMomentumMultiIter
+[       OK ] SGDSolverTest/1.TestLeastSquaresUpdateWithMomentumMultiIter (88 ms)
+[ RUN      ] SGDSolverTest/1.TestLeastSquaresUpdateLROneHundredth
+[       OK ] SGDSolverTest/1.TestLeastSquaresUpdateLROneHundredth (16 ms)
+[ RUN      ] SGDSolverTest/1.TestSnapshotShare
+[       OK ] SGDSolverTest/1.TestSnapshotShare (30 ms)
+[----------] 12 tests from SGDSolverTest/1 (502 ms total)
+
+[----------] 14 tests from DataLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] DataLayerTest/0.TestReshapeLMDB
+[       OK ] DataLayerTest/0.TestReshapeLMDB (11 ms)
+[ RUN      ] DataLayerTest/0.TestReadCropTrainSequenceUnseededLevelDB
+[       OK ] DataLayerTest/0.TestReadCropTrainSequenceUnseededLevelDB (91 ms)
+[ RUN      ] DataLayerTest/0.TestReadCropTrainLevelDB
+[       OK ] DataLayerTest/0.TestReadCropTrainLevelDB (69 ms)
+[ RUN      ] DataLayerTest/0.TestReadLMDB
+[       OK ] DataLayerTest/0.TestReadLMDB (26 ms)
+[ RUN      ] DataLayerTest/0.TestReadLevelDB
+[       OK ] DataLayerTest/0.TestReadLevelDB (62 ms)
+[ RUN      ] DataLayerTest/0.TestReadCropTrainSequenceSeededLevelDB
+[       OK ] DataLayerTest/0.TestReadCropTrainSequenceSeededLevelDB (88 ms)
+[ RUN      ] DataLayerTest/0.TestReadCropTrainSequenceSeededLMDB
+[       OK ] DataLayerTest/0.TestReadCropTrainSequenceSeededLMDB (21 ms)
+[ RUN      ] DataLayerTest/0.TestReadCropTrainSequenceUnseededLMDB
+[       OK ] DataLayerTest/0.TestReadCropTrainSequenceUnseededLMDB (14 ms)
+[ RUN      ] DataLayerTest/0.TestSkipLevelDB
+[       OK ] DataLayerTest/0.TestSkipLevelDB (312 ms)
+[ RUN      ] DataLayerTest/0.TestReadCropTestLMDB
+[       OK ] DataLayerTest/0.TestReadCropTestLMDB (18 ms)
+[ RUN      ] DataLayerTest/0.TestReadCropTrainLMDB
+[       OK ] DataLayerTest/0.TestReadCropTrainLMDB (13 ms)
+[ RUN      ] DataLayerTest/0.TestReadCropTestLevelDB
+[       OK ] DataLayerTest/0.TestReadCropTestLevelDB (71 ms)
+[ RUN      ] DataLayerTest/0.TestReshapeLevelDB
+[       OK ] DataLayerTest/0.TestReshapeLevelDB (62 ms)
+[ RUN      ] DataLayerTest/0.TestSkipLMDB
+[       OK ] DataLayerTest/0.TestSkipLMDB (27 ms)
+[----------] 14 tests from DataLayerTest/0 (887 ms total)
+
+[----------] 3 tests from FilterLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] FilterLayerTest/0.TestGradient
+[       OK ] FilterLayerTest/0.TestGradient (338 ms)
+[ RUN      ] FilterLayerTest/0.TestForward
+[       OK ] FilterLayerTest/0.TestForward (0 ms)
+[ RUN      ] FilterLayerTest/0.TestReshape
+[       OK ] FilterLayerTest/0.TestReshape (0 ms)
+[----------] 3 tests from FilterLayerTest/0 (341 ms total)
+
+[----------] 1 test from SolverFactoryTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] SolverFactoryTest/1.TestCreateSolver
+[       OK ] SolverFactoryTest/1.TestCreateSolver (2 ms)
+[----------] 1 test from SolverFactoryTest/1 (3 ms total)
+
+[----------] 2 tests from BilinearFillerTest/0, where TypeParam = float
+[ RUN      ] BilinearFillerTest/0.TestFillEven
+[       OK ] BilinearFillerTest/0.TestFillEven (9 ms)
+[ RUN      ] BilinearFillerTest/0.TestFillOdd
+[       OK ] BilinearFillerTest/0.TestFillOdd (14 ms)
+[----------] 2 tests from BilinearFillerTest/0 (26 ms total)
+
+[----------] 2 tests from BatchReindexLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] BatchReindexLayerTest/1.TestGradient
+[       OK ] BatchReindexLayerTest/1.TestGradient (168 ms)
+[ RUN      ] BatchReindexLayerTest/1.TestForward
+[       OK ] BatchReindexLayerTest/1.TestForward (0 ms)
+[----------] 2 tests from BatchReindexLayerTest/1 (171 ms total)
+
+[----------] 22 tests from ScaleLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] ScaleLayerTest/0.TestGradientEltwiseWithParam
+[       OK ] ScaleLayerTest/0.TestGradientEltwiseWithParam (363 ms)
+[ RUN      ] ScaleLayerTest/0.TestBackwardEltwiseInPlace
+[       OK ] ScaleLayerTest/0.TestBackwardEltwiseInPlace (0 ms)
+[ RUN      ] ScaleLayerTest/0.TestForwardEltwiseWithParam
+[       OK ] ScaleLayerTest/0.TestForwardEltwiseWithParam (0 ms)
+[ RUN      ] ScaleLayerTest/0.TestBackwardBroadcastMiddleInPlace
+[       OK ] ScaleLayerTest/0.TestBackwardBroadcastMiddleInPlace (0 ms)
+[ RUN      ] ScaleLayerTest/0.TestForwardBroadcastBegin
+[       OK ] ScaleLayerTest/0.TestForwardBroadcastBegin (0 ms)
+[ RUN      ] ScaleLayerTest/0.TestForwardBroadcastMiddleInPlace
+[       OK ] ScaleLayerTest/0.TestForwardBroadcastMiddleInPlace (0 ms)
+[ RUN      ] ScaleLayerTest/0.TestGradientScale
+[       OK ] ScaleLayerTest/0.TestGradientScale (92 ms)
+[ RUN      ] ScaleLayerTest/0.TestGradientBroadcastMiddle
+[       OK ] ScaleLayerTest/0.TestGradientBroadcastMiddle (125 ms)
+[ RUN      ] ScaleLayerTest/0.TestGradientEltwise
+[       OK ] ScaleLayerTest/0.TestGradientEltwise (7 ms)
+[ RUN      ] ScaleLayerTest/0.TestForwardBroadcastEnd
+[       OK ] ScaleLayerTest/0.TestForwardBroadcastEnd (0 ms)
+[ RUN      ] ScaleLayerTest/0.TestGradientBroadcastBegin
+[       OK ] ScaleLayerTest/0.TestGradientBroadcastBegin (118 ms)
+[ RUN      ] ScaleLayerTest/0.TestForwardBroadcastMiddleWithParamAndBias
+[       OK ] ScaleLayerTest/0.TestForwardBroadcastMiddleWithParamAndBias (1 ms)
+[ RUN      ] ScaleLayerTest/0.TestGradientScaleAndBias
+[       OK ] ScaleLayerTest/0.TestGradientScaleAndBias (113 ms)
+[ RUN      ] ScaleLayerTest/0.TestForwardScale
+[       OK ] ScaleLayerTest/0.TestForwardScale (0 ms)
+[ RUN      ] ScaleLayerTest/0.TestForwardEltwise
+[       OK ] ScaleLayerTest/0.TestForwardEltwise (0 ms)
+[ RUN      ] ScaleLayerTest/0.TestGradientBroadcastMiddleWithParam
+[       OK ] ScaleLayerTest/0.TestGradientBroadcastMiddleWithParam (126 ms)
+[ RUN      ] ScaleLayerTest/0.TestGradientBroadcastEnd
+[       OK ] ScaleLayerTest/0.TestGradientBroadcastEnd (205 ms)
+[ RUN      ] ScaleLayerTest/0.TestForwardEltwiseInPlace
+[       OK ] ScaleLayerTest/0.TestForwardEltwiseInPlace (0 ms)
+[ RUN      ] ScaleLayerTest/0.TestForwardScaleAxis2
+[       OK ] ScaleLayerTest/0.TestForwardScaleAxis2 (0 ms)
+[ RUN      ] ScaleLayerTest/0.TestGradientScaleAxis2
+[       OK ] ScaleLayerTest/0.TestGradientScaleAxis2 (91 ms)
+[ RUN      ] ScaleLayerTest/0.TestForwardBroadcastMiddleWithParam
+[       OK ] ScaleLayerTest/0.TestForwardBroadcastMiddleWithParam (0 ms)
+[ RUN      ] ScaleLayerTest/0.TestForwardBroadcastMiddle
+[       OK ] ScaleLayerTest/0.TestForwardBroadcastMiddle (1 ms)
+[----------] 22 tests from ScaleLayerTest/0 (1252 ms total)
+
+[----------] 7 tests from CPUMathFunctionsTest/1, where TypeParam = double
+[ RUN      ] CPUMathFunctionsTest/1.TestNothing
+[       OK ] CPUMathFunctionsTest/1.TestNothing (4 ms)
+[ RUN      ] CPUMathFunctionsTest/1.TestSign
+[       OK ] CPUMathFunctionsTest/1.TestSign (5 ms)
+[ RUN      ] CPUMathFunctionsTest/1.TestFabs
+[       OK ] CPUMathFunctionsTest/1.TestFabs (5 ms)
+[ RUN      ] CPUMathFunctionsTest/1.TestCopy
+[       OK ] CPUMathFunctionsTest/1.TestCopy (4 ms)
+[ RUN      ] CPUMathFunctionsTest/1.TestSgnbit
+[       OK ] CPUMathFunctionsTest/1.TestSgnbit (5 ms)
+[ RUN      ] CPUMathFunctionsTest/1.TestScale
+[       OK ] CPUMathFunctionsTest/1.TestScale (5 ms)
+[ RUN      ] CPUMathFunctionsTest/1.TestAsum
+[       OK ] CPUMathFunctionsTest/1.TestAsum (5 ms)
+[----------] 7 tests from CPUMathFunctionsTest/1 (34 ms total)
+
+[----------] 20 tests from BiasLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] BiasLayerTest/0.TestForwardEltwise
+[       OK ] BiasLayerTest/0.TestForwardEltwise (0 ms)
+[ RUN      ] BiasLayerTest/0.TestBackwardEltwiseInPlace
+[       OK ] BiasLayerTest/0.TestBackwardEltwiseInPlace (0 ms)
+[ RUN      ] BiasLayerTest/0.TestGradientBias
+[       OK ] BiasLayerTest/0.TestGradientBias (94 ms)
+[ RUN      ] BiasLayerTest/0.TestForwardBroadcastMiddleInPlace
+[       OK ] BiasLayerTest/0.TestForwardBroadcastMiddleInPlace (0 ms)
+[ RUN      ] BiasLayerTest/0.TestForwardBroadcastMiddleWithParam
+[       OK ] BiasLayerTest/0.TestForwardBroadcastMiddleWithParam (0 ms)
+[ RUN      ] BiasLayerTest/0.TestForwardEltwiseWithParam
+[       OK ] BiasLayerTest/0.TestForwardEltwiseWithParam (0 ms)
+[ RUN      ] BiasLayerTest/0.TestForwardBroadcastBegin
+[       OK ] BiasLayerTest/0.TestForwardBroadcastBegin (0 ms)
+[ RUN      ] BiasLayerTest/0.TestGradientBroadcastMiddle
+[       OK ] BiasLayerTest/0.TestGradientBroadcastMiddle (121 ms)
+[ RUN      ] BiasLayerTest/0.TestGradientBroadcastBegin
+[       OK ] BiasLayerTest/0.TestGradientBroadcastBegin (111 ms)
+[ RUN      ] BiasLayerTest/0.TestGradientEltwise
+[       OK ] BiasLayerTest/0.TestGradientEltwise (3 ms)
+[ RUN      ] BiasLayerTest/0.TestForwardBiasAxis2
+[       OK ] BiasLayerTest/0.TestForwardBiasAxis2 (0 ms)
+[ RUN      ] BiasLayerTest/0.TestGradientEltwiseWithParam
+[       OK ] BiasLayerTest/0.TestGradientEltwiseWithParam (235 ms)
+[ RUN      ] BiasLayerTest/0.TestGradientBroadcastMiddleWithParam
+[       OK ] BiasLayerTest/0.TestGradientBroadcastMiddleWithParam (121 ms)
+[ RUN      ] BiasLayerTest/0.TestForwardBroadcastMiddle
+[       OK ] BiasLayerTest/0.TestForwardBroadcastMiddle (0 ms)
+[ RUN      ] BiasLayerTest/0.TestForwardBroadcastEnd
+[       OK ] BiasLayerTest/0.TestForwardBroadcastEnd (0 ms)
+[ RUN      ] BiasLayerTest/0.TestForwardEltwiseInPlace
+[       OK ] BiasLayerTest/0.TestForwardEltwiseInPlace (0 ms)
+[ RUN      ] BiasLayerTest/0.TestBackwardBroadcastMiddleInPlace
+[       OK ] BiasLayerTest/0.TestBackwardBroadcastMiddleInPlace (0 ms)
+[ RUN      ] BiasLayerTest/0.TestGradientBiasAxis2
+[       OK ] BiasLayerTest/0.TestGradientBiasAxis2 (92 ms)
+[ RUN      ] BiasLayerTest/0.TestForwardBias
+[       OK ] BiasLayerTest/0.TestForwardBias (0 ms)
+[ RUN      ] BiasLayerTest/0.TestGradientBroadcastEnd
+[       OK ] BiasLayerTest/0.TestGradientBroadcastEnd (151 ms)
+[----------] 20 tests from BiasLayerTest/0 (931 ms total)
+
+[----------] 2 tests from HDF5DataLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] HDF5DataLayerTest/0.TestSkip
+[       OK ] HDF5DataLayerTest/0.TestSkip (28 ms)
+[ RUN      ] HDF5DataLayerTest/0.TestRead
+[       OK ] HDF5DataLayerTest/0.TestRead (8 ms)
+[----------] 2 tests from HDF5DataLayerTest/0 (36 ms total)
+
+[----------] 12 tests from NesterovSolverTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] NesterovSolverTest/0.TestLeastSquaresUpdateWithMomentumMultiIter
+[       OK ] NesterovSolverTest/0.TestLeastSquaresUpdateWithMomentumMultiIter (78 ms)
+[ RUN      ] NesterovSolverTest/0.TestNesterovLeastSquaresUpdateWithWeightDecayMultiIter
+[       OK ] NesterovSolverTest/0.TestNesterovLeastSquaresUpdateWithWeightDecayMultiIter (77 ms)
+[ RUN      ] NesterovSolverTest/0.TestNesterovLeastSquaresUpdate
+[       OK ] NesterovSolverTest/0.TestNesterovLeastSquaresUpdate (16 ms)
+[ RUN      ] NesterovSolverTest/0.TestNesterovLeastSquaresUpdateWithEverythingShare
+[       OK ] NesterovSolverTest/0.TestNesterovLeastSquaresUpdateWithEverythingShare (83 ms)
+[ RUN      ] NesterovSolverTest/0.TestNesterovLeastSquaresUpdateLROneHundredth
+[       OK ] NesterovSolverTest/0.TestNesterovLeastSquaresUpdateLROneHundredth (16 ms)
+[ RUN      ] NesterovSolverTest/0.TestSnapshotShare
+[       OK ] NesterovSolverTest/0.TestSnapshotShare (32 ms)
+[ RUN      ] NesterovSolverTest/0.TestNesterovLeastSquaresUpdateWithMomentum
+[       OK ] NesterovSolverTest/0.TestNesterovLeastSquaresUpdateWithMomentum (32 ms)
+[ RUN      ] NesterovSolverTest/0.TestLeastSquaresUpdateWithEverythingAccum
+[       OK ] NesterovSolverTest/0.TestLeastSquaresUpdateWithEverythingAccum (4 ms)
+[ RUN      ] NesterovSolverTest/0.TestSnapshot
+[       OK ] NesterovSolverTest/0.TestSnapshot (26 ms)
+[ RUN      ] NesterovSolverTest/0.TestNesterovLeastSquaresUpdateWithWeightDecay
+[       OK ] NesterovSolverTest/0.TestNesterovLeastSquaresUpdateWithWeightDecay (16 ms)
+[ RUN      ] NesterovSolverTest/0.TestLeastSquaresUpdateWithEverythingAccumShare
+[       OK ] NesterovSolverTest/0.TestLeastSquaresUpdateWithEverythingAccumShare (7 ms)
+[ RUN      ] NesterovSolverTest/0.TestNesterovLeastSquaresUpdateWithEverything
+[       OK ] NesterovSolverTest/0.TestNesterovLeastSquaresUpdateWithEverything (87 ms)
+[----------] 12 tests from NesterovSolverTest/0 (475 ms total)
+
+[----------] 1 test from LayerFactoryTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] LayerFactoryTest/1.TestCreateLayer
+[       OK ] LayerFactoryTest/1.TestCreateLayer (53 ms)
+[----------] 1 test from LayerFactoryTest/1 (53 ms total)
+
+[----------] 5 tests from BenchmarkTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] BenchmarkTest/0.TestTimerStart
+[       OK ] BenchmarkTest/0.TestTimerStart (0 ms)
+[ RUN      ] BenchmarkTest/0.TestTimerConstructor
+[       OK ] BenchmarkTest/0.TestTimerConstructor (0 ms)
+[ RUN      ] BenchmarkTest/0.TestTimerMilliSeconds
+[       OK ] BenchmarkTest/0.TestTimerMilliSeconds (301 ms)
+[ RUN      ] BenchmarkTest/0.TestTimerStop
+[       OK ] BenchmarkTest/0.TestTimerStop (0 ms)
+[ RUN      ] BenchmarkTest/0.TestTimerSeconds
+[       OK ] BenchmarkTest/0.TestTimerSeconds (301 ms)
+[----------] 5 tests from BenchmarkTest/0 (602 ms total)
+
+[----------] 12 tests from ReshapeLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] ReshapeLayerTest/0.TestForwardAfterReshape
+[       OK ] ReshapeLayerTest/0.TestForwardAfterReshape (0 ms)
+[ RUN      ] ReshapeLayerTest/0.TestInsertSingletonAxesStart
+[       OK ] ReshapeLayerTest/0.TestInsertSingletonAxesStart (0 ms)
+[ RUN      ] ReshapeLayerTest/0.TestFlattenOutputSizes
+[       OK ] ReshapeLayerTest/0.TestFlattenOutputSizes (0 ms)
+[ RUN      ] ReshapeLayerTest/0.TestInsertSingletonAxesEnd
+[       OK ] ReshapeLayerTest/0.TestInsertSingletonAxesEnd (0 ms)
+[ RUN      ] ReshapeLayerTest/0.TestInsertSingletonAxesMiddle
+[       OK ] ReshapeLayerTest/0.TestInsertSingletonAxesMiddle (0 ms)
+[ RUN      ] ReshapeLayerTest/0.TestForward
+[       OK ] ReshapeLayerTest/0.TestForward (0 ms)
+[ RUN      ] ReshapeLayerTest/0.TestCopyDimensions
+[       OK ] ReshapeLayerTest/0.TestCopyDimensions (0 ms)
+[ RUN      ] ReshapeLayerTest/0.TestInferenceOfUnspecified
+[       OK ] ReshapeLayerTest/0.TestInferenceOfUnspecified (0 ms)
+[ RUN      ] ReshapeLayerTest/0.TestFlattenMiddle
+[       OK ] ReshapeLayerTest/0.TestFlattenMiddle (0 ms)
+[ RUN      ] ReshapeLayerTest/0.TestFlattenValues
+[       OK ] ReshapeLayerTest/0.TestFlattenValues (0 ms)
+[ RUN      ] ReshapeLayerTest/0.TestInferenceOfUnspecifiedWithStartAxis
+[       OK ] ReshapeLayerTest/0.TestInferenceOfUnspecifiedWithStartAxis (0 ms)
+[ RUN      ] ReshapeLayerTest/0.TestGradient
+[       OK ] ReshapeLayerTest/0.TestGradient (3 ms)
+[----------] 12 tests from ReshapeLayerTest/0 (3 ms total)
+
+[----------] 11 tests from PoolingLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] PoolingLayerTest/1.TestGradientAvePadded
+[       OK ] PoolingLayerTest/1.TestGradientAvePadded (958 ms)
+[ RUN      ] PoolingLayerTest/1.TestSetup
+[       OK ] PoolingLayerTest/1.TestSetup (0 ms)
+[ RUN      ] PoolingLayerTest/1.TestGradientAve
+[       OK ] PoolingLayerTest/1.TestGradientAve (349 ms)
+[ RUN      ] PoolingLayerTest/1.TestForwardAve
+[       OK ] PoolingLayerTest/1.TestForwardAve (0 ms)
+[ RUN      ] PoolingLayerTest/1.TestSetupPadded
+[       OK ] PoolingLayerTest/1.TestSetupPadded (0 ms)
+[ RUN      ] PoolingLayerTest/1.TestSetupGlobalPooling
+[       OK ] PoolingLayerTest/1.TestSetupGlobalPooling (0 ms)
+[ RUN      ] PoolingLayerTest/1.TestGradientMaxTopMask
+[       OK ] PoolingLayerTest/1.TestGradientMaxTopMask (695 ms)
+[ RUN      ] PoolingLayerTest/1.TestForwardMaxPadded
+[       OK ] PoolingLayerTest/1.TestForwardMaxPadded (0 ms)
+[ RUN      ] PoolingLayerTest/1.TestGradientMax
+[       OK ] PoolingLayerTest/1.TestGradientMax (896 ms)
+[ RUN      ] PoolingLayerTest/1.TestForwardMaxTopMask
+[       OK ] PoolingLayerTest/1.TestForwardMaxTopMask (0 ms)
+[ RUN      ] PoolingLayerTest/1.TestForwardMax
+[       OK ] PoolingLayerTest/1.TestForwardMax (0 ms)
+[----------] 11 tests from PoolingLayerTest/1 (2899 ms total)
+
+[----------] 8 tests from LRNLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] LRNLayerTest/0.TestForwardAcrossChannels
+[       OK ] LRNLayerTest/0.TestForwardAcrossChannels (0 ms)
+[ RUN      ] LRNLayerTest/0.TestGradientAcrossChannels
+[       OK ] LRNLayerTest/0.TestGradientAcrossChannels (794 ms)
+[ RUN      ] LRNLayerTest/0.TestSetupWithinChannel
+[       OK ] LRNLayerTest/0.TestSetupWithinChannel (0 ms)
+[ RUN      ] LRNLayerTest/0.TestGradientWithinChannel
+[       OK ] LRNLayerTest/0.TestGradientWithinChannel (598 ms)
+[ RUN      ] LRNLayerTest/0.TestGradientAcrossChannelsLargeRegion
+[       OK ] LRNLayerTest/0.TestGradientAcrossChannelsLargeRegion (1005 ms)
+[ RUN      ] LRNLayerTest/0.TestSetupAcrossChannels
+[       OK ] LRNLayerTest/0.TestSetupAcrossChannels (0 ms)
+[ RUN      ] LRNLayerTest/0.TestForwardWithinChannel
+[       OK ] LRNLayerTest/0.TestForwardWithinChannel (1 ms)
+[ RUN      ] LRNLayerTest/0.TestForwardAcrossChannelsLargeRegion
+[       OK ] LRNLayerTest/0.TestForwardAcrossChannelsLargeRegion (0 ms)
+[----------] 8 tests from LRNLayerTest/0 (2398 ms total)
+
+[----------] 2 tests from InternalThreadTest
+[ RUN      ] InternalThreadTest.TestRandomSeed
+[       OK ] InternalThreadTest.TestRandomSeed (2 ms)
+[ RUN      ] InternalThreadTest.TestStartAndExit
+[       OK ] InternalThreadTest.TestStartAndExit (1 ms)
+[----------] 2 tests from InternalThreadTest (3 ms total)
+
+[----------] 4 tests from UniformFillerTest/1, where TypeParam = double
+[ RUN      ] UniformFillerTest/1.TestFill
+[       OK ] UniformFillerTest/1.TestFill (0 ms)
+[ RUN      ] UniformFillerTest/1.TestFill2D
+[       OK ] UniformFillerTest/1.TestFill2D (0 ms)
+[ RUN      ] UniformFillerTest/1.TestFill5D
+[       OK ] UniformFillerTest/1.TestFill5D (0 ms)
+[ RUN      ] UniformFillerTest/1.TestFill1D
+[       OK ] UniformFillerTest/1.TestFill1D (0 ms)
+[----------] 4 tests from UniformFillerTest/1 (0 ms total)
+
+[----------] 8 tests from SliceLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] SliceLayerTest/0.TestTrivialSlice
+[       OK ] SliceLayerTest/0.TestTrivialSlice (0 ms)
+[ RUN      ] SliceLayerTest/0.TestSliceAcrossChannels
+[       OK ] SliceLayerTest/0.TestSliceAcrossChannels (0 ms)
+[ RUN      ] SliceLayerTest/0.TestSetupNum
+[       OK ] SliceLayerTest/0.TestSetupNum (0 ms)
+[ RUN      ] SliceLayerTest/0.TestGradientAcrossNum
+[       OK ] SliceLayerTest/0.TestGradientAcrossNum (41 ms)
+[ RUN      ] SliceLayerTest/0.TestSliceAcrossNum
+[       OK ] SliceLayerTest/0.TestSliceAcrossNum (0 ms)
+[ RUN      ] SliceLayerTest/0.TestGradientTrivial
+[       OK ] SliceLayerTest/0.TestGradientTrivial (11 ms)
+[ RUN      ] SliceLayerTest/0.TestGradientAcrossChannels
+[       OK ] SliceLayerTest/0.TestGradientAcrossChannels (46 ms)
+[ RUN      ] SliceLayerTest/0.TestSetupChannels
+[       OK ] SliceLayerTest/0.TestSetupChannels (0 ms)
+[----------] 8 tests from SliceLayerTest/0 (98 ms total)
+
+[----------] 5 tests from EmbedLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] EmbedLayerTest/0.TestSetUp
+[       OK ] EmbedLayerTest/0.TestSetUp (0 ms)
+[ RUN      ] EmbedLayerTest/0.TestForward
+[       OK ] EmbedLayerTest/0.TestForward (0 ms)
+[ RUN      ] EmbedLayerTest/0.TestForwardWithBias
+[       OK ] EmbedLayerTest/0.TestForwardWithBias (0 ms)
+[ RUN      ] EmbedLayerTest/0.TestGradient
+[       OK ] EmbedLayerTest/0.TestGradient (13 ms)
+[ RUN      ] EmbedLayerTest/0.TestGradientWithBias
+[       OK ] EmbedLayerTest/0.TestGradientWithBias (16 ms)
+[----------] 5 tests from EmbedLayerTest/0 (29 ms total)
+
+[----------] 1 test from HDF5OutputLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] HDF5OutputLayerTest/1.TestForward
+[       OK ] HDF5OutputLayerTest/1.TestForward (4 ms)
+[----------] 1 test from HDF5OutputLayerTest/1 (4 ms total)
+
+[----------] 8 tests from LRNLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] LRNLayerTest/1.TestSetupAcrossChannels
+[       OK ] LRNLayerTest/1.TestSetupAcrossChannels (0 ms)
+[ RUN      ] LRNLayerTest/1.TestGradientAcrossChannelsLargeRegion
+[       OK ] LRNLayerTest/1.TestGradientAcrossChannelsLargeRegion (1333 ms)
+[ RUN      ] LRNLayerTest/1.TestGradientWithinChannel
+[       OK ] LRNLayerTest/1.TestGradientWithinChannel (894 ms)
+[ RUN      ] LRNLayerTest/1.TestForwardAcrossChannels
+[       OK ] LRNLayerTest/1.TestForwardAcrossChannels (1 ms)
+[ RUN      ] LRNLayerTest/1.TestForwardAcrossChannelsLargeRegion
+[       OK ] LRNLayerTest/1.TestForwardAcrossChannelsLargeRegion (0 ms)
+[ RUN      ] LRNLayerTest/1.TestForwardWithinChannel
+[       OK ] LRNLayerTest/1.TestForwardWithinChannel (0 ms)
+[ RUN      ] LRNLayerTest/1.TestGradientAcrossChannels
+[       OK ] LRNLayerTest/1.TestGradientAcrossChannels (1137 ms)
+[ RUN      ] LRNLayerTest/1.TestSetupWithinChannel
+[       OK ] LRNLayerTest/1.TestSetupWithinChannel (0 ms)
+[----------] 8 tests from LRNLayerTest/1 (3365 ms total)
+
+[----------] 26 tests from NetTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] NetTest/0.TestGetBlob
+[       OK ] NetTest/0.TestGetBlob (2 ms)
+[ RUN      ] NetTest/0.TestForcePropagateDown
+[       OK ] NetTest/0.TestForcePropagateDown (1 ms)
+[ RUN      ] NetTest/0.TestLossWeightMidNet
+[       OK ] NetTest/0.TestLossWeightMidNet (7 ms)
+[ RUN      ] NetTest/0.TestBottomNeedBackwardForce
+[       OK ] NetTest/0.TestBottomNeedBackwardForce (1 ms)
+[ RUN      ] NetTest/0.TestGetLayerByName
+[       OK ] NetTest/0.TestGetLayerByName (1 ms)
+[ RUN      ] NetTest/0.TestSharedWeightsDiffNet
+[       OK ] NetTest/0.TestSharedWeightsDiffNet (1 ms)
+[ RUN      ] NetTest/0.TestSharedWeightsResume
+[       OK ] NetTest/0.TestSharedWeightsResume (2 ms)
+[ RUN      ] NetTest/0.TestUnsharedWeightsDataNet
+[       OK ] NetTest/0.TestUnsharedWeightsDataNet (0 ms)
+[ RUN      ] NetTest/0.TestSharedWeightsDataNet
+[       OK ] NetTest/0.TestSharedWeightsDataNet (0 ms)
+[ RUN      ] NetTest/0.TestUnsharedWeightsDiffNet
+[       OK ] NetTest/0.TestUnsharedWeightsDiffNet (1 ms)
+[ RUN      ] NetTest/0.TestParamPropagateDown
+[       OK ] NetTest/0.TestParamPropagateDown (4 ms)
+[ RUN      ] NetTest/0.TestReshape
+[       OK ] NetTest/0.TestReshape (1 ms)
+[ RUN      ] NetTest/0.TestBackwardWithAccuracyLayer
+[       OK ] NetTest/0.TestBackwardWithAccuracyLayer (2 ms)
+[ RUN      ] NetTest/0.TestComboLossWeight
+[       OK ] NetTest/0.TestComboLossWeight (5 ms)
+[ RUN      ] NetTest/0.TestBottomNeedBackwardEuclideanForce
+[       OK ] NetTest/0.TestBottomNeedBackwardEuclideanForce (1 ms)
+[ RUN      ] NetTest/0.TestAllInOneNetTrain
+[       OK ] NetTest/0.TestAllInOneNetTrain (1 ms)
+[ RUN      ] NetTest/0.TestAllInOneNetVal
+[       OK ] NetTest/0.TestAllInOneNetVal (1 ms)
+[ RUN      ] NetTest/0.TestHasLayer
+[       OK ] NetTest/0.TestHasLayer (1 ms)
+[ RUN      ] NetTest/0.TestBottomNeedBackwardTricky
+[       OK ] NetTest/0.TestBottomNeedBackwardTricky (1 ms)
+[ RUN      ] NetTest/0.TestSkipPropagateDown
+[       OK ] NetTest/0.TestSkipPropagateDown (2 ms)
+[ RUN      ] NetTest/0.TestAllInOneNetDeploy
+[       OK ] NetTest/0.TestAllInOneNetDeploy (1 ms)
+[ RUN      ] NetTest/0.TestHasBlob
+[       OK ] NetTest/0.TestHasBlob (1 ms)
+[ RUN      ] NetTest/0.TestBottomNeedBackward
+[       OK ] NetTest/0.TestBottomNeedBackward (1 ms)
+[ RUN      ] NetTest/0.TestLossWeight
+[       OK ] NetTest/0.TestLossWeight (6 ms)
+[ RUN      ] NetTest/0.TestFromTo
+[       OK ] NetTest/0.TestFromTo (3 ms)
+[ RUN      ] NetTest/0.TestSharedWeightsUpdate
+[       OK ] NetTest/0.TestSharedWeightsUpdate (1 ms)
+[----------] 26 tests from NetTest/0 (49 ms total)
+
+[----------] 3 tests from TanHLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] TanHLayerTest/1.TestTanH
+[       OK ] TanHLayerTest/1.TestTanH (0 ms)
+[ RUN      ] TanHLayerTest/1.TestTanHOverflow
+[       OK ] TanHLayerTest/1.TestTanHOverflow (0 ms)
+[ RUN      ] TanHLayerTest/1.TestTanHGradient
+[       OK ] TanHLayerTest/1.TestTanHGradient (4 ms)
+[----------] 3 tests from TanHLayerTest/1 (4 ms total)
+
+[----------] 12 tests from DataTransformTest/1, where TypeParam = double
+[ RUN      ] DataTransformTest/1.TestMirrorTest
+[       OK ] DataTransformTest/1.TestMirrorTest (0 ms)
+[ RUN      ] DataTransformTest/1.TestMeanValues
+[       OK ] DataTransformTest/1.TestMeanValues (0 ms)
+[ RUN      ] DataTransformTest/1.TestCropMirrorTest
+[       OK ] DataTransformTest/1.TestCropMirrorTest (0 ms)
+[ RUN      ] DataTransformTest/1.TestCropMirrorTrain
+[       OK ] DataTransformTest/1.TestCropMirrorTrain (0 ms)
+[ RUN      ] DataTransformTest/1.TestCropTest
+[       OK ] DataTransformTest/1.TestCropTest (0 ms)
+[ RUN      ] DataTransformTest/1.TestCropTrain
+[       OK ] DataTransformTest/1.TestCropTrain (0 ms)
+[ RUN      ] DataTransformTest/1.TestCropSize
+[       OK ] DataTransformTest/1.TestCropSize (0 ms)
+[ RUN      ] DataTransformTest/1.TestMeanFile
+[       OK ] DataTransformTest/1.TestMeanFile (1 ms)
+[ RUN      ] DataTransformTest/1.TestEmptyTransform
+[       OK ] DataTransformTest/1.TestEmptyTransform (0 ms)
+[ RUN      ] DataTransformTest/1.TestMirrorTrain
+[       OK ] DataTransformTest/1.TestMirrorTrain (0 ms)
+[ RUN      ] DataTransformTest/1.TestMeanValue
+[       OK ] DataTransformTest/1.TestMeanValue (0 ms)
+[ RUN      ] DataTransformTest/1.TestEmptyTransformUniquePixels
+[       OK ] DataTransformTest/1.TestEmptyTransformUniquePixels (0 ms)
+[----------] 12 tests from DataTransformTest/1 (2 ms total)
+
+[----------] 2 tests from EuclideanLossLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] EuclideanLossLayerTest/0.TestGradient
+[       OK ] EuclideanLossLayerTest/0.TestGradient (1 ms)
+[ RUN      ] EuclideanLossLayerTest/0.TestForward
+[       OK ] EuclideanLossLayerTest/0.TestForward (0 ms)
+[----------] 2 tests from EuclideanLossLayerTest/0 (1 ms total)
+
+[----------] 1 test from HDF5OutputLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] HDF5OutputLayerTest/0.TestForward
+[       OK ] HDF5OutputLayerTest/0.TestForward (3 ms)
+[----------] 1 test from HDF5OutputLayerTest/0 (3 ms total)
+
+[----------] 4 tests from BlobSimpleTest/1, where TypeParam = double
+[ RUN      ] BlobSimpleTest/1.TestReshape
+[       OK ] BlobSimpleTest/1.TestReshape (0 ms)
+[ RUN      ] BlobSimpleTest/1.TestLegacyBlobProtoShapeEquals
+[       OK ] BlobSimpleTest/1.TestLegacyBlobProtoShapeEquals (0 ms)
+[ RUN      ] BlobSimpleTest/1.TestInitialization
+[       OK ] BlobSimpleTest/1.TestInitialization (0 ms)
+[ RUN      ] BlobSimpleTest/1.TestReshapeZero
+[       OK ] BlobSimpleTest/1.TestReshapeZero (0 ms)
+[----------] 4 tests from BlobSimpleTest/1 (0 ms total)
+
+[----------] 6 tests from XavierFillerTest/1, where TypeParam = double
+[ RUN      ] XavierFillerTest/1.TestFillFanIn
+[       OK ] XavierFillerTest/1.TestFillFanIn (43 ms)
+[ RUN      ] XavierFillerTest/1.TestFill5D
+[       OK ] XavierFillerTest/1.TestFill5D (0 ms)
+[ RUN      ] XavierFillerTest/1.TestFill2D
+[       OK ] XavierFillerTest/1.TestFill2D (0 ms)
+[ RUN      ] XavierFillerTest/1.TestFill1D
+[       OK ] XavierFillerTest/1.TestFill1D (0 ms)
+[ RUN      ] XavierFillerTest/1.TestFillAverage
+[       OK ] XavierFillerTest/1.TestFillAverage (42 ms)
+[ RUN      ] XavierFillerTest/1.TestFillFanOut
+[       OK ] XavierFillerTest/1.TestFillFanOut (43 ms)
+[----------] 6 tests from XavierFillerTest/1 (129 ms total)
+
+[----------] 12 tests from ArgMaxLayerTest/1, where TypeParam = double
+[ RUN      ] ArgMaxLayerTest/1.TestCPUAxisTopK
+[       OK ] ArgMaxLayerTest/1.TestCPUAxisTopK (39 ms)
+[ RUN      ] ArgMaxLayerTest/1.TestSetupAxisNegativeIndexing
+[       OK ] ArgMaxLayerTest/1.TestSetupAxisNegativeIndexing (1 ms)
+[ RUN      ] ArgMaxLayerTest/1.TestCPUAxis
+[       OK ] ArgMaxLayerTest/1.TestCPUAxis (9 ms)
+[ RUN      ] ArgMaxLayerTest/1.TestCPUAxisMaxValTopK
+[       OK ] ArgMaxLayerTest/1.TestCPUAxisMaxValTopK (37 ms)
+[ RUN      ] ArgMaxLayerTest/1.TestCPU
+[       OK ] ArgMaxLayerTest/1.TestCPU (1 ms)
+[ RUN      ] ArgMaxLayerTest/1.TestCPUTopK
+[       OK ] ArgMaxLayerTest/1.TestCPUTopK (2 ms)
+[ RUN      ] ArgMaxLayerTest/1.TestCPUMaxValTopK
+[       OK ] ArgMaxLayerTest/1.TestCPUMaxValTopK (1 ms)
+[ RUN      ] ArgMaxLayerTest/1.TestSetup
+[       OK ] ArgMaxLayerTest/1.TestSetup (1 ms)
+[ RUN      ] ArgMaxLayerTest/1.TestSetupMaxVal
+[       OK ] ArgMaxLayerTest/1.TestSetupMaxVal (1 ms)
+[ RUN      ] ArgMaxLayerTest/1.TestSetupAxis
+[       OK ] ArgMaxLayerTest/1.TestSetupAxis (1 ms)
+[ RUN      ] ArgMaxLayerTest/1.TestCPUMaxVal
+[       OK ] ArgMaxLayerTest/1.TestCPUMaxVal (1 ms)
+[ RUN      ] ArgMaxLayerTest/1.TestSetupAxisMaxVal
+[       OK ] ArgMaxLayerTest/1.TestSetupAxisMaxVal (1 ms)
+[----------] 12 tests from ArgMaxLayerTest/1 (96 ms total)
+
+[----------] 14 tests from DataLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] DataLayerTest/1.TestReshapeLevelDB
+[       OK ] DataLayerTest/1.TestReshapeLevelDB (67 ms)
+[ RUN      ] DataLayerTest/1.TestReadCropTrainSequenceUnseededLMDB
+[       OK ] DataLayerTest/1.TestReadCropTrainSequenceUnseededLMDB (25 ms)
+[ RUN      ] DataLayerTest/1.TestReadLevelDB
+[       OK ] DataLayerTest/1.TestReadLevelDB (71 ms)
+[ RUN      ] DataLayerTest/1.TestReadCropTrainLMDB
+[       OK ] DataLayerTest/1.TestReadCropTrainLMDB (18 ms)
+[ RUN      ] DataLayerTest/1.TestReadCropTrainSequenceSeededLevelDB
+[       OK ] DataLayerTest/1.TestReadCropTrainSequenceSeededLevelDB (105 ms)
+[ RUN      ] DataLayerTest/1.TestReadCropTrainSequenceUnseededLevelDB
+[       OK ] DataLayerTest/1.TestReadCropTrainSequenceUnseededLevelDB (117 ms)
+[ RUN      ] DataLayerTest/1.TestSkipLMDB
+[       OK ] DataLayerTest/1.TestSkipLMDB (48 ms)
+[ RUN      ] DataLayerTest/1.TestReadLMDB
+[       OK ] DataLayerTest/1.TestReadLMDB (21 ms)
+[ RUN      ] DataLayerTest/1.TestReadCropTestLevelDB
+[       OK ] DataLayerTest/1.TestReadCropTestLevelDB (65 ms)
+[ RUN      ] DataLayerTest/1.TestReadCropTrainSequenceSeededLMDB
+[       OK ] DataLayerTest/1.TestReadCropTrainSequenceSeededLMDB (26 ms)
+[ RUN      ] DataLayerTest/1.TestReshapeLMDB
+[       OK ] DataLayerTest/1.TestReshapeLMDB (16 ms)
+[ RUN      ] DataLayerTest/1.TestReadCropTestLMDB
+[       OK ] DataLayerTest/1.TestReadCropTestLMDB (13 ms)
+[ RUN      ] DataLayerTest/1.TestSkipLevelDB
+[       OK ] DataLayerTest/1.TestSkipLevelDB (338 ms)
+[ RUN      ] DataLayerTest/1.TestReadCropTrainLevelDB
+[       OK ] DataLayerTest/1.TestReadCropTrainLevelDB (72 ms)
+[----------] 14 tests from DataLayerTest/1 (1003 ms total)
+
+[----------] 15 tests from ConvolutionLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] ConvolutionLayerTest/0.TestSetup
+[       OK ] ConvolutionLayerTest/0.TestSetup (0 ms)
+[ RUN      ] ConvolutionLayerTest/0.TestGradient
+[       OK ] ConvolutionLayerTest/0.TestGradient (81 ms)
+[ RUN      ] ConvolutionLayerTest/0.TestSobelConvolution
+[       OK ] ConvolutionLayerTest/0.TestSobelConvolution (0 ms)
+[ RUN      ] ConvolutionLayerTest/0.Test1x1Gradient
+[       OK ] ConvolutionLayerTest/0.Test1x1Gradient (777 ms)
+[ RUN      ] ConvolutionLayerTest/0.TestGradient3D
+[       OK ] ConvolutionLayerTest/0.TestGradient3D (863 ms)
+[ RUN      ] ConvolutionLayerTest/0.TestSimpleConvolution
+[       OK ] ConvolutionLayerTest/0.TestSimpleConvolution (1 ms)
+[ RUN      ] ConvolutionLayerTest/0.TestGradientGroup
+[       OK ] ConvolutionLayerTest/0.TestGradientGroup (27 ms)
+[ RUN      ] ConvolutionLayerTest/0.TestNDAgainst2D
+[       OK ] ConvolutionLayerTest/0.TestNDAgainst2D (406 ms)
+[ RUN      ] ConvolutionLayerTest/0.TestDilated3DConvolution
+[       OK ] ConvolutionLayerTest/0.TestDilated3DConvolution (14 ms)
+[ RUN      ] ConvolutionLayerTest/0.TestDilatedGradient
+[       OK ] ConvolutionLayerTest/0.TestDilatedGradient (19 ms)
+[ RUN      ] ConvolutionLayerTest/0.Test1x1Convolution
+[       OK ] ConvolutionLayerTest/0.Test1x1Convolution (1 ms)
+[ RUN      ] ConvolutionLayerTest/0.Test0DConvolution
+[       OK ] ConvolutionLayerTest/0.Test0DConvolution (0 ms)
+[ RUN      ] ConvolutionLayerTest/0.TestSimple3DConvolution
+[       OK ] ConvolutionLayerTest/0.TestSimple3DConvolution (2 ms)
+[ RUN      ] ConvolutionLayerTest/0.TestSimpleConvolutionGroup
+[       OK ] ConvolutionLayerTest/0.TestSimpleConvolutionGroup (0 ms)
+[ RUN      ] ConvolutionLayerTest/0.TestDilatedConvolution
+[       OK ] ConvolutionLayerTest/0.TestDilatedConvolution (2 ms)
+[----------] 15 tests from ConvolutionLayerTest/0 (2198 ms total)
+
+[----------] 2 tests from HingeLossLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] HingeLossLayerTest/1.TestGradientL1
+[       OK ] HingeLossLayerTest/1.TestGradientL1 (0 ms)
+[ RUN      ] HingeLossLayerTest/1.TestGradientL2
+[       OK ] HingeLossLayerTest/1.TestGradientL2 (0 ms)
+[----------] 2 tests from HingeLossLayerTest/1 (0 ms total)
+
+[----------] 4 tests from UniformFillerTest/0, where TypeParam = float
+[ RUN      ] UniformFillerTest/0.TestFill1D
+[       OK ] UniformFillerTest/0.TestFill1D (0 ms)
+[ RUN      ] UniformFillerTest/0.TestFill
+[       OK ] UniformFillerTest/0.TestFill (0 ms)
+[ RUN      ] UniformFillerTest/0.TestFill5D
+[       OK ] UniformFillerTest/0.TestFill5D (0 ms)
+[ RUN      ] UniformFillerTest/0.TestFill2D
+[       OK ] UniformFillerTest/0.TestFill2D (0 ms)
+[----------] 4 tests from UniformFillerTest/0 (0 ms total)
+
+[----------] 3 tests from BlobMathTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] BlobMathTest/0.TestAsum
+[       OK ] BlobMathTest/0.TestAsum (0 ms)
+[ RUN      ] BlobMathTest/0.TestSumOfSquares
+[       OK ] BlobMathTest/0.TestSumOfSquares (0 ms)
+[ RUN      ] BlobMathTest/0.TestScaleData
+[       OK ] BlobMathTest/0.TestScaleData (0 ms)
+[----------] 3 tests from BlobMathTest/0 (0 ms total)
+
+[----------] 3 tests from FilterLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] FilterLayerTest/1.TestReshape
+[       OK ] FilterLayerTest/1.TestReshape (0 ms)
+[ RUN      ] FilterLayerTest/1.TestGradient
+[       OK ] FilterLayerTest/1.TestGradient (296 ms)
+[ RUN      ] FilterLayerTest/1.TestForward
+[       OK ] FilterLayerTest/1.TestForward (0 ms)
+[----------] 3 tests from FilterLayerTest/1 (296 ms total)
+
+[----------] 27 tests from ReductionLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] ReductionLayerTest/1.TestSumOfSquaresCoeff
+[       OK ] ReductionLayerTest/1.TestSumOfSquaresCoeff (0 ms)
+[ RUN      ] ReductionLayerTest/1.TestSum
+[       OK ] ReductionLayerTest/1.TestSum (0 ms)
+[ RUN      ] ReductionLayerTest/1.TestSumCoeffAxis1
+[       OK ] ReductionLayerTest/1.TestSumCoeffAxis1 (0 ms)
+[ RUN      ] ReductionLayerTest/1.TestAbsSumCoeffAxis1
+[       OK ] ReductionLayerTest/1.TestAbsSumCoeffAxis1 (0 ms)
+[ RUN      ] ReductionLayerTest/1.TestSetUpWithAxis2
+[       OK ] ReductionLayerTest/1.TestSetUpWithAxis2 (0 ms)
+[ RUN      ] ReductionLayerTest/1.TestSumOfSquaresCoeffAxis1Gradient
+[       OK ] ReductionLayerTest/1.TestSumOfSquaresCoeffAxis1Gradient (1 ms)
+[ RUN      ] ReductionLayerTest/1.TestSumOfSquaresGradient
+[       OK ] ReductionLayerTest/1.TestSumOfSquaresGradient (1 ms)
+[ RUN      ] ReductionLayerTest/1.TestMean
+[       OK ] ReductionLayerTest/1.TestMean (0 ms)
+[ RUN      ] ReductionLayerTest/1.TestAbsSumGradient
+[       OK ] ReductionLayerTest/1.TestAbsSumGradient (1 ms)
+[ RUN      ] ReductionLayerTest/1.TestAbsSum
+[       OK ] ReductionLayerTest/1.TestAbsSum (0 ms)
+[ RUN      ] ReductionLayerTest/1.TestMeanCoeffAxis1
+[       OK ] ReductionLayerTest/1.TestMeanCoeffAxis1 (0 ms)
+[ RUN      ] ReductionLayerTest/1.TestMeanCoeffGradientAxis1
+[       OK ] ReductionLayerTest/1.TestMeanCoeffGradientAxis1 (2 ms)
+[ RUN      ] ReductionLayerTest/1.TestSumOfSquares
+[       OK ] ReductionLayerTest/1.TestSumOfSquares (0 ms)
+[ RUN      ] ReductionLayerTest/1.TestSumCoeffAxis1Gradient
+[       OK ] ReductionLayerTest/1.TestSumCoeffAxis1Gradient (1 ms)
+[ RUN      ] ReductionLayerTest/1.TestSumOfSquaresCoeffGradient
+[       OK ] ReductionLayerTest/1.TestSumOfSquaresCoeffGradient (1 ms)
+[ RUN      ] ReductionLayerTest/1.TestMeanGradient
+[       OK ] ReductionLayerTest/1.TestMeanGradient (1 ms)
+[ RUN      ] ReductionLayerTest/1.TestMeanCoeffGradient
+[       OK ] ReductionLayerTest/1.TestMeanCoeffGradient (1 ms)
+[ RUN      ] ReductionLayerTest/1.TestAbsSumCoeffGradient
+[       OK ] ReductionLayerTest/1.TestAbsSumCoeffGradient (0 ms)
+[ RUN      ] ReductionLayerTest/1.TestSumCoeffGradient
+[       OK ] ReductionLayerTest/1.TestSumCoeffGradient (1 ms)
+[ RUN      ] ReductionLayerTest/1.TestSetUp
+[       OK ] ReductionLayerTest/1.TestSetUp (0 ms)
+[ RUN      ] ReductionLayerTest/1.TestSetUpWithAxis1
+[       OK ] ReductionLayerTest/1.TestSetUpWithAxis1 (0 ms)
+[ RUN      ] ReductionLayerTest/1.TestSumCoeff
+[       OK ] ReductionLayerTest/1.TestSumCoeff (1 ms)
+[ RUN      ] ReductionLayerTest/1.TestSumOfSquaresCoeffAxis1
+[       OK ] ReductionLayerTest/1.TestSumOfSquaresCoeffAxis1 (0 ms)
+[ RUN      ] ReductionLayerTest/1.TestAbsSumCoeffAxis1Gradient
+[       OK ] ReductionLayerTest/1.TestAbsSumCoeffAxis1Gradient (1 ms)
+[ RUN      ] ReductionLayerTest/1.TestMeanCoeff
+[       OK ] ReductionLayerTest/1.TestMeanCoeff (0 ms)
+[ RUN      ] ReductionLayerTest/1.TestAbsSumCoeff
+[       OK ] ReductionLayerTest/1.TestAbsSumCoeff (0 ms)
+[ RUN      ] ReductionLayerTest/1.TestSumGradient
+[       OK ] ReductionLayerTest/1.TestSumGradient (1 ms)
+[----------] 27 tests from ReductionLayerTest/1 (13 ms total)
+
+[----------] 4 tests from ContrastiveLossLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] ContrastiveLossLayerTest/1.TestForward
+[       OK ] ContrastiveLossLayerTest/1.TestForward (0 ms)
+[ RUN      ] ContrastiveLossLayerTest/1.TestForwardLegacy
+[       OK ] ContrastiveLossLayerTest/1.TestForwardLegacy (0 ms)
+[ RUN      ] ContrastiveLossLayerTest/1.TestGradientLegacy
+[       OK ] ContrastiveLossLayerTest/1.TestGradientLegacy (211 ms)
+[ RUN      ] ContrastiveLossLayerTest/1.TestGradient
+[       OK ] ContrastiveLossLayerTest/1.TestGradient (222 ms)
+[----------] 4 tests from ContrastiveLossLayerTest/1 (433 ms total)
+
+[----------] 3 tests from MaxPoolingDropoutTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] MaxPoolingDropoutTest/1.TestBackward
+[       OK ] MaxPoolingDropoutTest/1.TestBackward (0 ms)
+[ RUN      ] MaxPoolingDropoutTest/1.TestForward
+[       OK ] MaxPoolingDropoutTest/1.TestForward (0 ms)
+[ RUN      ] MaxPoolingDropoutTest/1.TestSetup
+[       OK ] MaxPoolingDropoutTest/1.TestSetup (0 ms)
+[----------] 3 tests from MaxPoolingDropoutTest/1 (0 ms total)
+
+[----------] 8 tests from AdamSolverTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] AdamSolverTest/1.TestAdamLeastSquaresUpdate
+[       OK ] AdamSolverTest/1.TestAdamLeastSquaresUpdate (17 ms)
+[ RUN      ] AdamSolverTest/1.TestAdamLeastSquaresUpdateWithWeightDecay
+[       OK ] AdamSolverTest/1.TestAdamLeastSquaresUpdateWithWeightDecay (16 ms)
+[ RUN      ] AdamSolverTest/1.TestAdamLeastSquaresUpdateWithEverything
+[       OK ] AdamSolverTest/1.TestAdamLeastSquaresUpdateWithEverything (80 ms)
+[ RUN      ] AdamSolverTest/1.TestAdamLeastSquaresUpdateWithEverythingShare
+[       OK ] AdamSolverTest/1.TestAdamLeastSquaresUpdateWithEverythingShare (83 ms)
+[ RUN      ] AdamSolverTest/1.TestSnapshot
+[       OK ] AdamSolverTest/1.TestSnapshot (26 ms)
+[ RUN      ] AdamSolverTest/1.TestLeastSquaresUpdateWithEverythingAccumShare
+[       OK ] AdamSolverTest/1.TestLeastSquaresUpdateWithEverythingAccumShare (5 ms)
+[ RUN      ] AdamSolverTest/1.TestLeastSquaresUpdateWithEverythingAccum
+[       OK ] AdamSolverTest/1.TestLeastSquaresUpdateWithEverythingAccum (3 ms)
+[ RUN      ] AdamSolverTest/1.TestSnapshotShare
+[       OK ] AdamSolverTest/1.TestSnapshotShare (31 ms)
+[----------] 8 tests from AdamSolverTest/1 (263 ms total)
+
+[----------] 6 tests from RNNLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] RNNLayerTest/1.TestForward
+[       OK ] RNNLayerTest/1.TestForward (8 ms)
+[ RUN      ] RNNLayerTest/1.TestGradientNonZeroCont
+[       OK ] RNNLayerTest/1.TestGradientNonZeroCont (106 ms)
+[ RUN      ] RNNLayerTest/1.TestGradientNonZeroContBufferSize2
+[       OK ] RNNLayerTest/1.TestGradientNonZeroContBufferSize2 (208 ms)
+[ RUN      ] RNNLayerTest/1.TestGradientNonZeroContBufferSize2WithStaticInput
+[       OK ] RNNLayerTest/1.TestGradientNonZeroContBufferSize2WithStaticInput (990 ms)
+[ RUN      ] RNNLayerTest/1.TestGradient
+[       OK ] RNNLayerTest/1.TestGradient (110 ms)
+[ RUN      ] RNNLayerTest/1.TestSetUp
+[       OK ] RNNLayerTest/1.TestSetUp (2 ms)
+[----------] 6 tests from RNNLayerTest/1 (1424 ms total)
+
+[----------] 1 test from SolverFactoryTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] SolverFactoryTest/0.TestCreateSolver
+[       OK ] SolverFactoryTest/0.TestCreateSolver (1 ms)
+[----------] 1 test from SolverFactoryTest/0 (1 ms total)
+
+[----------] 58 tests from NeuronLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] NeuronLayerTest/1.TestExpLayerBase2Shift1Scale3
+[       OK ] NeuronLayerTest/1.TestExpLayerBase2Shift1Scale3 (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestPReLUGradientChannelShared
+[       OK ] NeuronLayerTest/1.TestPReLUGradientChannelShared (135 ms)
+[ RUN      ] NeuronLayerTest/1.TestClipGradient
+[       OK ] NeuronLayerTest/1.TestClipGradient (2 ms)
+[ RUN      ] NeuronLayerTest/1.TestPReLUConsistencyReLU
+[       OK ] NeuronLayerTest/1.TestPReLUConsistencyReLU (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestSwishAsLinear
+[       OK ] NeuronLayerTest/1.TestSwishAsLinear (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestSigmoid
+[       OK ] NeuronLayerTest/1.TestSigmoid (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestDropoutGradient
+[       OK ] NeuronLayerTest/1.TestDropoutGradient (2 ms)
+[ RUN      ] NeuronLayerTest/1.TestSigmoidGradient
+[       OK ] NeuronLayerTest/1.TestSigmoidGradient (4 ms)
+[ RUN      ] NeuronLayerTest/1.TestPReLUForward
+[       OK ] NeuronLayerTest/1.TestPReLUForward (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestExpGradient
+[       OK ] NeuronLayerTest/1.TestExpGradient (3 ms)
+[ RUN      ] NeuronLayerTest/1.TestSwishGradient
+[       OK ] NeuronLayerTest/1.TestSwishGradient (4 ms)
+[ RUN      ] NeuronLayerTest/1.TestSwishWithBeta
+[       OK ] NeuronLayerTest/1.TestSwishWithBeta (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestLogLayerBase2Scale3
+[       OK ] NeuronLayerTest/1.TestLogLayerBase2Scale3 (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestTanH
+[       OK ] NeuronLayerTest/1.TestTanH (1 ms)
+[ RUN      ] NeuronLayerTest/1.TestReLUGradientWithNegativeSlope
+[       OK ] NeuronLayerTest/1.TestReLUGradientWithNegativeSlope (1 ms)
+[ RUN      ] NeuronLayerTest/1.TestExpLayer
+[       OK ] NeuronLayerTest/1.TestExpLayer (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestExpLayerBase2Shift1
+[       OK ] NeuronLayerTest/1.TestExpLayerBase2Shift1 (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestAbsVal
+[       OK ] NeuronLayerTest/1.TestAbsVal (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestELUasReLUGradient
+[       OK ] NeuronLayerTest/1.TestELUasReLUGradient (2 ms)
+[ RUN      ] NeuronLayerTest/1.TestLogGradientBase2
+[       OK ] NeuronLayerTest/1.TestLogGradientBase2 (4 ms)
+[ RUN      ] NeuronLayerTest/1.TestSwishAsLinearGradient
+[       OK ] NeuronLayerTest/1.TestSwishAsLinearGradient (3 ms)
+[ RUN      ] NeuronLayerTest/1.TestExpGradientBase2Shift1Scale3
+[       OK ] NeuronLayerTest/1.TestExpGradientBase2Shift1Scale3 (3 ms)
+[ RUN      ] NeuronLayerTest/1.TestExpGradientBase2
+[       OK ] NeuronLayerTest/1.TestExpGradientBase2 (4 ms)
+[ RUN      ] NeuronLayerTest/1.TestExpGradientBase2Shift1
+[       OK ] NeuronLayerTest/1.TestExpGradientBase2Shift1 (3 ms)
+[ RUN      ] NeuronLayerTest/1.TestDropoutGradientTest
+[       OK ] NeuronLayerTest/1.TestDropoutGradientTest (2 ms)
+[ RUN      ] NeuronLayerTest/1.TestLogGradientBase2Shift1
+[       OK ] NeuronLayerTest/1.TestLogGradientBase2Shift1 (5 ms)
+[ RUN      ] NeuronLayerTest/1.TestDropoutHalf
+[       OK ] NeuronLayerTest/1.TestDropoutHalf (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestExpGradientBase2Scale3
+[       OK ] NeuronLayerTest/1.TestExpGradientBase2Scale3 (3 ms)
+[ RUN      ] NeuronLayerTest/1.TestLogGradientBase2Scale3
+[       OK ] NeuronLayerTest/1.TestLogGradientBase2Scale3 (4 ms)
+[ RUN      ] NeuronLayerTest/1.TestLogGradient
+[       OK ] NeuronLayerTest/1.TestLogGradient (5 ms)
+[ RUN      ] NeuronLayerTest/1.TestReLUWithNegativeSlope
+[       OK ] NeuronLayerTest/1.TestReLUWithNegativeSlope (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestPReLUInPlace
+[       OK ] NeuronLayerTest/1.TestPReLUInPlace (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestAbsGradient
+[       OK ] NeuronLayerTest/1.TestAbsGradient (1 ms)
+[ RUN      ] NeuronLayerTest/1.TestDropoutThreeQuarters
+[       OK ] NeuronLayerTest/1.TestDropoutThreeQuarters (1 ms)
+[ RUN      ] NeuronLayerTest/1.TestPReLUGradient
+[       OK ] NeuronLayerTest/1.TestPReLUGradient (137 ms)
+[ RUN      ] NeuronLayerTest/1.TestSwishWithBetaGradient
+[       OK ] NeuronLayerTest/1.TestSwishWithBetaGradient (4 ms)
+[ RUN      ] NeuronLayerTest/1.TestPReLUForwardChannelShared
+[       OK ] NeuronLayerTest/1.TestPReLUForwardChannelShared (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestClip
+[       OK ] NeuronLayerTest/1.TestClip (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestExpLayerWithShift
+[       OK ] NeuronLayerTest/1.TestExpLayerWithShift (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestLogLayer
+[       OK ] NeuronLayerTest/1.TestLogLayer (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestTanHGradient
+[       OK ] NeuronLayerTest/1.TestTanHGradient (4 ms)
+[ RUN      ] NeuronLayerTest/1.TestLogGradientBase2Shift1Scale3
+[       OK ] NeuronLayerTest/1.TestLogGradientBase2Shift1Scale3 (4 ms)
+[ RUN      ] NeuronLayerTest/1.TestReLUGradient
+[       OK ] NeuronLayerTest/1.TestReLUGradient (2 ms)
+[ RUN      ] NeuronLayerTest/1.TestBNLLGradient
+[       OK ] NeuronLayerTest/1.TestBNLLGradient (6 ms)
+[ RUN      ] NeuronLayerTest/1.TestExpGradientWithShift
+[       OK ] NeuronLayerTest/1.TestExpGradientWithShift (4 ms)
+[ RUN      ] NeuronLayerTest/1.TestExpLayerBase2Scale3
+[       OK ] NeuronLayerTest/1.TestExpLayerBase2Scale3 (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestPReLUParam
+[       OK ] NeuronLayerTest/1.TestPReLUParam (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestExpLayerBase2
+[       OK ] NeuronLayerTest/1.TestExpLayerBase2 (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestELUasReLU
+[       OK ] NeuronLayerTest/1.TestELUasReLU (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestReLU
+[       OK ] NeuronLayerTest/1.TestReLU (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestDropoutTestPhase
+[       OK ] NeuronLayerTest/1.TestDropoutTestPhase (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestLogLayerBase2Shift1
+[       OK ] NeuronLayerTest/1.TestLogLayerBase2Shift1 (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestLogLayerBase2
+[       OK ] NeuronLayerTest/1.TestLogLayerBase2 (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestSwish
+[       OK ] NeuronLayerTest/1.TestSwish (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestBNLL
+[       OK ] NeuronLayerTest/1.TestBNLL (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestLogLayerBase2Shift1Scale3
+[       OK ] NeuronLayerTest/1.TestLogLayerBase2Shift1Scale3 (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestELU
+[       OK ] NeuronLayerTest/1.TestELU (0 ms)
+[ RUN      ] NeuronLayerTest/1.TestELUGradient
+[       OK ] NeuronLayerTest/1.TestELUGradient (3 ms)
+[----------] 58 tests from NeuronLayerTest/1 (357 ms total)
+
+[----------] 6 tests from MSRAFillerTest/0, where TypeParam = float
+[ RUN      ] MSRAFillerTest/0.TestFillFanOut
+[       OK ] MSRAFillerTest/0.TestFillFanOut (71 ms)
+[ RUN      ] MSRAFillerTest/0.TestFill1D
+[       OK ] MSRAFillerTest/0.TestFill1D (0 ms)
+[ RUN      ] MSRAFillerTest/0.TestFill2D
+[       OK ] MSRAFillerTest/0.TestFill2D (0 ms)
+[ RUN      ] MSRAFillerTest/0.TestFillFanIn
+[       OK ] MSRAFillerTest/0.TestFillFanIn (71 ms)
+[ RUN      ] MSRAFillerTest/0.TestFill5D
+[       OK ] MSRAFillerTest/0.TestFill5D (0 ms)
+[ RUN      ] MSRAFillerTest/0.TestFillAverage
+[       OK ] MSRAFillerTest/0.TestFillAverage (71 ms)
+[----------] 6 tests from MSRAFillerTest/0 (213 ms total)
+
+[----------] 3 tests from SplitLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] SplitLayerTest/1.Test
+[       OK ] SplitLayerTest/1.Test (1 ms)
+[ RUN      ] SplitLayerTest/1.TestGradient
+[       OK ] SplitLayerTest/1.TestGradient (5 ms)
+[ RUN      ] SplitLayerTest/1.TestSetup
+[       OK ] SplitLayerTest/1.TestSetup (0 ms)
+[----------] 3 tests from SplitLayerTest/1 (6 ms total)
+
+[----------] 4 tests from SoftmaxWithLossLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] SoftmaxWithLossLayerTest/0.TestGradient
+[       OK ] SoftmaxWithLossLayerTest/0.TestGradient (10 ms)
+[ RUN      ] SoftmaxWithLossLayerTest/0.TestGradientUnnormalized
+[       OK ] SoftmaxWithLossLayerTest/0.TestGradientUnnormalized (10 ms)
+[ RUN      ] SoftmaxWithLossLayerTest/0.TestGradientIgnoreLabel
+[       OK ] SoftmaxWithLossLayerTest/0.TestGradientIgnoreLabel (10 ms)
+[ RUN      ] SoftmaxWithLossLayerTest/0.TestForwardIgnoreLabel
+[       OK ] SoftmaxWithLossLayerTest/0.TestForwardIgnoreLabel (4 ms)
+[----------] 4 tests from SoftmaxWithLossLayerTest/0 (34 ms total)
+
+[----------] 10 tests from ConcatLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] ConcatLayerTest/1.TestGradientTrivial
+[       OK ] ConcatLayerTest/1.TestGradientTrivial (2 ms)
+[ RUN      ] ConcatLayerTest/1.TestForwardNum
+[       OK ] ConcatLayerTest/1.TestForwardNum (1 ms)
+[ RUN      ] ConcatLayerTest/1.TestSetupChannelsNegativeIndexing
+[       OK ] ConcatLayerTest/1.TestSetupChannelsNegativeIndexing (0 ms)
+[ RUN      ] ConcatLayerTest/1.TestForwardTrivial
+[       OK ] ConcatLayerTest/1.TestForwardTrivial (0 ms)
+[ RUN      ] ConcatLayerTest/1.TestForwardChannels
+[       OK ] ConcatLayerTest/1.TestForwardChannels (0 ms)
+[ RUN      ] ConcatLayerTest/1.TestSetupChannels
+[       OK ] ConcatLayerTest/1.TestSetupChannels (0 ms)
+[ RUN      ] ConcatLayerTest/1.TestSetupNum
+[       OK ] ConcatLayerTest/1.TestSetupNum (0 ms)
+[ RUN      ] ConcatLayerTest/1.TestGradientChannelsBottomOneOnly
+[       OK ] ConcatLayerTest/1.TestGradientChannelsBottomOneOnly (3 ms)
+[ RUN      ] ConcatLayerTest/1.TestGradientChannels
+[       OK ] ConcatLayerTest/1.TestGradientChannels (4 ms)
+[ RUN      ] ConcatLayerTest/1.TestGradientNum
+[       OK ] ConcatLayerTest/1.TestGradientNum (5 ms)
+[----------] 10 tests from ConcatLayerTest/1 (15 ms total)
+
+[----------] 10 tests from ConcatLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] ConcatLayerTest/0.TestForwardTrivial
+[       OK ] ConcatLayerTest/0.TestForwardTrivial (0 ms)
+[ RUN      ] ConcatLayerTest/0.TestGradientChannelsBottomOneOnly
+[       OK ] ConcatLayerTest/0.TestGradientChannelsBottomOneOnly (3 ms)
+[ RUN      ] ConcatLayerTest/0.TestForwardNum
+[       OK ] ConcatLayerTest/0.TestForwardNum (0 ms)
+[ RUN      ] ConcatLayerTest/0.TestGradientNum
+[       OK ] ConcatLayerTest/0.TestGradientNum (5 ms)
+[ RUN      ] ConcatLayerTest/0.TestSetupChannels
+[       OK ] ConcatLayerTest/0.TestSetupChannels (0 ms)
+[ RUN      ] ConcatLayerTest/0.TestSetupNum
+[       OK ] ConcatLayerTest/0.TestSetupNum (0 ms)
+[ RUN      ] ConcatLayerTest/0.TestSetupChannelsNegativeIndexing
+[       OK ] ConcatLayerTest/0.TestSetupChannelsNegativeIndexing (0 ms)
+[ RUN      ] ConcatLayerTest/0.TestGradientTrivial
+[       OK ] ConcatLayerTest/0.TestGradientTrivial (3 ms)
+[ RUN      ] ConcatLayerTest/0.TestForwardChannels
+[       OK ] ConcatLayerTest/0.TestForwardChannels (0 ms)
+[ RUN      ] ConcatLayerTest/0.TestGradientChannels
+[       OK ] ConcatLayerTest/0.TestGradientChannels (4 ms)
+[----------] 10 tests from ConcatLayerTest/0 (15 ms total)
+
+[----------] 5 tests from MemoryDataLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] MemoryDataLayerTest/0.AddDatumVectorDefaultTransform
+[       OK ] MemoryDataLayerTest/0.AddDatumVectorDefaultTransform (0 ms)
+[ RUN      ] MemoryDataLayerTest/0.AddMatVectorDefaultTransform
+[       OK ] MemoryDataLayerTest/0.AddMatVectorDefaultTransform (1 ms)
+[ RUN      ] MemoryDataLayerTest/0.TestSetup
+[       OK ] MemoryDataLayerTest/0.TestSetup (1 ms)
+[ RUN      ] MemoryDataLayerTest/0.TestSetBatchSize
+[       OK ] MemoryDataLayerTest/0.TestSetBatchSize (1 ms)
+[ RUN      ] MemoryDataLayerTest/0.TestForward
+[       OK ] MemoryDataLayerTest/0.TestForward (31 ms)
+[----------] 5 tests from MemoryDataLayerTest/0 (35 ms total)
+
+[----------] 8 tests from SplitLayerInsertionTest
+[ RUN      ] SplitLayerInsertionTest.TestNoInsertion1
+[       OK ] SplitLayerInsertionTest.TestNoInsertion1 (0 ms)
+[ RUN      ] SplitLayerInsertionTest.TestNoInsertion2
+[       OK ] SplitLayerInsertionTest.TestNoInsertion2 (0 ms)
+[ RUN      ] SplitLayerInsertionTest.TestLossInsertion
+[       OK ] SplitLayerInsertionTest.TestLossInsertion (0 ms)
+[ RUN      ] SplitLayerInsertionTest.TestNoInsertionWithInPlace
+[       OK ] SplitLayerInsertionTest.TestNoInsertionWithInPlace (0 ms)
+[ RUN      ] SplitLayerInsertionTest.TestNoInsertionImageNet
+[       OK ] SplitLayerInsertionTest.TestNoInsertionImageNet (2 ms)
+[ RUN      ] SplitLayerInsertionTest.TestInsertionTwoTop
+[       OK ] SplitLayerInsertionTest.TestInsertionTwoTop (0 ms)
+[ RUN      ] SplitLayerInsertionTest.TestInsertion
+[       OK ] SplitLayerInsertionTest.TestInsertion (0 ms)
+[ RUN      ] SplitLayerInsertionTest.TestWithInPlace
+[       OK ] SplitLayerInsertionTest.TestWithInPlace (1 ms)
+[----------] 8 tests from SplitLayerInsertionTest (3 ms total)
+
+[----------] 2 tests from SoftmaxLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] SoftmaxLayerTest/1.TestGradient
+[       OK ] SoftmaxLayerTest/1.TestGradient (300 ms)
+[ RUN      ] SoftmaxLayerTest/1.TestForward
+[       OK ] SoftmaxLayerTest/1.TestForward (0 ms)
+[----------] 2 tests from SoftmaxLayerTest/1 (300 ms total)
+
+[----------] 10 tests from EltwiseLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] EltwiseLayerTest/0.TestUnstableProdGradient
+[       OK ] EltwiseLayerTest/0.TestUnstableProdGradient (4 ms)
+[ RUN      ] EltwiseLayerTest/0.TestSumCoeff
+[       OK ] EltwiseLayerTest/0.TestSumCoeff (0 ms)
+[ RUN      ] EltwiseLayerTest/0.TestMaxGradient
+[       OK ] EltwiseLayerTest/0.TestMaxGradient (4 ms)
+[ RUN      ] EltwiseLayerTest/0.TestMax
+[       OK ] EltwiseLayerTest/0.TestMax (1 ms)
+[ RUN      ] EltwiseLayerTest/0.TestProd
+[       OK ] EltwiseLayerTest/0.TestProd (0 ms)
+[ RUN      ] EltwiseLayerTest/0.TestStableProdGradient
+[       OK ] EltwiseLayerTest/0.TestStableProdGradient (4 ms)
+[ RUN      ] EltwiseLayerTest/0.TestSumGradient
+[       OK ] EltwiseLayerTest/0.TestSumGradient (5 ms)
+[ RUN      ] EltwiseLayerTest/0.TestSum
+[       OK ] EltwiseLayerTest/0.TestSum (0 ms)
+[ RUN      ] EltwiseLayerTest/0.TestSumCoeffGradient
+[       OK ] EltwiseLayerTest/0.TestSumCoeffGradient (4 ms)
+[ RUN      ] EltwiseLayerTest/0.TestSetUp
+[       OK ] EltwiseLayerTest/0.TestSetUp (0 ms)
+[----------] 10 tests from EltwiseLayerTest/0 (23 ms total)
+
+[----------] 9 tests from InnerProductLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] InnerProductLayerTest/1.TestSetUp
+[       OK ] InnerProductLayerTest/1.TestSetUp (0 ms)
+[ RUN      ] InnerProductLayerTest/1.TestGradientTranspose
+[       OK ] InnerProductLayerTest/1.TestGradientTranspose (160 ms)
+[ RUN      ] InnerProductLayerTest/1.TestForwardTranspose
+[       OK ] InnerProductLayerTest/1.TestForwardTranspose (0 ms)
+[ RUN      ] InnerProductLayerTest/1.TestSetUpTransposeFalse
+[       OK ] InnerProductLayerTest/1.TestSetUpTransposeFalse (0 ms)
+[ RUN      ] InnerProductLayerTest/1.TestSetUpTransposeTrue
+[       OK ] InnerProductLayerTest/1.TestSetUpTransposeTrue (0 ms)
+[ RUN      ] InnerProductLayerTest/1.TestGradient
+[       OK ] InnerProductLayerTest/1.TestGradient (133 ms)
+[ RUN      ] InnerProductLayerTest/1.TestForward
+[       OK ] InnerProductLayerTest/1.TestForward (0 ms)
+[ RUN      ] InnerProductLayerTest/1.TestBackwardTranspose
+[       OK ] InnerProductLayerTest/1.TestBackwardTranspose (0 ms)
+[ RUN      ] InnerProductLayerTest/1.TestForwardNoBatch
+[       OK ] InnerProductLayerTest/1.TestForwardNoBatch (0 ms)
+[----------] 9 tests from InnerProductLayerTest/1 (293 ms total)
+
+[----------] 7 tests from TileLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] TileLayerTest/1.TestTrivialSetup
+[       OK ] TileLayerTest/1.TestTrivialSetup (0 ms)
+[ RUN      ] TileLayerTest/1.TestForwardChannels
+[       OK ] TileLayerTest/1.TestForwardChannels (1 ms)
+[ RUN      ] TileLayerTest/1.TestForwardNum
+[       OK ] TileLayerTest/1.TestForwardNum (0 ms)
+[ RUN      ] TileLayerTest/1.TestTrivialGradient
+[       OK ] TileLayerTest/1.TestTrivialGradient (80 ms)
+[ RUN      ] TileLayerTest/1.TestGradientChannels
+[       OK ] TileLayerTest/1.TestGradientChannels (281 ms)
+[ RUN      ] TileLayerTest/1.TestGradientNum
+[       OK ] TileLayerTest/1.TestGradientNum (267 ms)
+[ RUN      ] TileLayerTest/1.TestSetup
+[       OK ] TileLayerTest/1.TestSetup (0 ms)
+[----------] 7 tests from TileLayerTest/1 (630 ms total)
+
+[----------] 1 test from SolverTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] SolverTest/0.TestInitTrainTestNets
+[       OK ] SolverTest/0.TestInitTrainTestNets (2 ms)
+[----------] 1 test from SolverTest/0 (2 ms total)
+
+[----------] 5 tests from ImageDataLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] ImageDataLayerTest/0.TestReshape
+[       OK ] ImageDataLayerTest/0.TestReshape (35 ms)
+[ RUN      ] ImageDataLayerTest/0.TestResize
+[       OK ] ImageDataLayerTest/0.TestResize (122 ms)
+[ RUN      ] ImageDataLayerTest/0.TestRead
+[       OK ] ImageDataLayerTest/0.TestRead (138 ms)
+[ RUN      ] ImageDataLayerTest/0.TestShuffle
+[       OK ] ImageDataLayerTest/0.TestShuffle (148 ms)
+[ RUN      ] ImageDataLayerTest/0.TestSpace
+[       OK ] ImageDataLayerTest/0.TestSpace (41 ms)
+[----------] 5 tests from ImageDataLayerTest/0 (484 ms total)
+
+[----------] 2 tests from CommonTest
+[ RUN      ] CommonTest.TestBrewMode
+[       OK ] CommonTest.TestBrewMode (0 ms)
+[ RUN      ] CommonTest.TestRandSeedCPU
+[       OK ] CommonTest.TestRandSeedCPU (0 ms)
+[----------] 2 tests from CommonTest (0 ms total)
+
+[----------] 12 tests from ReshapeLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] ReshapeLayerTest/1.TestInsertSingletonAxesEnd
+[       OK ] ReshapeLayerTest/1.TestInsertSingletonAxesEnd (0 ms)
+[ RUN      ] ReshapeLayerTest/1.TestForward
+[       OK ] ReshapeLayerTest/1.TestForward (0 ms)
+[ RUN      ] ReshapeLayerTest/1.TestInferenceOfUnspecified
+[       OK ] ReshapeLayerTest/1.TestInferenceOfUnspecified (0 ms)
+[ RUN      ] ReshapeLayerTest/1.TestFlattenMiddle
+[       OK ] ReshapeLayerTest/1.TestFlattenMiddle (0 ms)
+[ RUN      ] ReshapeLayerTest/1.TestFlattenValues
+[       OK ] ReshapeLayerTest/1.TestFlattenValues (0 ms)
+[ RUN      ] ReshapeLayerTest/1.TestCopyDimensions
+[       OK ] ReshapeLayerTest/1.TestCopyDimensions (0 ms)
+[ RUN      ] ReshapeLayerTest/1.TestInferenceOfUnspecifiedWithStartAxis
+[       OK ] ReshapeLayerTest/1.TestInferenceOfUnspecifiedWithStartAxis (0 ms)
+[ RUN      ] ReshapeLayerTest/1.TestGradient
+[       OK ] ReshapeLayerTest/1.TestGradient (3 ms)
+[ RUN      ] ReshapeLayerTest/1.TestInsertSingletonAxesStart
+[       OK ] ReshapeLayerTest/1.TestInsertSingletonAxesStart (0 ms)
+[ RUN      ] ReshapeLayerTest/1.TestForwardAfterReshape
+[       OK ] ReshapeLayerTest/1.TestForwardAfterReshape (0 ms)
+[ RUN      ] ReshapeLayerTest/1.TestFlattenOutputSizes
+[       OK ] ReshapeLayerTest/1.TestFlattenOutputSizes (0 ms)
+[ RUN      ] ReshapeLayerTest/1.TestInsertSingletonAxesMiddle
+[       OK ] ReshapeLayerTest/1.TestInsertSingletonAxesMiddle (0 ms)
+[----------] 12 tests from ReshapeLayerTest/1 (4 ms total)
+
+[----------] 10 tests from PowerLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] PowerLayerTest/1.TestPowerGradient
+[       OK ] PowerLayerTest/1.TestPowerGradient (7 ms)
+[ RUN      ] PowerLayerTest/1.TestPowerOne
+[       OK ] PowerLayerTest/1.TestPowerOne (0 ms)
+[ RUN      ] PowerLayerTest/1.TestPowerOneGradient
+[       OK ] PowerLayerTest/1.TestPowerOneGradient (2 ms)
+[ RUN      ] PowerLayerTest/1.TestPowerTwoGradient
+[       OK ] PowerLayerTest/1.TestPowerTwoGradient (2 ms)
+[ RUN      ] PowerLayerTest/1.TestPowerZero
+[       OK ] PowerLayerTest/1.TestPowerZero (0 ms)
+[ RUN      ] PowerLayerTest/1.TestPowerTwoScaleHalfGradient
+[       OK ] PowerLayerTest/1.TestPowerTwoScaleHalfGradient (3 ms)
+[ RUN      ] PowerLayerTest/1.TestPowerTwo
+[       OK ] PowerLayerTest/1.TestPowerTwo (0 ms)
+[ RUN      ] PowerLayerTest/1.TestPowerZeroGradient
+[       OK ] PowerLayerTest/1.TestPowerZeroGradient (1 ms)
+[ RUN      ] PowerLayerTest/1.TestPower
+[       OK ] PowerLayerTest/1.TestPower (0 ms)
+[ RUN      ] PowerLayerTest/1.TestPowerGradientShiftZero
+[       OK ] PowerLayerTest/1.TestPowerGradientShiftZero (7 ms)
+[----------] 10 tests from PowerLayerTest/1 (22 ms total)
+
+[----------] 5 tests from EmbedLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] EmbedLayerTest/1.TestSetUp
+[       OK ] EmbedLayerTest/1.TestSetUp (0 ms)
+[ RUN      ] EmbedLayerTest/1.TestForwardWithBias
+[       OK ] EmbedLayerTest/1.TestForwardWithBias (0 ms)
+[ RUN      ] EmbedLayerTest/1.TestGradientWithBias
+[       OK ] EmbedLayerTest/1.TestGradientWithBias (16 ms)
+[ RUN      ] EmbedLayerTest/1.TestGradient
+[       OK ] EmbedLayerTest/1.TestGradient (11 ms)
+[ RUN      ] EmbedLayerTest/1.TestForward
+[       OK ] EmbedLayerTest/1.TestForward (0 ms)
+[----------] 5 tests from EmbedLayerTest/1 (28 ms total)
+
+[----------] 2 tests from EuclideanLossLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] EuclideanLossLayerTest/1.TestForward
+[       OK ] EuclideanLossLayerTest/1.TestForward (0 ms)
+[ RUN      ] EuclideanLossLayerTest/1.TestGradient
+[       OK ] EuclideanLossLayerTest/1.TestGradient (0 ms)
+[----------] 2 tests from EuclideanLossLayerTest/1 (0 ms total)
+
+[----------] 9 tests from AccuracyLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] AccuracyLayerTest/0.TestForward
+[       OK ] AccuracyLayerTest/0.TestForward (1 ms)
+[ RUN      ] AccuracyLayerTest/0.TestSetup
+[       OK ] AccuracyLayerTest/0.TestSetup (0 ms)
+[ RUN      ] AccuracyLayerTest/0.TestSetupTopK
+[       OK ] AccuracyLayerTest/0.TestSetupTopK (0 ms)
+[ RUN      ] AccuracyLayerTest/0.TestForwardPerClass
+[       OK ] AccuracyLayerTest/0.TestForwardPerClass (1 ms)
+[ RUN      ] AccuracyLayerTest/0.TestForwardPerClassWithIgnoreLabel
+[       OK ] AccuracyLayerTest/0.TestForwardPerClassWithIgnoreLabel (0 ms)
+[ RUN      ] AccuracyLayerTest/0.TestSetupOutputPerClass
+[       OK ] AccuracyLayerTest/0.TestSetupOutputPerClass (0 ms)
+[ RUN      ] AccuracyLayerTest/0.TestForwardWithSpatialAxes
+[       OK ] AccuracyLayerTest/0.TestForwardWithSpatialAxes (0 ms)
+[ RUN      ] AccuracyLayerTest/0.TestForwardTopK
+[       OK ] AccuracyLayerTest/0.TestForwardTopK (4 ms)
+[ RUN      ] AccuracyLayerTest/0.TestForwardIgnoreLabel
+[       OK ] AccuracyLayerTest/0.TestForwardIgnoreLabel (0 ms)
+[----------] 9 tests from AccuracyLayerTest/0 (7 ms total)
+
+[----------] 27 tests from ReductionLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] ReductionLayerTest/0.TestSetUpWithAxis1
+[       OK ] ReductionLayerTest/0.TestSetUpWithAxis1 (1 ms)
+[ RUN      ] ReductionLayerTest/0.TestAbsSumCoeff
+[       OK ] ReductionLayerTest/0.TestAbsSumCoeff (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestSum
+[       OK ] ReductionLayerTest/0.TestSum (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestSetUpWithAxis2
+[       OK ] ReductionLayerTest/0.TestSetUpWithAxis2 (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestAbsSumCoeffAxis1
+[       OK ] ReductionLayerTest/0.TestAbsSumCoeffAxis1 (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestSumOfSquaresCoeffGradient
+[       OK ] ReductionLayerTest/0.TestSumOfSquaresCoeffGradient (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestSumOfSquaresCoeff
+[       OK ] ReductionLayerTest/0.TestSumOfSquaresCoeff (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestMeanCoeffAxis1
+[       OK ] ReductionLayerTest/0.TestMeanCoeffAxis1 (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestSumCoeffAxis1
+[       OK ] ReductionLayerTest/0.TestSumCoeffAxis1 (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestAbsSumGradient
+[       OK ] ReductionLayerTest/0.TestAbsSumGradient (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestSumCoeffGradient
+[       OK ] ReductionLayerTest/0.TestSumCoeffGradient (1 ms)
+[ RUN      ] ReductionLayerTest/0.TestMeanCoeffGradient
+[       OK ] ReductionLayerTest/0.TestMeanCoeffGradient (1 ms)
+[ RUN      ] ReductionLayerTest/0.TestSumCoeffAxis1Gradient
+[       OK ] ReductionLayerTest/0.TestSumCoeffAxis1Gradient (1 ms)
+[ RUN      ] ReductionLayerTest/0.TestAbsSumCoeffAxis1Gradient
+[       OK ] ReductionLayerTest/0.TestAbsSumCoeffAxis1Gradient (2 ms)
+[ RUN      ] ReductionLayerTest/0.TestSumOfSquaresGradient
+[       OK ] ReductionLayerTest/0.TestSumOfSquaresGradient (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestSumGradient
+[       OK ] ReductionLayerTest/0.TestSumGradient (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestMeanGradient
+[       OK ] ReductionLayerTest/0.TestMeanGradient (1 ms)
+[ RUN      ] ReductionLayerTest/0.TestSumOfSquaresCoeffAxis1
+[       OK ] ReductionLayerTest/0.TestSumOfSquaresCoeffAxis1 (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestSumOfSquares
+[       OK ] ReductionLayerTest/0.TestSumOfSquares (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestMeanCoeff
+[       OK ] ReductionLayerTest/0.TestMeanCoeff (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestAbsSum
+[       OK ] ReductionLayerTest/0.TestAbsSum (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestSumOfSquaresCoeffAxis1Gradient
+[       OK ] ReductionLayerTest/0.TestSumOfSquaresCoeffAxis1Gradient (2 ms)
+[ RUN      ] ReductionLayerTest/0.TestAbsSumCoeffGradient
+[       OK ] ReductionLayerTest/0.TestAbsSumCoeffGradient (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestMeanCoeffGradientAxis1
+[       OK ] ReductionLayerTest/0.TestMeanCoeffGradientAxis1 (2 ms)
+[ RUN      ] ReductionLayerTest/0.TestMean
+[       OK ] ReductionLayerTest/0.TestMean (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestSetUp
+[       OK ] ReductionLayerTest/0.TestSetUp (0 ms)
+[ RUN      ] ReductionLayerTest/0.TestSumCoeff
+[       OK ] ReductionLayerTest/0.TestSumCoeff (0 ms)
+[----------] 27 tests from ReductionLayerTest/0 (13 ms total)
+
+[----------] 1 test from CPUStochasticPoolingLayerTest/0, where TypeParam = float
+[ RUN      ] CPUStochasticPoolingLayerTest/0.TestSetup
+[       OK ] CPUStochasticPoolingLayerTest/0.TestSetup (0 ms)
+[----------] 1 test from CPUStochasticPoolingLayerTest/0 (0 ms total)
+
+[----------] 4 tests from ConstantFillerTest/1, where TypeParam = double
+[ RUN      ] ConstantFillerTest/1.TestFill2D
+[       OK ] ConstantFillerTest/1.TestFill2D (0 ms)
+[ RUN      ] ConstantFillerTest/1.TestFill1D
+[       OK ] ConstantFillerTest/1.TestFill1D (0 ms)
+[ RUN      ] ConstantFillerTest/1.TestFill
+[       OK ] ConstantFillerTest/1.TestFill (0 ms)
+[ RUN      ] ConstantFillerTest/1.TestFill5D
+[       OK ] ConstantFillerTest/1.TestFill5D (0 ms)
+[----------] 4 tests from ConstantFillerTest/1 (0 ms total)
+
+[----------] 1 test from SolverTypeUpgradeTest
+[ RUN      ] SolverTypeUpgradeTest.TestSimple
+[       OK ] SolverTypeUpgradeTest.TestSimple (1 ms)
+[----------] 1 test from SolverTypeUpgradeTest (1 ms total)
+
+[----------] 3 tests from ThresholdLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] ThresholdLayerTest/0.TestSetup
+[       OK ] ThresholdLayerTest/0.TestSetup (0 ms)
+[ RUN      ] ThresholdLayerTest/0.Test2
+[       OK ] ThresholdLayerTest/0.Test2 (0 ms)
+[ RUN      ] ThresholdLayerTest/0.Test
+[       OK ] ThresholdLayerTest/0.Test (0 ms)
+[----------] 3 tests from ThresholdLayerTest/0 (0 ms total)
+
+[----------] 9 tests from AccuracyLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] AccuracyLayerTest/1.TestSetupTopK
+[       OK ] AccuracyLayerTest/1.TestSetupTopK (0 ms)
+[ RUN      ] AccuracyLayerTest/1.TestForwardWithSpatialAxes
+[       OK ] AccuracyLayerTest/1.TestForwardWithSpatialAxes (0 ms)
+[ RUN      ] AccuracyLayerTest/1.TestSetup
+[       OK ] AccuracyLayerTest/1.TestSetup (0 ms)
+[ RUN      ] AccuracyLayerTest/1.TestForwardIgnoreLabel
+[       OK ] AccuracyLayerTest/1.TestForwardIgnoreLabel (0 ms)
+[ RUN      ] AccuracyLayerTest/1.TestForwardPerClass
+[       OK ] AccuracyLayerTest/1.TestForwardPerClass (1 ms)
+[ RUN      ] AccuracyLayerTest/1.TestSetupOutputPerClass
+[       OK ] AccuracyLayerTest/1.TestSetupOutputPerClass (0 ms)
+[ RUN      ] AccuracyLayerTest/1.TestForwardPerClassWithIgnoreLabel
+[       OK ] AccuracyLayerTest/1.TestForwardPerClassWithIgnoreLabel (1 ms)
+[ RUN      ] AccuracyLayerTest/1.TestForwardTopK
+[       OK ] AccuracyLayerTest/1.TestForwardTopK (3 ms)
+[ RUN      ] AccuracyLayerTest/1.TestForward
+[       OK ] AccuracyLayerTest/1.TestForward (1 ms)
+[----------] 9 tests from AccuracyLayerTest/1 (7 ms total)
+
+[----------] 3 tests from SigmoidCrossEntropyLossLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] SigmoidCrossEntropyLossLayerTest/0.TestGradient
+[       OK ] SigmoidCrossEntropyLossLayerTest/0.TestGradient (1 ms)
+[ RUN      ] SigmoidCrossEntropyLossLayerTest/0.TestIgnoreGradient
+[       OK ] SigmoidCrossEntropyLossLayerTest/0.TestIgnoreGradient (0 ms)
+[ RUN      ] SigmoidCrossEntropyLossLayerTest/0.TestSigmoidCrossEntropyLoss
+[       OK ] SigmoidCrossEntropyLossLayerTest/0.TestSigmoidCrossEntropyLoss (1 ms)
+[----------] 3 tests from SigmoidCrossEntropyLossLayerTest/0 (2 ms total)
+
+[----------] 15 tests from ConvolutionLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] ConvolutionLayerTest/1.Test1x1Convolution
+[       OK ] ConvolutionLayerTest/1.Test1x1Convolution (1 ms)
+[ RUN      ] ConvolutionLayerTest/1.Test0DConvolution
+[       OK ] ConvolutionLayerTest/1.Test0DConvolution (0 ms)
+[ RUN      ] ConvolutionLayerTest/1.TestSimple3DConvolution
+[       OK ] ConvolutionLayerTest/1.TestSimple3DConvolution (2 ms)
+[ RUN      ] ConvolutionLayerTest/1.TestNDAgainst2D
+[       OK ] ConvolutionLayerTest/1.TestNDAgainst2D (426 ms)
+[ RUN      ] ConvolutionLayerTest/1.TestGradientGroup
+[       OK ] ConvolutionLayerTest/1.TestGradientGroup (26 ms)
+[ RUN      ] ConvolutionLayerTest/1.Test1x1Gradient
+[       OK ] ConvolutionLayerTest/1.Test1x1Gradient (784 ms)
+[ RUN      ] ConvolutionLayerTest/1.TestDilatedConvolution
+[       OK ] ConvolutionLayerTest/1.TestDilatedConvolution (3 ms)
+[ RUN      ] ConvolutionLayerTest/1.TestDilatedGradient
+[       OK ] ConvolutionLayerTest/1.TestDilatedGradient (19 ms)
+[ RUN      ] ConvolutionLayerTest/1.TestGradient3D
+[       OK ] ConvolutionLayerTest/1.TestGradient3D (731 ms)
+[ RUN      ] ConvolutionLayerTest/1.TestSimpleConvolutionGroup
+[       OK ] ConvolutionLayerTest/1.TestSimpleConvolutionGroup (0 ms)
+[ RUN      ] ConvolutionLayerTest/1.TestSetup
+[       OK ] ConvolutionLayerTest/1.TestSetup (0 ms)
+[ RUN      ] ConvolutionLayerTest/1.TestDilated3DConvolution
+[       OK ] ConvolutionLayerTest/1.TestDilated3DConvolution (15 ms)
+[ RUN      ] ConvolutionLayerTest/1.TestSobelConvolution
+[       OK ] ConvolutionLayerTest/1.TestSobelConvolution (0 ms)
+[ RUN      ] ConvolutionLayerTest/1.TestSimpleConvolution
+[       OK ] ConvolutionLayerTest/1.TestSimpleConvolution (1 ms)
+[ RUN      ] ConvolutionLayerTest/1.TestGradient
+[       OK ] ConvolutionLayerTest/1.TestGradient (79 ms)
+[----------] 15 tests from ConvolutionLayerTest/1 (2087 ms total)
+
+[----------] 9 tests from AdaGradSolverTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] AdaGradSolverTest/1.TestAdaGradLeastSquaresUpdate
+[       OK ] AdaGradSolverTest/1.TestAdaGradLeastSquaresUpdate (16 ms)
+[ RUN      ] AdaGradSolverTest/1.TestAdaGradLeastSquaresUpdateWithEverythingShare
+[       OK ] AdaGradSolverTest/1.TestAdaGradLeastSquaresUpdateWithEverythingShare (85 ms)
+[ RUN      ] AdaGradSolverTest/1.TestAdaGradLeastSquaresUpdateLROneHundredth
+[       OK ] AdaGradSolverTest/1.TestAdaGradLeastSquaresUpdateLROneHundredth (16 ms)
+[ RUN      ] AdaGradSolverTest/1.TestLeastSquaresUpdateWithEverythingAccumShare
+[       OK ] AdaGradSolverTest/1.TestLeastSquaresUpdateWithEverythingAccumShare (5 ms)
+[ RUN      ] AdaGradSolverTest/1.TestAdaGradLeastSquaresUpdateWithWeightDecay
+[       OK ] AdaGradSolverTest/1.TestAdaGradLeastSquaresUpdateWithWeightDecay (16 ms)
+[ RUN      ] AdaGradSolverTest/1.TestLeastSquaresUpdateWithEverythingAccum
+[       OK ] AdaGradSolverTest/1.TestLeastSquaresUpdateWithEverythingAccum (4 ms)
+[ RUN      ] AdaGradSolverTest/1.TestAdaGradLeastSquaresUpdateWithEverything
+[       OK ] AdaGradSolverTest/1.TestAdaGradLeastSquaresUpdateWithEverything (79 ms)
+[ RUN      ] AdaGradSolverTest/1.TestSnapshotShare
+[       OK ] AdaGradSolverTest/1.TestSnapshotShare (33 ms)
+[ RUN      ] AdaGradSolverTest/1.TestSnapshot
+[       OK ] AdaGradSolverTest/1.TestSnapshot (63 ms)
+[----------] 9 tests from AdaGradSolverTest/1 (318 ms total)
+
+[----------] 12 tests from NesterovSolverTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] NesterovSolverTest/1.TestLeastSquaresUpdateWithEverythingAccum
+[       OK ] NesterovSolverTest/1.TestLeastSquaresUpdateWithEverythingAccum (4 ms)
+[ RUN      ] NesterovSolverTest/1.TestNesterovLeastSquaresUpdateWithEverything
+[       OK ] NesterovSolverTest/1.TestNesterovLeastSquaresUpdateWithEverything (75 ms)
+[ RUN      ] NesterovSolverTest/1.TestSnapshot
+[       OK ] NesterovSolverTest/1.TestSnapshot (24 ms)
+[ RUN      ] NesterovSolverTest/1.TestNesterovLeastSquaresUpdateWithMomentum
+[       OK ] NesterovSolverTest/1.TestNesterovLeastSquaresUpdateWithMomentum (31 ms)
+[ RUN      ] NesterovSolverTest/1.TestNesterovLeastSquaresUpdateWithEverythingShare
+[       OK ] NesterovSolverTest/1.TestNesterovLeastSquaresUpdateWithEverythingShare (84 ms)
+[ RUN      ] NesterovSolverTest/1.TestNesterovLeastSquaresUpdateWithWeightDecayMultiIter
+[       OK ] NesterovSolverTest/1.TestNesterovLeastSquaresUpdateWithWeightDecayMultiIter (77 ms)
+[ RUN      ] NesterovSolverTest/1.TestLeastSquaresUpdateWithMomentumMultiIter
+[       OK ] NesterovSolverTest/1.TestLeastSquaresUpdateWithMomentumMultiIter (78 ms)
+[ RUN      ] NesterovSolverTest/1.TestLeastSquaresUpdateWithEverythingAccumShare
+[       OK ] NesterovSolverTest/1.TestLeastSquaresUpdateWithEverythingAccumShare (5 ms)
+[ RUN      ] NesterovSolverTest/1.TestNesterovLeastSquaresUpdateWithWeightDecay
+[       OK ] NesterovSolverTest/1.TestNesterovLeastSquaresUpdateWithWeightDecay (22 ms)
+[ RUN      ] NesterovSolverTest/1.TestSnapshotShare
+[       OK ] NesterovSolverTest/1.TestSnapshotShare (34 ms)
+[ RUN      ] NesterovSolverTest/1.TestNesterovLeastSquaresUpdate
+[       OK ] NesterovSolverTest/1.TestNesterovLeastSquaresUpdate (16 ms)
+[ RUN      ] NesterovSolverTest/1.TestNesterovLeastSquaresUpdateLROneHundredth
+[       OK ] NesterovSolverTest/1.TestNesterovLeastSquaresUpdateLROneHundredth (15 ms)
+[----------] 12 tests from NesterovSolverTest/1 (465 ms total)
+
+[----------] 4 tests from PositiveUnitballFillerTest/1, where TypeParam = double
+[ RUN      ] PositiveUnitballFillerTest/1.TestFill2D
+[       OK ] PositiveUnitballFillerTest/1.TestFill2D (0 ms)
+[ RUN      ] PositiveUnitballFillerTest/1.TestFill1D
+[       OK ] PositiveUnitballFillerTest/1.TestFill1D (0 ms)
+[ RUN      ] PositiveUnitballFillerTest/1.TestFill
+[       OK ] PositiveUnitballFillerTest/1.TestFill (0 ms)
+[ RUN      ] PositiveUnitballFillerTest/1.TestFill5D
+[       OK ] PositiveUnitballFillerTest/1.TestFill5D (0 ms)
+[----------] 4 tests from PositiveUnitballFillerTest/1 (1 ms total)
+
+[----------] 9 tests from LSTMLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] LSTMLayerTest/1.TestGradientNonZeroCont
+[       OK ] LSTMLayerTest/1.TestGradientNonZeroCont (315 ms)
+[ RUN      ] LSTMLayerTest/1.TestLSTMUnitSetUp
+[       OK ] LSTMLayerTest/1.TestLSTMUnitSetUp (0 ms)
+[ RUN      ] LSTMLayerTest/1.TestLSTMUnitGradient
+[       OK ] LSTMLayerTest/1.TestLSTMUnitGradient (59 ms)
+[ RUN      ] LSTMLayerTest/1.TestGradientNonZeroContBufferSize2
+[       OK ] LSTMLayerTest/1.TestGradientNonZeroContBufferSize2 (575 ms)
+[ RUN      ] LSTMLayerTest/1.TestGradientNonZeroContBufferSize2WithStaticInput
+[       OK ] LSTMLayerTest/1.TestGradientNonZeroContBufferSize2WithStaticInput (3437 ms)
+[ RUN      ] LSTMLayerTest/1.TestForward
+[       OK ] LSTMLayerTest/1.TestForward (8 ms)
+[ RUN      ] LSTMLayerTest/1.TestLSTMUnitGradientNonZeroCont
+[       OK ] LSTMLayerTest/1.TestLSTMUnitGradientNonZeroCont (58 ms)
+[ RUN      ] LSTMLayerTest/1.TestGradient
+[       OK ] LSTMLayerTest/1.TestGradient (296 ms)
+[ RUN      ] LSTMLayerTest/1.TestSetUp
+[       OK ] LSTMLayerTest/1.TestSetUp (2 ms)
+[----------] 9 tests from LSTMLayerTest/1 (4750 ms total)
+
+[----------] 2 tests from SoftmaxLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] SoftmaxLayerTest/0.TestForward
+[       OK ] SoftmaxLayerTest/0.TestForward (0 ms)
+[ RUN      ] SoftmaxLayerTest/0.TestGradient
+[       OK ] SoftmaxLayerTest/0.TestGradient (190 ms)
+[----------] 2 tests from SoftmaxLayerTest/0 (190 ms total)
+
+[----------] 10 tests from EltwiseLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] EltwiseLayerTest/1.TestSum
+[       OK ] EltwiseLayerTest/1.TestSum (0 ms)
+[ RUN      ] EltwiseLayerTest/1.TestStableProdGradient
+[       OK ] EltwiseLayerTest/1.TestStableProdGradient (4 ms)
+[ RUN      ] EltwiseLayerTest/1.TestMax
+[       OK ] EltwiseLayerTest/1.TestMax (0 ms)
+[ RUN      ] EltwiseLayerTest/1.TestUnstableProdGradient
+[       OK ] EltwiseLayerTest/1.TestUnstableProdGradient (4 ms)
+[ RUN      ] EltwiseLayerTest/1.TestMaxGradient
+[       OK ] EltwiseLayerTest/1.TestMaxGradient (5 ms)
+[ RUN      ] EltwiseLayerTest/1.TestSumGradient
+[       OK ] EltwiseLayerTest/1.TestSumGradient (5 ms)
+[ RUN      ] EltwiseLayerTest/1.TestSumCoeffGradient
+[       OK ] EltwiseLayerTest/1.TestSumCoeffGradient (4 ms)
+[ RUN      ] EltwiseLayerTest/1.TestSumCoeff
+[       OK ] EltwiseLayerTest/1.TestSumCoeff (0 ms)
+[ RUN      ] EltwiseLayerTest/1.TestSetUp
+[       OK ] EltwiseLayerTest/1.TestSetUp (0 ms)
+[ RUN      ] EltwiseLayerTest/1.TestProd
+[       OK ] EltwiseLayerTest/1.TestProd (0 ms)
+[----------] 10 tests from EltwiseLayerTest/1 (24 ms total)
+
+[----------] 3 tests from SyncedMemoryTest
+[ RUN      ] SyncedMemoryTest.TestInitialization
+[       OK ] SyncedMemoryTest.TestInitialization (0 ms)
+[ RUN      ] SyncedMemoryTest.TestAllocationCPU
+[       OK ] SyncedMemoryTest.TestAllocationCPU (0 ms)
+[ RUN      ] SyncedMemoryTest.TestCPUWrite
+[       OK ] SyncedMemoryTest.TestCPUWrite (0 ms)
+[----------] 3 tests from SyncedMemoryTest (0 ms total)
+
+[----------] 4 tests from GaussianFillerTest/1, where TypeParam = double
+[ RUN      ] GaussianFillerTest/1.TestFill
+[       OK ] GaussianFillerTest/1.TestFill (0 ms)
+[ RUN      ] GaussianFillerTest/1.TestFill2D
+[       OK ] GaussianFillerTest/1.TestFill2D (0 ms)
+[ RUN      ] GaussianFillerTest/1.TestFill5D
+[       OK ] GaussianFillerTest/1.TestFill5D (0 ms)
+[ RUN      ] GaussianFillerTest/1.TestFill1D
+[       OK ] GaussianFillerTest/1.TestFill1D (1 ms)
+[----------] 4 tests from GaussianFillerTest/1 (2 ms total)
+
+[----------] 1 test from SolverTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] SolverTest/1.TestInitTrainTestNets
+[       OK ] SolverTest/1.TestInitTrainTestNets (2 ms)
+[----------] 1 test from SolverTest/1 (2 ms total)
+
+[----------] 9 tests from LSTMLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] LSTMLayerTest/0.TestSetUp
+[       OK ] LSTMLayerTest/0.TestSetUp (3 ms)
+[ RUN      ] LSTMLayerTest/0.TestLSTMUnitSetUp
+[       OK ] LSTMLayerTest/0.TestLSTMUnitSetUp (0 ms)
+[ RUN      ] LSTMLayerTest/0.TestLSTMUnitGradient
+[       OK ] LSTMLayerTest/0.TestLSTMUnitGradient (50 ms)
+[ RUN      ] LSTMLayerTest/0.TestGradientNonZeroContBufferSize2WithStaticInput
+[       OK ] LSTMLayerTest/0.TestGradientNonZeroContBufferSize2WithStaticInput (2960 ms)
+[ RUN      ] LSTMLayerTest/0.TestGradientNonZeroContBufferSize2
+[       OK ] LSTMLayerTest/0.TestGradientNonZeroContBufferSize2 (499 ms)
+[ RUN      ] LSTMLayerTest/0.TestForward
+[       OK ] LSTMLayerTest/0.TestForward (8 ms)
+[ RUN      ] LSTMLayerTest/0.TestGradientNonZeroCont
+[       OK ] LSTMLayerTest/0.TestGradientNonZeroCont (304 ms)
+[ RUN      ] LSTMLayerTest/0.TestGradient
+[       OK ] LSTMLayerTest/0.TestGradient (297 ms)
+[ RUN      ] LSTMLayerTest/0.TestLSTMUnitGradientNonZeroCont
+[       OK ] LSTMLayerTest/0.TestLSTMUnitGradientNonZeroCont (50 ms)
+[----------] 9 tests from LSTMLayerTest/0 (4171 ms total)
+
+[----------] 22 tests from ScaleLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] ScaleLayerTest/1.TestGradientBroadcastMiddleWithParam
+[       OK ] ScaleLayerTest/1.TestGradientBroadcastMiddleWithParam (232 ms)
+[ RUN      ] ScaleLayerTest/1.TestForwardScaleAxis2
+[       OK ] ScaleLayerTest/1.TestForwardScaleAxis2 (0 ms)
+[ RUN      ] ScaleLayerTest/1.TestForwardEltwiseWithParam
+[       OK ] ScaleLayerTest/1.TestForwardEltwiseWithParam (0 ms)
+[ RUN      ] ScaleLayerTest/1.TestForwardBroadcastMiddle
+[       OK ] ScaleLayerTest/1.TestForwardBroadcastMiddle (0 ms)
+[ RUN      ] ScaleLayerTest/1.TestGradientBroadcastEnd
+[       OK ] ScaleLayerTest/1.TestGradientBroadcastEnd (798 ms)
+[ RUN      ] ScaleLayerTest/1.TestForwardBroadcastMiddleWithParamAndBias
+[       OK ] ScaleLayerTest/1.TestForwardBroadcastMiddleWithParamAndBias (0 ms)
+[ RUN      ] ScaleLayerTest/1.TestForwardEltwiseInPlace
+[       OK ] ScaleLayerTest/1.TestForwardEltwiseInPlace (0 ms)
+[ RUN      ] ScaleLayerTest/1.TestGradientScaleAxis2
+[       OK ] ScaleLayerTest/1.TestGradientScaleAxis2 (103 ms)
+[ RUN      ] ScaleLayerTest/1.TestForwardScale
+[       OK ] ScaleLayerTest/1.TestForwardScale (0 ms)
+[ RUN      ] ScaleLayerTest/1.TestForwardBroadcastMiddleWithParam
+[       OK ] ScaleLayerTest/1.TestForwardBroadcastMiddleWithParam (0 ms)
+[ RUN      ] ScaleLayerTest/1.TestBackwardBroadcastMiddleInPlace
+[       OK ] ScaleLayerTest/1.TestBackwardBroadcastMiddleInPlace (0 ms)
+[ RUN      ] ScaleLayerTest/1.TestForwardBroadcastEnd
+[       OK ] ScaleLayerTest/1.TestForwardBroadcastEnd (0 ms)
+[ RUN      ] ScaleLayerTest/1.TestGradientEltwise
+[       OK ] ScaleLayerTest/1.TestGradientEltwise (18 ms)
+[ RUN      ] ScaleLayerTest/1.TestGradientBroadcastMiddle
+[       OK ] ScaleLayerTest/1.TestGradientBroadcastMiddle (233 ms)
+[ RUN      ] ScaleLayerTest/1.TestGradientScaleAndBias
+[       OK ] ScaleLayerTest/1.TestGradientScaleAndBias (120 ms)
+[ RUN      ] ScaleLayerTest/1.TestGradientScale
+[       OK ] ScaleLayerTest/1.TestGradientScale (112 ms)
+[ RUN      ] ScaleLayerTest/1.TestForwardEltwise
+[       OK ] ScaleLayerTest/1.TestForwardEltwise (0 ms)
+[ RUN      ] ScaleLayerTest/1.TestForwardBroadcastMiddleInPlace
+[       OK ] ScaleLayerTest/1.TestForwardBroadcastMiddleInPlace (0 ms)
+[ RUN      ] ScaleLayerTest/1.TestForwardBroadcastBegin
+[       OK ] ScaleLayerTest/1.TestForwardBroadcastBegin (0 ms)
+[ RUN      ] ScaleLayerTest/1.TestBackwardEltwiseInPlace
+[       OK ] ScaleLayerTest/1.TestBackwardEltwiseInPlace (1 ms)
+[ RUN      ] ScaleLayerTest/1.TestGradientBroadcastBegin
+[       OK ] ScaleLayerTest/1.TestGradientBroadcastBegin (214 ms)
+[ RUN      ] ScaleLayerTest/1.TestGradientEltwiseWithParam
+[       OK ] ScaleLayerTest/1.TestGradientEltwiseWithParam (2497 ms)
+[----------] 22 tests from ScaleLayerTest/1 (4329 ms total)
+
+[----------] 3 tests from DummyDataLayerTest/1, where TypeParam = double
+[ RUN      ] DummyDataLayerTest/1.TestOneTopConstant
+[       OK ] DummyDataLayerTest/1.TestOneTopConstant (0 ms)
+[ RUN      ] DummyDataLayerTest/1.TestThreeTopConstantGaussianConstant
+[       OK ] DummyDataLayerTest/1.TestThreeTopConstantGaussianConstant (0 ms)
+[ RUN      ] DummyDataLayerTest/1.TestTwoTopConstant
+[       OK ] DummyDataLayerTest/1.TestTwoTopConstant (0 ms)
+[----------] 3 tests from DummyDataLayerTest/1 (0 ms total)
+
+[----------] 6 tests from MVNLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] MVNLayerTest/1.TestForward
+[       OK ] MVNLayerTest/1.TestForward (0 ms)
+[ RUN      ] MVNLayerTest/1.TestForwardAcrossChannels
+[       OK ] MVNLayerTest/1.TestForwardAcrossChannels (1 ms)
+[ RUN      ] MVNLayerTest/1.TestForwardMeanOnly
+[       OK ] MVNLayerTest/1.TestForwardMeanOnly (0 ms)
+[ RUN      ] MVNLayerTest/1.TestGradientMeanOnly
+[       OK ] MVNLayerTest/1.TestGradientMeanOnly (130 ms)
+[ RUN      ] MVNLayerTest/1.TestGradient
+[       OK ] MVNLayerTest/1.TestGradient (269 ms)
+[ RUN      ] MVNLayerTest/1.TestGradientAcrossChannels
+[       OK ] MVNLayerTest/1.TestGradientAcrossChannels (331 ms)
+[----------] 6 tests from MVNLayerTest/1 (732 ms total)
+
+[----------] 3 tests from SplitLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] SplitLayerTest/0.Test
+[       OK ] SplitLayerTest/0.Test (0 ms)
+[ RUN      ] SplitLayerTest/0.TestGradient
+[       OK ] SplitLayerTest/0.TestGradient (6 ms)
+[ RUN      ] SplitLayerTest/0.TestSetup
+[       OK ] SplitLayerTest/0.TestSetup (0 ms)
+[----------] 3 tests from SplitLayerTest/0 (6 ms total)
+
+[----------] 12 tests from ArgMaxLayerTest/0, where TypeParam = float
+[ RUN      ] ArgMaxLayerTest/0.TestCPUMaxVal
+[       OK ] ArgMaxLayerTest/0.TestCPUMaxVal (1 ms)
+[ RUN      ] ArgMaxLayerTest/0.TestSetupAxisNegativeIndexing
+[       OK ] ArgMaxLayerTest/0.TestSetupAxisNegativeIndexing (1 ms)
+[ RUN      ] ArgMaxLayerTest/0.TestSetup
+[       OK ] ArgMaxLayerTest/0.TestSetup (1 ms)
+[ RUN      ] ArgMaxLayerTest/0.TestSetupMaxVal
+[       OK ] ArgMaxLayerTest/0.TestSetupMaxVal (1 ms)
+[ RUN      ] ArgMaxLayerTest/0.TestCPUAxisTopK
+[       OK ] ArgMaxLayerTest/0.TestCPUAxisTopK (39 ms)
+[ RUN      ] ArgMaxLayerTest/0.TestCPUAxis
+[       OK ] ArgMaxLayerTest/0.TestCPUAxis (9 ms)
+[ RUN      ] ArgMaxLayerTest/0.TestSetupAxis
+[       OK ] ArgMaxLayerTest/0.TestSetupAxis (1 ms)
+[ RUN      ] ArgMaxLayerTest/0.TestCPUAxisMaxValTopK
+[       OK ] ArgMaxLayerTest/0.TestCPUAxisMaxValTopK (38 ms)
+[ RUN      ] ArgMaxLayerTest/0.TestSetupAxisMaxVal
+[       OK ] ArgMaxLayerTest/0.TestSetupAxisMaxVal (0 ms)
+[ RUN      ] ArgMaxLayerTest/0.TestCPUTopK
+[       OK ] ArgMaxLayerTest/0.TestCPUTopK (1 ms)
+[ RUN      ] ArgMaxLayerTest/0.TestCPUMaxValTopK
+[       OK ] ArgMaxLayerTest/0.TestCPUMaxValTopK (1 ms)
+[ RUN      ] ArgMaxLayerTest/0.TestCPU
+[       OK ] ArgMaxLayerTest/0.TestCPU (1 ms)
+[----------] 12 tests from ArgMaxLayerTest/0 (96 ms total)
+
+[----------] 4 tests from BlobSimpleTest/0, where TypeParam = float
+[ RUN      ] BlobSimpleTest/0.TestReshapeZero
+[       OK ] BlobSimpleTest/0.TestReshapeZero (0 ms)
+[ RUN      ] BlobSimpleTest/0.TestReshape
+[       OK ] BlobSimpleTest/0.TestReshape (0 ms)
+[ RUN      ] BlobSimpleTest/0.TestInitialization
+[       OK ] BlobSimpleTest/0.TestInitialization (0 ms)
+[ RUN      ] BlobSimpleTest/0.TestLegacyBlobProtoShapeEquals
+[       OK ] BlobSimpleTest/0.TestLegacyBlobProtoShapeEquals (0 ms)
+[----------] 4 tests from BlobSimpleTest/0 (0 ms total)
+
+[----------] 3 tests from TanHLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] TanHLayerTest/0.TestTanHGradient
+[       OK ] TanHLayerTest/0.TestTanHGradient (4 ms)
+[ RUN      ] TanHLayerTest/0.TestTanHOverflow
+[       OK ] TanHLayerTest/0.TestTanHOverflow (0 ms)
+[ RUN      ] TanHLayerTest/0.TestTanH
+[       OK ] TanHLayerTest/0.TestTanH (0 ms)
+[----------] 3 tests from TanHLayerTest/0 (4 ms total)
+
+[----------] 1 test from LayerFactoryTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] LayerFactoryTest/0.TestCreateLayer
+[       OK ] LayerFactoryTest/0.TestCreateLayer (57 ms)
+[----------] 1 test from LayerFactoryTest/0 (58 ms total)
+
+[----------] 5 tests from DBTest/1, where TypeParam = caffe::TypeLMDB
+[ RUN      ] DBTest/1.TestSeekToFirst
+[       OK ] DBTest/1.TestSeekToFirst (34 ms)
+[ RUN      ] DBTest/1.TestKeyValue
+[       OK ] DBTest/1.TestKeyValue (32 ms)
+[ RUN      ] DBTest/1.TestGetDB
+[       OK ] DBTest/1.TestGetDB (35 ms)
+[ RUN      ] DBTest/1.TestNext
+[       OK ] DBTest/1.TestNext (34 ms)
+[ RUN      ] DBTest/1.TestWrite
+[       OK ] DBTest/1.TestWrite (48 ms)
+[----------] 5 tests from DBTest/1 (183 ms total)
+
+[----------] 11 tests from RandomNumberGeneratorTest/1, where TypeParam = double
+[ RUN      ] RandomNumberGeneratorTest/1.TestRngGaussianTimesBernoulli
+[       OK ] RandomNumberGeneratorTest/1.TestRngGaussianTimesBernoulli (0 ms)
+[ RUN      ] RandomNumberGeneratorTest/1.TestRngUniform2
+[       OK ] RandomNumberGeneratorTest/1.TestRngUniform2 (0 ms)
+[ RUN      ] RandomNumberGeneratorTest/1.TestRngGaussian2
+[       OK ] RandomNumberGeneratorTest/1.TestRngGaussian2 (1 ms)
+[ RUN      ] RandomNumberGeneratorTest/1.TestRngBernoulli
+[       OK ] RandomNumberGeneratorTest/1.TestRngBernoulli (0 ms)
+[ RUN      ] RandomNumberGeneratorTest/1.TestRngBernoulli2
+[       OK ] RandomNumberGeneratorTest/1.TestRngBernoulli2 (0 ms)
+[ RUN      ] RandomNumberGeneratorTest/1.TestRngUniformTimesUniform
+[       OK ] RandomNumberGeneratorTest/1.TestRngUniformTimesUniform (0 ms)
+[ RUN      ] RandomNumberGeneratorTest/1.TestRngBernoulliTimesBernoulli
+[       OK ] RandomNumberGeneratorTest/1.TestRngBernoulliTimesBernoulli (0 ms)
+[ RUN      ] RandomNumberGeneratorTest/1.TestRngGaussian
+[       OK ] RandomNumberGeneratorTest/1.TestRngGaussian (0 ms)
+[ RUN      ] RandomNumberGeneratorTest/1.TestRngUniform
+[       OK ] RandomNumberGeneratorTest/1.TestRngUniform (0 ms)
+[ RUN      ] RandomNumberGeneratorTest/1.TestRngGaussianTimesGaussian
+[       OK ] RandomNumberGeneratorTest/1.TestRngGaussianTimesGaussian (1 ms)
+[ RUN      ] RandomNumberGeneratorTest/1.TestRngUniformTimesBernoulli
+[       OK ] RandomNumberGeneratorTest/1.TestRngUniformTimesBernoulli (0 ms)
+[----------] 11 tests from RandomNumberGeneratorTest/1 (4 ms total)
+
+[----------] 8 tests from Im2colLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] Im2colLayerTest/1.TestSetup
+[       OK ] Im2colLayerTest/1.TestSetup (0 ms)
+[ RUN      ] Im2colLayerTest/1.TestGradientForceND
+[       OK ] Im2colLayerTest/1.TestGradientForceND (580 ms)
+[ RUN      ] Im2colLayerTest/1.TestForward
+[       OK ] Im2colLayerTest/1.TestForward (0 ms)
+[ RUN      ] Im2colLayerTest/1.TestDilatedGradientForceND
+[       OK ] Im2colLayerTest/1.TestDilatedGradientForceND (1767 ms)
+[ RUN      ] Im2colLayerTest/1.TestGradient
+[       OK ] Im2colLayerTest/1.TestGradient (389 ms)
+[ RUN      ] Im2colLayerTest/1.TestDilatedGradient
+[       OK ] Im2colLayerTest/1.TestDilatedGradient (943 ms)
+[ RUN      ] Im2colLayerTest/1.TestRect
+[       OK ] Im2colLayerTest/1.TestRect (0 ms)
+[ RUN      ] Im2colLayerTest/1.TestRectGradient
+[       OK ] Im2colLayerTest/1.TestRectGradient (259 ms)
+[----------] 8 tests from Im2colLayerTest/1 (3939 ms total)
+
+[----------] 5 tests from SPPLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] SPPLayerTest/1.TestSetup
+[       OK ] SPPLayerTest/1.TestSetup (1 ms)
+[ RUN      ] SPPLayerTest/1.TestEqualOutputDims2
+[       OK ] SPPLayerTest/1.TestEqualOutputDims2 (0 ms)
+[ RUN      ] SPPLayerTest/1.TestGradient
+[       OK ] SPPLayerTest/1.TestGradient (2746 ms)
+[ RUN      ] SPPLayerTest/1.TestForwardBackward
+[       OK ] SPPLayerTest/1.TestForwardBackward (0 ms)
+[ RUN      ] SPPLayerTest/1.TestEqualOutputDims
+[       OK ] SPPLayerTest/1.TestEqualOutputDims (0 ms)
+[----------] 5 tests from SPPLayerTest/1 (2747 ms total)
+
+[----------] 8 tests from SliceLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] SliceLayerTest/1.TestSetupChannels
+[       OK ] SliceLayerTest/1.TestSetupChannels (0 ms)
+[ RUN      ] SliceLayerTest/1.TestSliceAcrossNum
+[       OK ] SliceLayerTest/1.TestSliceAcrossNum (0 ms)
+[ RUN      ] SliceLayerTest/1.TestGradientTrivial
+[       OK ] SliceLayerTest/1.TestGradientTrivial (12 ms)
+[ RUN      ] SliceLayerTest/1.TestGradientAcrossChannels
+[       OK ] SliceLayerTest/1.TestGradientAcrossChannels (44 ms)
+[ RUN      ] SliceLayerTest/1.TestGradientAcrossNum
+[       OK ] SliceLayerTest/1.TestGradientAcrossNum (39 ms)
+[ RUN      ] SliceLayerTest/1.TestTrivialSlice
+[       OK ] SliceLayerTest/1.TestTrivialSlice (0 ms)
+[ RUN      ] SliceLayerTest/1.TestSliceAcrossChannels
+[       OK ] SliceLayerTest/1.TestSliceAcrossChannels (0 ms)
+[ RUN      ] SliceLayerTest/1.TestSetupNum
+[       OK ] SliceLayerTest/1.TestSetupNum (0 ms)
+[----------] 8 tests from SliceLayerTest/1 (95 ms total)
+
+[----------] 3 tests from BatchNormLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] BatchNormLayerTest/1.TestGradient
+[       OK ] BatchNormLayerTest/1.TestGradient (224 ms)
+[ RUN      ] BatchNormLayerTest/1.TestForward
+[       OK ] BatchNormLayerTest/1.TestForward (0 ms)
+[ RUN      ] BatchNormLayerTest/1.TestForwardInplace
+[       OK ] BatchNormLayerTest/1.TestForwardInplace (0 ms)
+[----------] 3 tests from BatchNormLayerTest/1 (225 ms total)
+
+[----------] 7 tests from TileLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] TileLayerTest/0.TestTrivialSetup
+[       OK ] TileLayerTest/0.TestTrivialSetup (0 ms)
+[ RUN      ] TileLayerTest/0.TestForwardNum
+[       OK ] TileLayerTest/0.TestForwardNum (1 ms)
+[ RUN      ] TileLayerTest/0.TestSetup
+[       OK ] TileLayerTest/0.TestSetup (0 ms)
+[ RUN      ] TileLayerTest/0.TestTrivialGradient
+[       OK ] TileLayerTest/0.TestTrivialGradient (80 ms)
+[ RUN      ] TileLayerTest/0.TestForwardChannels
+[       OK ] TileLayerTest/0.TestForwardChannels (0 ms)
+[ RUN      ] TileLayerTest/0.TestGradientChannels
+[       OK ] TileLayerTest/0.TestGradientChannels (268 ms)
+[ RUN      ] TileLayerTest/0.TestGradientNum
+[       OK ] TileLayerTest/0.TestGradientNum (253 ms)
+[----------] 7 tests from TileLayerTest/0 (603 ms total)
+
+[----------] 2 tests from BilinearFillerTest/1, where TypeParam = double
+[ RUN      ] BilinearFillerTest/1.TestFillOdd
+[       OK ] BilinearFillerTest/1.TestFillOdd (14 ms)
+[ RUN      ] BilinearFillerTest/1.TestFillEven
+[       OK ] BilinearFillerTest/1.TestFillEven (10 ms)
+[----------] 2 tests from BilinearFillerTest/1 (24 ms total)
+
+[----------] 3 tests from SigmoidCrossEntropyLossLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] SigmoidCrossEntropyLossLayerTest/1.TestGradient
+[       OK ] SigmoidCrossEntropyLossLayerTest/1.TestGradient (1 ms)
+[ RUN      ] SigmoidCrossEntropyLossLayerTest/1.TestIgnoreGradient
+[       OK ] SigmoidCrossEntropyLossLayerTest/1.TestIgnoreGradient (0 ms)
+[ RUN      ] SigmoidCrossEntropyLossLayerTest/1.TestSigmoidCrossEntropyLoss
+[       OK ] SigmoidCrossEntropyLossLayerTest/1.TestSigmoidCrossEntropyLoss (3 ms)
+[----------] 3 tests from SigmoidCrossEntropyLossLayerTest/1 (4 ms total)
+
+[----------] 6 tests from MVNLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] MVNLayerTest/0.TestForwardMeanOnly
+[       OK ] MVNLayerTest/0.TestForwardMeanOnly (0 ms)
+[ RUN      ] MVNLayerTest/0.TestGradient
+[       OK ] MVNLayerTest/0.TestGradient (346 ms)
+[ RUN      ] MVNLayerTest/0.TestForward
+[       OK ] MVNLayerTest/0.TestForward (0 ms)
+[ RUN      ] MVNLayerTest/0.TestGradientAcrossChannels
+[       OK ] MVNLayerTest/0.TestGradientAcrossChannels (278 ms)
+[ RUN      ] MVNLayerTest/0.TestForwardAcrossChannels
+[       OK ] MVNLayerTest/0.TestForwardAcrossChannels (0 ms)
+[ RUN      ] MVNLayerTest/0.TestGradientMeanOnly
+[       OK ] MVNLayerTest/0.TestGradientMeanOnly (131 ms)
+[----------] 6 tests from MVNLayerTest/0 (755 ms total)
+
+[----------] 1 test from CPUStochasticPoolingLayerTest/1, where TypeParam = double
+[ RUN      ] CPUStochasticPoolingLayerTest/1.TestSetup
+[       OK ] CPUStochasticPoolingLayerTest/1.TestSetup (0 ms)
+[----------] 1 test from CPUStochasticPoolingLayerTest/1 (0 ms total)
+
+[----------] 2 tests from HDF5DataLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] HDF5DataLayerTest/1.TestRead
+[       OK ] HDF5DataLayerTest/1.TestRead (7 ms)
+[ RUN      ] HDF5DataLayerTest/1.TestSkip
+[       OK ] HDF5DataLayerTest/1.TestSkip (27 ms)
+[----------] 2 tests from HDF5DataLayerTest/1 (36 ms total)
+
+[----------] 11 tests from PoolingLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] PoolingLayerTest/0.TestSetupGlobalPooling
+[       OK ] PoolingLayerTest/0.TestSetupGlobalPooling (0 ms)
+[ RUN      ] PoolingLayerTest/0.TestForwardAve
+[       OK ] PoolingLayerTest/0.TestForwardAve (0 ms)
+[ RUN      ] PoolingLayerTest/0.TestSetupPadded
+[       OK ] PoolingLayerTest/0.TestSetupPadded (0 ms)
+[ RUN      ] PoolingLayerTest/0.TestGradientMax
+[       OK ] PoolingLayerTest/0.TestGradientMax (891 ms)
+[ RUN      ] PoolingLayerTest/0.TestForwardMax
+[       OK ] PoolingLayerTest/0.TestForwardMax (0 ms)
+[ RUN      ] PoolingLayerTest/0.TestGradientMaxTopMask
+[       OK ] PoolingLayerTest/0.TestGradientMaxTopMask (730 ms)
+[ RUN      ] PoolingLayerTest/0.TestForwardMaxPadded
+[       OK ] PoolingLayerTest/0.TestForwardMaxPadded (0 ms)
+[ RUN      ] PoolingLayerTest/0.TestGradientAve
+[       OK ] PoolingLayerTest/0.TestGradientAve (237 ms)
+[ RUN      ] PoolingLayerTest/0.TestGradientAvePadded
+[       OK ] PoolingLayerTest/0.TestGradientAvePadded (902 ms)
+[ RUN      ] PoolingLayerTest/0.TestSetup
+[       OK ] PoolingLayerTest/0.TestSetup (0 ms)
+[ RUN      ] PoolingLayerTest/0.TestForwardMaxTopMask
+[       OK ] PoolingLayerTest/0.TestForwardMaxTopMask (1 ms)
+[----------] 11 tests from PoolingLayerTest/0 (2761 ms total)
+
+[----------] 1 test from ProtoTest
+[ RUN      ] ProtoTest.TestSerialization
+Printing in binary format.
+
+testTest
+Printing in text format.
+name: "test"
+type: "Test"
+
+[       OK ] ProtoTest.TestSerialization (0 ms)
+[----------] 1 test from ProtoTest (0 ms total)
+
+[----------] 8 tests from RMSPropSolverTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] RMSPropSolverTest/1.TestRMSPropLeastSquaresUpdateWithWeightDecay
+[       OK ] RMSPropSolverTest/1.TestRMSPropLeastSquaresUpdateWithWeightDecay (16 ms)
+[ RUN      ] RMSPropSolverTest/1.TestRMSPropLeastSquaresUpdateWithEverything
+[       OK ] RMSPropSolverTest/1.TestRMSPropLeastSquaresUpdateWithEverything (80 ms)
+[ RUN      ] RMSPropSolverTest/1.TestRMSPropLeastSquaresUpdateWithEverythingShare
+[       OK ] RMSPropSolverTest/1.TestRMSPropLeastSquaresUpdateWithEverythingShare (86 ms)
+[ RUN      ] RMSPropSolverTest/1.TestLeastSquaresUpdateWithEverythingAccum
+[       OK ] RMSPropSolverTest/1.TestLeastSquaresUpdateWithEverythingAccum (4 ms)
+[ RUN      ] RMSPropSolverTest/1.TestSnapshot
+[       OK ] RMSPropSolverTest/1.TestSnapshot (27 ms)
+[ RUN      ] RMSPropSolverTest/1.TestSnapshotShare
+[       OK ] RMSPropSolverTest/1.TestSnapshotShare (35 ms)
+[ RUN      ] RMSPropSolverTest/1.TestLeastSquaresUpdateWithEverythingAccumShare
+[       OK ] RMSPropSolverTest/1.TestLeastSquaresUpdateWithEverythingAccumShare (6 ms)
+[ RUN      ] RMSPropSolverTest/1.TestRMSPropLeastSquaresUpdateWithRmsDecay
+[       OK ] RMSPropSolverTest/1.TestRMSPropLeastSquaresUpdateWithRmsDecay (79 ms)
+[----------] 8 tests from RMSPropSolverTest/1 (333 ms total)
+
+[----------] 1 test from MultinomialLogisticLossLayerTest/0, where TypeParam = float
+[ RUN      ] MultinomialLogisticLossLayerTest/0.TestGradientCPU
+[       OK ] MultinomialLogisticLossLayerTest/0.TestGradientCPU (1 ms)
+[----------] 1 test from MultinomialLogisticLossLayerTest/0 (1 ms total)
+
+[----------] 2 tests from BatchReindexLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] BatchReindexLayerTest/0.TestForward
+[       OK ] BatchReindexLayerTest/0.TestForward (0 ms)
+[ RUN      ] BatchReindexLayerTest/0.TestGradient
+[       OK ] BatchReindexLayerTest/0.TestGradient (127 ms)
+[----------] 2 tests from BatchReindexLayerTest/0 (127 ms total)
+
+[----------] 6 tests from RNNLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] RNNLayerTest/0.TestSetUp
+[       OK ] RNNLayerTest/0.TestSetUp (2 ms)
+[ RUN      ] RNNLayerTest/0.TestForward
+[       OK ] RNNLayerTest/0.TestForward (9 ms)
+[ RUN      ] RNNLayerTest/0.TestGradientNonZeroContBufferSize2
+[       OK ] RNNLayerTest/0.TestGradientNonZeroContBufferSize2 (198 ms)
+[ RUN      ] RNNLayerTest/0.TestGradientNonZeroCont
+[       OK ] RNNLayerTest/0.TestGradientNonZeroCont (102 ms)
+[ RUN      ] RNNLayerTest/0.TestGradient
+[       OK ] RNNLayerTest/0.TestGradient (105 ms)
+[ RUN      ] RNNLayerTest/0.TestGradientNonZeroContBufferSize2WithStaticInput
+[       OK ] RNNLayerTest/0.TestGradientNonZeroContBufferSize2WithStaticInput (910 ms)
+[----------] 6 tests from RNNLayerTest/0 (1326 ms total)
+
+[----------] 10 tests from PowerLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] PowerLayerTest/0.TestPower
+[       OK ] PowerLayerTest/0.TestPower (0 ms)
+[ RUN      ] PowerLayerTest/0.TestPowerTwoScaleHalfGradient
+[       OK ] PowerLayerTest/0.TestPowerTwoScaleHalfGradient (4 ms)
+[ RUN      ] PowerLayerTest/0.TestPowerGradientShiftZero
+[       OK ] PowerLayerTest/0.TestPowerGradientShiftZero (4 ms)
+[ RUN      ] PowerLayerTest/0.TestPowerZero
+[       OK ] PowerLayerTest/0.TestPowerZero (0 ms)
+[ RUN      ] PowerLayerTest/0.TestPowerOneGradient
+[       OK ] PowerLayerTest/0.TestPowerOneGradient (1 ms)
+[ RUN      ] PowerLayerTest/0.TestPowerGradient
+[       OK ] PowerLayerTest/0.TestPowerGradient (2 ms)
+[ RUN      ] PowerLayerTest/0.TestPowerTwoGradient
+[       OK ] PowerLayerTest/0.TestPowerTwoGradient (4 ms)
+[ RUN      ] PowerLayerTest/0.TestPowerTwo
+[       OK ] PowerLayerTest/0.TestPowerTwo (0 ms)
+[ RUN      ] PowerLayerTest/0.TestPowerZeroGradient
+[       OK ] PowerLayerTest/0.TestPowerZeroGradient (1 ms)
+[ RUN      ] PowerLayerTest/0.TestPowerOne
+[       OK ] PowerLayerTest/0.TestPowerOne (1 ms)
+[----------] 10 tests from PowerLayerTest/0 (18 ms total)
+
+[----------] 3 tests from MaxPoolingDropoutTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] MaxPoolingDropoutTest/0.TestSetup
+[       OK ] MaxPoolingDropoutTest/0.TestSetup (0 ms)
+[ RUN      ] MaxPoolingDropoutTest/0.TestBackward
+[       OK ] MaxPoolingDropoutTest/0.TestBackward (0 ms)
+[ RUN      ] MaxPoolingDropoutTest/0.TestForward
+[       OK ] MaxPoolingDropoutTest/0.TestForward (0 ms)
+[----------] 3 tests from MaxPoolingDropoutTest/0 (0 ms total)
+
+[----------] 58 tests from NeuronLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] NeuronLayerTest/0.TestReLUWithNegativeSlope
+[       OK ] NeuronLayerTest/0.TestReLUWithNegativeSlope (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestReLU
+[       OK ] NeuronLayerTest/0.TestReLU (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestClipGradient
+[       OK ] NeuronLayerTest/0.TestClipGradient (2 ms)
+[ RUN      ] NeuronLayerTest/0.TestLogLayer
+[       OK ] NeuronLayerTest/0.TestLogLayer (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestSwish
+[       OK ] NeuronLayerTest/0.TestSwish (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestExpLayer
+[       OK ] NeuronLayerTest/0.TestExpLayer (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestLogLayerBase2Shift1
+[       OK ] NeuronLayerTest/0.TestLogLayerBase2Shift1 (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestLogLayerBase2Shift1Scale3
+[       OK ] NeuronLayerTest/0.TestLogLayerBase2Shift1Scale3 (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestSwishWithBetaGradient
+[       OK ] NeuronLayerTest/0.TestSwishWithBetaGradient (4 ms)
+[ RUN      ] NeuronLayerTest/0.TestSwishAsLinearGradient
+[       OK ] NeuronLayerTest/0.TestSwishAsLinearGradient (3 ms)
+[ RUN      ] NeuronLayerTest/0.TestAbsVal
+[       OK ] NeuronLayerTest/0.TestAbsVal (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestSigmoid
+[       OK ] NeuronLayerTest/0.TestSigmoid (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestDropoutGradientTest
+[       OK ] NeuronLayerTest/0.TestDropoutGradientTest (1 ms)
+[ RUN      ] NeuronLayerTest/0.TestExpLayerBase2Scale3
+[       OK ] NeuronLayerTest/0.TestExpLayerBase2Scale3 (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestPReLUConsistencyReLU
+[       OK ] NeuronLayerTest/0.TestPReLUConsistencyReLU (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestExpGradientWithShift
+[       OK ] NeuronLayerTest/0.TestExpGradientWithShift (2 ms)
+[ RUN      ] NeuronLayerTest/0.TestClip
+[       OK ] NeuronLayerTest/0.TestClip (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestExpGradientBase2Shift1
+[       OK ] NeuronLayerTest/0.TestExpGradientBase2Shift1 (2 ms)
+[ RUN      ] NeuronLayerTest/0.TestPReLUForward
+[       OK ] NeuronLayerTest/0.TestPReLUForward (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestTanH
+[       OK ] NeuronLayerTest/0.TestTanH (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestSwishGradient
+[       OK ] NeuronLayerTest/0.TestSwishGradient (4 ms)
+[ RUN      ] NeuronLayerTest/0.TestExpGradientBase2
+[       OK ] NeuronLayerTest/0.TestExpGradientBase2 (2 ms)
+[ RUN      ] NeuronLayerTest/0.TestLogLayerBase2Scale3
+[       OK ] NeuronLayerTest/0.TestLogLayerBase2Scale3 (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestExpLayerBase2Shift1
+[       OK ] NeuronLayerTest/0.TestExpLayerBase2Shift1 (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestSwishAsLinear
+[       OK ] NeuronLayerTest/0.TestSwishAsLinear (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestLogGradientBase2
+[       OK ] NeuronLayerTest/0.TestLogGradientBase2 (2 ms)
+[ RUN      ] NeuronLayerTest/0.TestExpLayerWithShift
+[       OK ] NeuronLayerTest/0.TestExpLayerWithShift (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestAbsGradient
+[       OK ] NeuronLayerTest/0.TestAbsGradient (2 ms)
+[ RUN      ] NeuronLayerTest/0.TestLogGradientBase2Shift1
+[       OK ] NeuronLayerTest/0.TestLogGradientBase2Shift1 (3 ms)
+[ RUN      ] NeuronLayerTest/0.TestLogLayerBase2
+[       OK ] NeuronLayerTest/0.TestLogLayerBase2 (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestPReLUGradient
+[       OK ] NeuronLayerTest/0.TestPReLUGradient (136 ms)
+[ RUN      ] NeuronLayerTest/0.TestSigmoidGradient
+[       OK ] NeuronLayerTest/0.TestSigmoidGradient (3 ms)
+[ RUN      ] NeuronLayerTest/0.TestBNLL
+[       OK ] NeuronLayerTest/0.TestBNLL (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestPReLUParam
+[       OK ] NeuronLayerTest/0.TestPReLUParam (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestDropoutHalf
+[       OK ] NeuronLayerTest/0.TestDropoutHalf (1 ms)
+[ RUN      ] NeuronLayerTest/0.TestELUasReLU
+[       OK ] NeuronLayerTest/0.TestELUasReLU (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestReLUGradientWithNegativeSlope
+[       OK ] NeuronLayerTest/0.TestReLUGradientWithNegativeSlope (2 ms)
+[ RUN      ] NeuronLayerTest/0.TestExpGradientBase2Scale3
+[       OK ] NeuronLayerTest/0.TestExpGradientBase2Scale3 (2 ms)
+[ RUN      ] NeuronLayerTest/0.TestELUGradient
+[       OK ] NeuronLayerTest/0.TestELUGradient (2 ms)
+[ RUN      ] NeuronLayerTest/0.TestReLUGradient
+[       OK ] NeuronLayerTest/0.TestReLUGradient (2 ms)
+[ RUN      ] NeuronLayerTest/0.TestDropoutGradient
+[       OK ] NeuronLayerTest/0.TestDropoutGradient (3 ms)
+[ RUN      ] NeuronLayerTest/0.TestLogGradientBase2Scale3
+[       OK ] NeuronLayerTest/0.TestLogGradientBase2Scale3 (2 ms)
+[ RUN      ] NeuronLayerTest/0.TestELU
+[       OK ] NeuronLayerTest/0.TestELU (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestExpGradientBase2Shift1Scale3
+[       OK ] NeuronLayerTest/0.TestExpGradientBase2Shift1Scale3 (2 ms)
+[ RUN      ] NeuronLayerTest/0.TestLogGradient
+[       OK ] NeuronLayerTest/0.TestLogGradient (2 ms)
+[ RUN      ] NeuronLayerTest/0.TestSwishWithBeta
+[       OK ] NeuronLayerTest/0.TestSwishWithBeta (1 ms)
+[ RUN      ] NeuronLayerTest/0.TestELUasReLUGradient
+[       OK ] NeuronLayerTest/0.TestELUasReLUGradient (2 ms)
+[ RUN      ] NeuronLayerTest/0.TestPReLUInPlace
+[       OK ] NeuronLayerTest/0.TestPReLUInPlace (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestExpLayerBase2Shift1Scale3
+[       OK ] NeuronLayerTest/0.TestExpLayerBase2Shift1Scale3 (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestLogGradientBase2Shift1Scale3
+[       OK ] NeuronLayerTest/0.TestLogGradientBase2Shift1Scale3 (3 ms)
+[ RUN      ] NeuronLayerTest/0.TestDropoutTestPhase
+[       OK ] NeuronLayerTest/0.TestDropoutTestPhase (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestPReLUForwardChannelShared
+[       OK ] NeuronLayerTest/0.TestPReLUForwardChannelShared (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestExpGradient
+[       OK ] NeuronLayerTest/0.TestExpGradient (2 ms)
+[ RUN      ] NeuronLayerTest/0.TestPReLUGradientChannelShared
+[       OK ] NeuronLayerTest/0.TestPReLUGradientChannelShared (135 ms)
+[ RUN      ] NeuronLayerTest/0.TestBNLLGradient
+[       OK ] NeuronLayerTest/0.TestBNLLGradient (5 ms)
+[ RUN      ] NeuronLayerTest/0.TestTanHGradient
+[       OK ] NeuronLayerTest/0.TestTanHGradient (3 ms)
+[ RUN      ] NeuronLayerTest/0.TestExpLayerBase2
+[       OK ] NeuronLayerTest/0.TestExpLayerBase2 (0 ms)
+[ RUN      ] NeuronLayerTest/0.TestDropoutThreeQuarters
+[       OK ] NeuronLayerTest/0.TestDropoutThreeQuarters (0 ms)
+[----------] 58 tests from NeuronLayerTest/0 (340 ms total)
+
+[----------] 8 tests from Im2colLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] Im2colLayerTest/0.TestRect
+[       OK ] Im2colLayerTest/0.TestRect (0 ms)
+[ RUN      ] Im2colLayerTest/0.TestDilatedGradient
+[       OK ] Im2colLayerTest/0.TestDilatedGradient (913 ms)
+[ RUN      ] Im2colLayerTest/0.TestForward
+[       OK ] Im2colLayerTest/0.TestForward (0 ms)
+[ RUN      ] Im2colLayerTest/0.TestDilatedGradientForceND
+[       OK ] Im2colLayerTest/0.TestDilatedGradientForceND (1676 ms)
+[ RUN      ] Im2colLayerTest/0.TestGradient
+[       OK ] Im2colLayerTest/0.TestGradient (305 ms)
+[ RUN      ] Im2colLayerTest/0.TestSetup
+[       OK ] Im2colLayerTest/0.TestSetup (0 ms)
+[ RUN      ] Im2colLayerTest/0.TestRectGradient
+[       OK ] Im2colLayerTest/0.TestRectGradient (404 ms)
+[ RUN      ] Im2colLayerTest/0.TestGradientForceND
+[       OK ] Im2colLayerTest/0.TestGradientForceND (582 ms)
+[----------] 8 tests from Im2colLayerTest/0 (3881 ms total)
+
+[----------] 11 tests from AdaDeltaSolverTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] AdaDeltaSolverTest/1.TestAdaDeltaLeastSquaresUpdate
+[       OK ] AdaDeltaSolverTest/1.TestAdaDeltaLeastSquaresUpdate (17 ms)
+[ RUN      ] AdaDeltaSolverTest/1.TestLeastSquaresUpdateWithMomentumMultiIter
+[       OK ] AdaDeltaSolverTest/1.TestLeastSquaresUpdateWithMomentumMultiIter (79 ms)
+[ RUN      ] AdaDeltaSolverTest/1.TestAdaDeltaLeastSquaresUpdateWithHalfMomentum
+[       OK ] AdaDeltaSolverTest/1.TestAdaDeltaLeastSquaresUpdateWithHalfMomentum (31 ms)
+[ RUN      ] AdaDeltaSolverTest/1.TestAdaDeltaLeastSquaresUpdateWithEverythingShare
+[       OK ] AdaDeltaSolverTest/1.TestAdaDeltaLeastSquaresUpdateWithEverythingShare (84 ms)
+[ RUN      ] AdaDeltaSolverTest/1.TestSnapshotShare
+[       OK ] AdaDeltaSolverTest/1.TestSnapshotShare (31 ms)
+[ RUN      ] AdaDeltaSolverTest/1.TestSnapshot
+[       OK ] AdaDeltaSolverTest/1.TestSnapshot (38 ms)
+[ RUN      ] AdaDeltaSolverTest/1.TestAdaDeltaLeastSquaresUpdateWithWeightDecay
+[       OK ] AdaDeltaSolverTest/1.TestAdaDeltaLeastSquaresUpdateWithWeightDecay (16 ms)
+[ RUN      ] AdaDeltaSolverTest/1.TestLeastSquaresUpdateWithEverythingAccumShare
+[       OK ] AdaDeltaSolverTest/1.TestLeastSquaresUpdateWithEverythingAccumShare (5 ms)
+[ RUN      ] AdaDeltaSolverTest/1.TestAdaDeltaLeastSquaresUpdateWithEverything
+[       OK ] AdaDeltaSolverTest/1.TestAdaDeltaLeastSquaresUpdateWithEverything (79 ms)
+[ RUN      ] AdaDeltaSolverTest/1.TestLeastSquaresUpdateWithEverythingAccum
+[       OK ] AdaDeltaSolverTest/1.TestLeastSquaresUpdateWithEverythingAccum (4 ms)
+[ RUN      ] AdaDeltaSolverTest/1.TestAdaDeltaLeastSquaresUpdateWithMomentum
+[       OK ] AdaDeltaSolverTest/1.TestAdaDeltaLeastSquaresUpdateWithMomentum (30 ms)
+[----------] 11 tests from AdaDeltaSolverTest/1 (414 ms total)
+
+[----------] 26 tests from NetTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] NetTest/1.TestAllInOneNetVal
+[       OK ] NetTest/1.TestAllInOneNetVal (1 ms)
+[ RUN      ] NetTest/1.TestUnsharedWeightsDataNet
+[       OK ] NetTest/1.TestUnsharedWeightsDataNet (1 ms)
+[ RUN      ] NetTest/1.TestLossWeight
+[       OK ] NetTest/1.TestLossWeight (6 ms)
+[ RUN      ] NetTest/1.TestSkipPropagateDown
+[       OK ] NetTest/1.TestSkipPropagateDown (2 ms)
+[ RUN      ] NetTest/1.TestUnsharedWeightsDiffNet
+[       OK ] NetTest/1.TestUnsharedWeightsDiffNet (1 ms)
+[ RUN      ] NetTest/1.TestSharedWeightsResume
+[       OK ] NetTest/1.TestSharedWeightsResume (2 ms)
+[ RUN      ] NetTest/1.TestForcePropagateDown
+[       OK ] NetTest/1.TestForcePropagateDown (1 ms)
+[ RUN      ] NetTest/1.TestSharedWeightsDiffNet
+[       OK ] NetTest/1.TestSharedWeightsDiffNet (1 ms)
+[ RUN      ] NetTest/1.TestBottomNeedBackward
+[       OK ] NetTest/1.TestBottomNeedBackward (1 ms)
+[ RUN      ] NetTest/1.TestSharedWeightsUpdate
+[       OK ] NetTest/1.TestSharedWeightsUpdate (2 ms)
+[ RUN      ] NetTest/1.TestHasLayer
+[       OK ] NetTest/1.TestHasLayer (1 ms)
+[ RUN      ] NetTest/1.TestBottomNeedBackwardForce
+[       OK ] NetTest/1.TestBottomNeedBackwardForce (1 ms)
+[ RUN      ] NetTest/1.TestGetLayerByName
+[       OK ] NetTest/1.TestGetLayerByName (1 ms)
+[ RUN      ] NetTest/1.TestBackwardWithAccuracyLayer
+[       OK ] NetTest/1.TestBackwardWithAccuracyLayer (3 ms)
+[ RUN      ] NetTest/1.TestParamPropagateDown
+[       OK ] NetTest/1.TestParamPropagateDown (3 ms)
+[ RUN      ] NetTest/1.TestAllInOneNetTrain
+[       OK ] NetTest/1.TestAllInOneNetTrain (1 ms)
+[ RUN      ] NetTest/1.TestGetBlob
+[       OK ] NetTest/1.TestGetBlob (1 ms)
+[ RUN      ] NetTest/1.TestBottomNeedBackwardTricky
+[       OK ] NetTest/1.TestBottomNeedBackwardTricky (2 ms)
+[ RUN      ] NetTest/1.TestComboLossWeight
+[       OK ] NetTest/1.TestComboLossWeight (5 ms)
+[ RUN      ] NetTest/1.TestReshape
+[       OK ] NetTest/1.TestReshape (1 ms)
+[ RUN      ] NetTest/1.TestAllInOneNetDeploy
+[       OK ] NetTest/1.TestAllInOneNetDeploy (1 ms)
+[ RUN      ] NetTest/1.TestFromTo
+[       OK ] NetTest/1.TestFromTo (3 ms)
+[ RUN      ] NetTest/1.TestBottomNeedBackwardEuclideanForce
+[       OK ] NetTest/1.TestBottomNeedBackwardEuclideanForce (0 ms)
+[ RUN      ] NetTest/1.TestLossWeightMidNet
+[       OK ] NetTest/1.TestLossWeightMidNet (7 ms)
+[ RUN      ] NetTest/1.TestHasBlob
+[       OK ] NetTest/1.TestHasBlob (1 ms)
+[ RUN      ] NetTest/1.TestSharedWeightsDataNet
+[       OK ] NetTest/1.TestSharedWeightsDataNet (1 ms)
+[----------] 26 tests from NetTest/1 (50 ms total)
+
+[----------] 11 tests from CropLayerTest/1, where TypeParam = caffe::CPUDevice<double>
+[ RUN      ] CropLayerTest/1.TestCrop5DGradient
+[       OK ] CropLayerTest/1.TestCrop5DGradient (1588 ms)
+[ RUN      ] CropLayerTest/1.TestDimensionsCheck
+[       OK ] CropLayerTest/1.TestDimensionsCheck (0 ms)
+[ RUN      ] CropLayerTest/1.TestCropAll
+[       OK ] CropLayerTest/1.TestCropAll (0 ms)
+[ RUN      ] CropLayerTest/1.TestCropHWGradient
+[       OK ] CropLayerTest/1.TestCropHWGradient (450 ms)
+[ RUN      ] CropLayerTest/1.TestSetupShapeAll
+[       OK ] CropLayerTest/1.TestSetupShapeAll (0 ms)
+[ RUN      ] CropLayerTest/1.TestCropAllGradient
+[       OK ] CropLayerTest/1.TestCropAllGradient (258 ms)
+[ RUN      ] CropLayerTest/1.TestCrop5D
+[       OK ] CropLayerTest/1.TestCrop5D (0 ms)
+[ RUN      ] CropLayerTest/1.TestSetupShapeDefault
+[       OK ] CropLayerTest/1.TestSetupShapeDefault (0 ms)
+[ RUN      ] CropLayerTest/1.TestCropHW
+[       OK ] CropLayerTest/1.TestCropHW (0 ms)
+[ RUN      ] CropLayerTest/1.TestCropAllOffset
+[       OK ] CropLayerTest/1.TestCropAllOffset (0 ms)
+[ RUN      ] CropLayerTest/1.TestSetupShapeNegativeIndexing
+[       OK ] CropLayerTest/1.TestSetupShapeNegativeIndexing (0 ms)
+[----------] 11 tests from CropLayerTest/1 (2296 ms total)
+
+[----------] 2 tests from HingeLossLayerTest/0, where TypeParam = caffe::CPUDevice<float>
+[ RUN      ] HingeLossLayerTest/0.TestGradientL2
+[       OK ] HingeLossLayerTest/0.TestGradientL2 (1 ms)
+[ RUN      ] HingeLossLayerTest/0.TestGradientL1
+[       OK ] HingeLossLayerTest/0.TestGradientL1 (0 ms)
+[----------] 2 tests from HingeLossLayerTest/0 (1 ms total)
+
+[----------] 4 tests from NetUpgradeTest
+[ RUN      ] NetUpgradeTest.TestUpgradeV1LayerType
+[       OK ] NetUpgradeTest.TestUpgradeV1LayerType (61 ms)
+[ RUN      ] NetUpgradeTest.TestSimple
+[       OK ] NetUpgradeTest.TestSimple (1 ms)
+[ RUN      ] NetUpgradeTest.TestAllParams
+[       OK ] NetUpgradeTest.TestAllParams (0 ms)
+[ RUN      ] NetUpgradeTest.TestImageNet
+[       OK ] NetUpgradeTest.TestImageNet (1 ms)
+[----------] 4 tests from NetUpgradeTest (64 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1162 tests from 152 test cases ran. (77088 ms total)
+[  PASSED  ] 1162 tests.
+[100%] Built target runtest
+

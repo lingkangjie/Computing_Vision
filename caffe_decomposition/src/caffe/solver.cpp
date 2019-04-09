@@ -40,11 +40,13 @@ Solver<Dtype>::Solver(const string& param_file)
   Init(param);
 }
 
+// set variable param_, iter_, current_step_
+// call InitTrainNet(), InitTestNets() function
 template <typename Dtype>
 void Solver<Dtype>::Init(const SolverParameter& param) {
   LOG_IF(INFO, Caffe::root_solver()) << "Initializing solver from parameters: "
     << std::endl << param.DebugString();
-  param_ = param;
+  param_ = param; // param_ is defined in solver.hpp:  SolverParameter param_;
   CHECK_GE(param_.average_loss(), 1) << "average_loss should be non-negative.";
   CheckSnapshotWritePermissions();
   if (param_.random_seed() >= 0) {
@@ -60,6 +62,8 @@ void Solver<Dtype>::Init(const SolverParameter& param) {
   current_step_ = 0;
 }
 
+// I found LoadNetWeights are not declared in sovler.hpp, maybe we don't want
+// others to call it.
 // Load weights from the caffemodel(s) specified in "weights" solver parameter
 // into the train and test nets.
 template <typename Dtype>
@@ -107,6 +111,12 @@ void Solver<Dtype>::InitTrainNet() {
   // precedence); then, merge in any NetState specified by the net_param itself;
   // finally, merge in any NetState specified by the train_state (highest
   // precedence).
+  // in caffe.proto: 
+  // message NetState {
+  //   optional Phase phase = 1 [default = TEST];
+  //   optional int32 level = 2 [default = 0];
+  //   repeated string stage = 3;
+  // }
   NetState net_state;
   net_state.set_phase(TRAIN);
   net_state.MergeFrom(net_param.state());
