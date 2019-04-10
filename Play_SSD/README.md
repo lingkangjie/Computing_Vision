@@ -26,7 +26,7 @@ lkj@lkj:~/deeplearning/tmp_caffe/caffe$ ./build/examples/ssd/ssd_detect.bin \
 --file_type image \
 --out_file ./build/examples/ssd/output.txt
 ```
-5. Verify the results
+5. Verify the results  
 Open `output.txt` file, you will see something like:  
 ```
 /home/lkj/deeplearning/tmp_caffe/caffe/build/examples/ssd/dog.jpg 7 0.0255449 421 319 453 387

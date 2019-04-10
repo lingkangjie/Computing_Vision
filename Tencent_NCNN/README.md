@@ -30,7 +30,7 @@ In `synset_words.txt`, there are total 1000 classes. `vim synset_word.txt`, you 
  ... ...
 ```
 ## A Deeper example
-1. Download [MobileNetSSD_deploy.caffemodel](https://drive.google.com/file/d/0B3gersZ2cHIxRm5PMWRoTkdHdHc/view), `MobileNetSSD_deploy.prototxt` two files
+1. Download [MobileNetSSD_deploy.caffemodel](https://drive.google.com/file/d/0B3gersZ2cHIxRm5PMWRoTkdHdHc/view), `MobileNetSSD_deploy.prototxt` two files, put they into `NCNN_ROOT/build/examples/`
 2. Update `*.caffemodel` and `*.prototxt` files, as NCNN only recognizes new file format.
 Build SSD Caffe:  
 ```
