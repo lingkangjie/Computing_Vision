@@ -70,7 +70,7 @@ inline bool is_a_ge_zero_and_a_lt_b(int a, int b) {
  *                                           |
  *                                       recptive field 1
  * There are total 6 recptive fields, output_w = (5-2*0-3)/1+1=3,
- * output_h = (4-2*0-3)/1+1 =2, recptive files = output_w * output_h
+ * output_h = (4-2*0-3)/1+1 =2, recptive fields = output_w * output_h
  * So the row size of data_col is kw*kh
  *
  * im2col(): pros:faster, cons: more memory
