@@ -2,6 +2,9 @@
 #define BOX_H
 #include "darknet.h"
 
+/** \brief box data struct for object detection.
+ *
+ */
 typedef struct{
     float dx, dy, dw, dh;
 } dbox;

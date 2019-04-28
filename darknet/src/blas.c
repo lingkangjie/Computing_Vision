@@ -262,6 +262,17 @@ void l1_cpu(int n, float *pred, float *truth, float *delta, float *error)
     }
 }
 
+/** \brief caculate loss and gradient delta for SoftMax function.
+ *
+ * loss for SoftMax function: \f[- sum_{j=1}^{K} t_{j} log(p_{j}) ]\f
+ * delta = pred - true (TODO)
+ *
+ * @param n tensor size.
+ * @param pred a pointer points to array storaged prediction value.
+ * @param truth an array storage labels states, e.g. total 5 classes, for an predicted image, 4-th class is true, [0,0,0,1,0].
+ * @param delta delta for gradient.
+ * @param error losses.
+ */
 void softmax_x_ent_cpu(int n, float *pred, float *truth, float *delta, float *error)
 {
     int i;
@@ -269,7 +280,7 @@ void softmax_x_ent_cpu(int n, float *pred, float *truth, float *delta, float *er
         float t = truth[i];
         float p = pred[i];
         error[i] = (t) ? -log(p) : 0;
-        delta[i] = t-p;
+        delta[i] = t-p; // why not `p-t`? (TODO)
     }
 }
 
@@ -302,15 +313,24 @@ float dot_cpu(int N, float *X, int INCX, float *Y, int INCY)
     return dot;
 }
 
+/** \brief compute softmax for tensor.
+ *
+ * @param input a pointer points to input tensor.
+ * @param n group size. An image has been divided to several groups, n = l.inputs (or image size) / l.groups.
+ * @param temp temperature parameter for softmax function.
+ * @param stride operate data point by stride.
+ * @param output a pointer points to softmax operation data results.
+ */
 void softmax(float *input, int n, float temp, int stride, float *output)
 {
     int i;
     float sum = 0;
     float largest = -FLT_MAX;
+    // find the largest element in group.
     for(i = 0; i < n; ++i){
         if(input[i*stride] > largest) largest = input[i*stride];
     }
-    for(i = 0; i < n; ++i){
+    for(i = 0; i < n; ++i){ // Here is a little different from odinary SoftMax definition.
         float e = exp(input[i*stride]/temp - largest/temp);
         sum += e;
         output[i*stride] = e;
@@ -321,11 +341,23 @@ void softmax(float *input, int n, float temp, int stride, float *output)
 }
 
 
+/** \brief Compute softmax for a batch of feature maps.
+ *
+ * @param input a pointer points to a batch of input feature maps.
+ * @param n group size. n = l.inputs (or feature map size) / l.groups.
+ * @param batch batch size.
+ * @param batch_offset equal to l.inputs (or feature map size).
+ * @param groups group number. For a feature map, grouped by `groups`, default is 1.
+ * @param group_offset equal to `n` (group size).
+ * @param stride operates in stride length.
+ * @param temp temperature, a parameter for SoftMax function.
+ * @param output a pointer points to output.
+ */
 void softmax_cpu(float *input, int n, int batch, int batch_offset, int groups, int group_offset, int stride, float temp, float *output)
 {
     int g, b;
-    for(b = 0; b < batch; ++b){
-        for(g = 0; g < groups; ++g){
+    for(b = 0; b < batch; ++b){ // operate by batch, e.g batch_size = 128
+        for(g = 0; g < groups; ++g){ // operate by group, default = 1.
             softmax(input + b*batch_offset + g*group_offset, n, temp, stride, output + b*batch_offset + g*group_offset);
         }
     }

@@ -8,16 +8,23 @@
 #include <stdio.h>
 #include <assert.h>
 
+/** \brief establish a softmax layer.
+ *
+ * @param batch batch size.
+ * @param inputs equal to a image size
+ * @param groups TODO
+ * @return A softmax layer. Note that softmax operation just do in place.
+ */
 softmax_layer make_softmax_layer(int batch, int inputs, int groups)
 {
-    assert(inputs%groups == 0);
+    assert(inputs%groups == 0); // inputs are seperates by groups
     fprintf(stderr, "softmax                                        %4d\n",  inputs);
     softmax_layer l = {0};
     l.type = SOFTMAX;
     l.batch = batch;
     l.groups = groups;
     l.inputs = inputs;
-    l.outputs = inputs;
+    l.outputs = inputs; // compute in place
     l.loss = calloc(inputs*batch, sizeof(float));
     l.output = calloc(inputs*batch, sizeof(float));
     l.delta = calloc(inputs*batch, sizeof(float));
@@ -38,7 +45,7 @@ softmax_layer make_softmax_layer(int batch, int inputs, int groups)
 
 void forward_softmax_layer(const softmax_layer l, network net)
 {
-    if(l.softmax_tree){
+    if(l.softmax_tree){ // What is l.softmax_tree meaning? TODO
         int i;
         int count = 0;
         for (i = 0; i < l.softmax_tree->groups; ++i) {
@@ -47,18 +54,18 @@ void forward_softmax_layer(const softmax_layer l, network net)
             count += group_size;
         }
     } else {
-        softmax_cpu(net.input, l.inputs/l.groups, l.batch, l.inputs, l.groups, l.inputs/l.groups, 1, l.temperature, l.output);
+        softmax_cpu(net.input, l.inputs/l.groups, l.batch, l.inputs, l.groups, l.inputs/l.groups, 1, l.temperature, l.output); // call blas.c:softmax_cpu()
     }
 
     if(net.truth && !l.noloss){
-        softmax_x_ent_cpu(l.batch*l.inputs, l.output, net.truth, l.delta, l.loss);
+        softmax_x_ent_cpu(l.batch*l.inputs, l.output, net.truth, l.delta, l.loss); // compute loss and delta for SoftMax function
         l.cost[0] = sum_array(l.loss, l.batch*l.inputs);
     }
 }
 
 void backward_softmax_layer(const softmax_layer l, network net)
 {
-    axpy_cpu(l.inputs*l.batch, 1, l.delta, 1, net.delta, 1);
+    axpy_cpu(l.inputs*l.batch, 1, l.delta, 1, net.delta, 1); // just copy l.delta to net.delta, where net.delta is delta of previous layer 
 }
 
 #ifdef GPU

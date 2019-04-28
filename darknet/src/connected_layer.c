@@ -14,28 +14,28 @@
 layer make_connected_layer(int batch, int inputs, int outputs, ACTIVATION activation, int batch_normalize, int adam)
 {
     int i;
-    layer l = {0};
+    layer l = {0}; // create layer
     l.learning_rate_scale = 1;
-    l.type = CONNECTED;
+    l.type = CONNECTED; // set layer type
 
-    l.inputs = inputs;
+    l.inputs = inputs; // equal to image size
     l.outputs = outputs;
     l.batch=batch;
     l.batch_normalize = batch_normalize;
-    l.h = 1;
+    l.h = 1; // we use a block to represent data, the h and w are set to 1
     l.w = 1;
-    l.c = inputs;
+    l.c = inputs; // in concept, we use channels to storage inputs and outputs
     l.out_h = 1;
     l.out_w = 1;
     l.out_c = outputs;
 
-    l.output = calloc(batch*outputs, sizeof(float));
+    l.output = calloc(batch*outputs, sizeof(float)); // total output
     l.delta = calloc(batch*outputs, sizeof(float));
 
     l.weight_updates = calloc(inputs*outputs, sizeof(float));
     l.bias_updates = calloc(outputs, sizeof(float));
 
-    l.weights = calloc(outputs*inputs, sizeof(float));
+    l.weights = calloc(outputs*inputs, sizeof(float)); // we compute an image by an image
     l.biases = calloc(outputs, sizeof(float));
 
     l.forward = forward_connected_layer;
@@ -43,6 +43,8 @@ layer make_connected_layer(int batch, int inputs, int outputs, ACTIVATION activa
     l.update = update_connected_layer;
 
     //float scale = 1./sqrt(inputs);
+    // initial weights and biases. There is an error if we
+    // load pre-trained weights and biases, here will recover them.
     float scale = sqrt(2./inputs);
     for(i = 0; i < outputs*inputs; ++i){
         l.weights[i] = scale*rand_uniform(-1, 1);
@@ -150,37 +152,46 @@ void update_connected_layer(layer l, update_args a)
 
 void forward_connected_layer(layer l, network net)
 {
-    fill_cpu(l.outputs*l.batch, 0, l.output, 1);
+    fill_cpu(l.outputs*l.batch, 0, l.output, 1); // l.output will has l.outputs*l.batch 0, later used as c.
     int m = l.batch;
     int k = l.inputs;
     int n = l.outputs;
-    float *a = net.input;
-    float *b = l.weights;
-    float *c = l.output;
-    gemm(0,1,m,n,k,1,a,k,b,k,1,c,n);
+    float *a = net.input; // net.input = l.batch * l.inputs, in concept, *a belongs to R(samples,image_size)
+    float *b = l.weights; // l.weights = l.inputs * l.outputs, in concept *b belongs to R(image_size,outputs)
+    float *c = l.output; //
+    gemm(0,1,m,n,k,1,a,k,b,k,1,c,n); // c = 1 * a * b + 1 *c
     if(l.batch_normalize){
         forward_batchnorm_layer(l, net);
     } else {
-        add_bias(l.output, l.biases, l.batch, l.outputs, 1);
+        add_bias(l.output, l.biases, l.batch, l.outputs, 1); // will call convolutional_layer.c:414
     }
     activate_array(l.output, l.outputs*l.batch, l.activation);
 }
 
+/** \brief compute current gradient of activation * delta (from below), compute differential of weights
+ *      (new delta * activation output from previous layer),
+ *      and caculate new delta for the next privious layer.
+ *
+ *  suppose layers: A, B, C. Now compute backward on layer B. Here activation coming from layer C. That is
+ *  to say, `new delta` is ejected by layer C, when we stand on layer B, we still do not know the delta
+ *  coming from C, and need to compute it out.
+ *
+ */
 void backward_connected_layer(layer l, network net)
 {
-    gradient_array(l.output, l.outputs*l.batch, l.activation, l.delta);
+    gradient_array(l.output, l.outputs*l.batch, l.activation, l.delta); // differential of activation * delta (from below), returned l.delta is new.
 
     if(l.batch_normalize){
         backward_batchnorm_layer(l, net);
     } else {
-        backward_bias(l.bias_updates, l.delta, l.batch, l.outputs, 1);
+        backward_bias(l.bias_updates, l.delta, l.batch, l.outputs, 1); // call convolutional_layer.c:backward_bias().
     }
 
     int m = l.outputs;
     int k = l.batch;
     int n = l.inputs;
     float *a = l.delta;
-    float *b = net.input;
+    float *b = net.input; // here net.input is previous layer output
     float *c = l.weight_updates;
     gemm(1,0,m,n,k,1,a,m,b,n,1,c,n);
 
@@ -190,9 +201,9 @@ void backward_connected_layer(layer l, network net)
 
     a = l.delta;
     b = l.weights;
-    c = net.delta;
+    c = net.delta; // As net.delta has been set to delta of privous layer. If we update param every 2 iteration (2 batch), it is helpful.
 
-    if(c) gemm(0,0,m,n,k,1,a,k,b,n,1,c,n);
+    if(c) gemm(0,0,m,n,k,1,a,k,b,n,1,c,n); // net.delta = delta * weights + net.delta, c is new delta used by previous layer.
 }
 
 

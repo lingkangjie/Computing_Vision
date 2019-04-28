@@ -1,11 +1,35 @@
 #include "im2col.h"
 #include <stdio.h>
+/** \brief Give a padded image and pixel location, get a pixel value.
+ *
+ *           |-------/|
+ *          /|      / |
+ *         / |_____/|_|
+ *        |  /    | | /
+ * row ---|-/-> @ | |/ channels
+ *        |/    ^ | /^
+ * height |_____|_|/ channel
+ *        width |
+ *             col
+ *          
+ *  Image is storaged by channel.
+ *  index = col + width*row + width *height*channel
+ *
+ * @param im the input image, 3-D tensor.
+ * @param height the height of input image.
+ * @param width the width of input image.
+ * @param channels the number of channel in input image.
+ * @param row the row location for the pixel be got.
+ * @param col the col location for the pixel be got.
+ * @param channel the channel-th of the got pixel.
+ */
 float im2col_get_pixel(float *im, int height, int width, int channels,
                         int row, int col, int channel, int pad)
 {
-    row -= pad;
+    row -= pad; /* as the input image has been padding */
     col -= pad;
 
+    // border checking
     if (row < 0 || col < 0 ||
         row >= height || col >= width) return 0;
     return im[col + width*(row + height*channel)];

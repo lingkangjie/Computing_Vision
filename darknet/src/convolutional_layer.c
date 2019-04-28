@@ -432,6 +432,10 @@ void scale_bias(float *output, float *scales, int batch, int n, int size)
     }
 }
 
+/** \brief bias is concatenated behind weights. For a data point, bias update just sum over its batch.
+*
+* [ point 1: a batch] [point 2: a batch] ... [point n: a batch]  ---> total n points
+*/
 void backward_bias(float *bias_updates, float *delta, int batch, int n, int size)
 {
     int i,b;

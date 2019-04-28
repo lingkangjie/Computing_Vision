@@ -5,6 +5,13 @@
 #include "layer.h"
 #include "network.h"
 
+/** \Brief Make an activation layer.
+ *
+ * Given tensors, activates each elements in them.
+ * @param batch batch size.
+ * @param inputs total data elements to be processed.
+ * @param activation actication type, a enumerate type.
+ */
 layer make_activation_layer(int batch, int inputs, ACTIVATION activation);
 
 void forward_activation_layer(layer l, network net);

@@ -4,18 +4,55 @@
 #include "cuda.h"
 #include "math.h"
 
+/** \brief Given a activation name, return a defined activation type.
+ *
+ * e.g., given 'tanh', return a enumeration type 'TANH'. If the given string
+ * is not defined, return the default type 'RELU'.
+ */ 
 ACTIVATION get_activation(char *s);
 
+/** \brief Given actication string, return its type.
+ *
+ * e.g, given 'LOGISTIC', return 'logistic'. If the given type is not defined,
+ * return 'relu'.
+ */
 char *get_activation_string(ACTIVATION a);
+
+/** \brief Given a data element and its activation type, return its activation.
+ */
 float activate(float x, ACTIVATION a);
+
+/** \brief Given x, return its gradient.
+ *
+ * @param x an input data element to compute gradient.
+ * @param a activation type.
+ */
 float gradient(float x, ACTIVATION a);
+
+/** \brief Given an array of x, return all of its gradient multiply its delta.
+ *
+ * In mathematics, a neuron recive delta, multiply its activation gradient, and 
+ * push the new delta backprop. In some activation function, the gradient is only 
+ * related with activation output, but some related with activation input x.
+ * @param x a const input array, the current layer output, such as feature map.
+ * @param n total number of x to be compute, equal to l.batch * l.out_c * .out_w * l.out_h.
+ * @param a activation type.
+ * @param delta error term in BP.
+ */
 void gradient_array(const float *x, const int n, const ACTIVATION a, float *delta);
+
+/** \brief Given an input array x, compute all of its activations
+ *
+ * @param x a pointer to an input array, not const
+ * @param n total number of x to be compute.
+ * @param a activation type.
+ */
 void activate_array(float *x, const int n, const ACTIVATION a);
 #ifdef GPU
 void activate_array_gpu(float *x, int n, ACTIVATION a);
 void gradient_array_gpu(float *x, int n, ACTIVATION a, float *delta);
 #endif
-
+// concrete activation function defined.
 static inline float stair_activate(float x)
 {
     int n = floor(x);
@@ -45,6 +82,7 @@ static inline float plse_activate(float x)
     return .125*x + .5;
 }
 
+// concrete gradient function defined
 static inline float lhtan_activate(float x)
 {
     if(x < 0) return .001*x;
