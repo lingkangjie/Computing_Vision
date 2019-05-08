@@ -48,7 +48,7 @@ void train_detector(char *datacfg, char *cfgfile, char *weightfile, int *gpus, i
     args.n = imgs;
     args.m = plist->size;
     args.classes = classes;
-    args.jitter = jitter;
+    args.jitter = jitter; // randomly resizes image
     args.num_boxes = l.max_boxes;
     args.d = &buffer;
     args.type = DETECTION_DATA;
@@ -71,7 +71,7 @@ void train_detector(char *datacfg, char *cfgfile, char *weightfile, int *gpus, i
 
             pthread_join(load_thread, 0);
             train = buffer;
-            free_data(train);
+            free_data(train); // if random==1, free old train data, get lasted
             load_thread = load_data(args);
 
             #pragma omp parallel for

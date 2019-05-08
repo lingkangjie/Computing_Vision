@@ -1,3 +1,4 @@
+/* Command at 2019-05-07, by lingkangjie */
 #include "yolo_layer.h"
 #include "activations.h"
 #include "blas.h"
@@ -16,17 +17,17 @@ layer make_yolo_layer(int batch, int w, int h, int n, int total, int *mask, int 
     layer l = {0};
     l.type = YOLO;
 
-    l.n = n;
+    l.n = n; // prior boxes number for a yolo layer, typical is 3
     l.total = total;
-    l.batch = batch;
-    l.h = h;
-    l.w = w;
-    l.c = n*(classes + 4 + 1);
-    l.out_w = l.w;
+    l.batch = batch; // training batch size
+    l.h = h; // the hight of input feature map, I call it as 'yolo cell'
+    l.w = w; // the width of input feature map
+    l.c = n*(classes + 4 + 1); // output 'channel' size, please see yolov3.md
+    l.out_w = l.w; // the size of input and output are just the same.
     l.out_h = l.h;
-    l.out_c = l.c;
-    l.classes = classes;
-    l.cost = calloc(1, sizeof(float));
+    l.out_c = l.c; // output 'channel' size
+    l.classes = classes; // VOC is 20 classes
+    l.cost = calloc(1, sizeof(float)); // cost for yolo layer
     l.biases = calloc(total*2, sizeof(float));
     if(mask) l.mask = mask;
     else{
@@ -37,8 +38,8 @@ layer make_yolo_layer(int batch, int w, int h, int n, int total, int *mask, int 
     }
     l.bias_updates = calloc(n*2, sizeof(float));
     l.outputs = h*w*n*(classes + 4 + 1);
-    l.inputs = l.outputs;
-    l.truths = 90*(4 + 1);
+    l.inputs = l.outputs; // the size of input and output are just the same.
+    l.truths = 90*(4 + 1); // an image almost has 90 ground truths
     l.delta = calloc(batch*l.outputs, sizeof(float));
     l.output = calloc(batch*l.outputs, sizeof(float));
     for(i = 0; i < total*2; ++i){
@@ -80,6 +81,20 @@ void resize_yolo_layer(layer *l, int w, int h)
 #endif
 }
 
+/** \brief Get the bx, by, bw, bh, as paper describes
+ *
+ * @param x a pointer to yolo output
+ * @param biases
+ * @param n the n-th of anchor, e.g. n= 6, 7, 8
+ * @param index the index of output datum slice
+ * @param i i-th cell in column
+ * @param j j-th cell in row
+ * @param lw width of input conv feature map
+ * @param lh hight of input conv feature map
+ * @param w width of resized input image
+ * @param h width of resized input image
+ * @param strinde equals to lw*lh
+ */
 box get_yolo_box(float *x, float *biases, int n, int index, int i, int j, int lw, int lh, int w, int h, int stride)
 {
     box b;
@@ -122,37 +137,79 @@ void delta_yolo_class(float *output, float *delta, int index, int class, int cla
     }
 }
 
+/** \brief Return a special kind of data index, such as tx,ty,confidence,class probability
+ *
+ * Since we need to activate data from nearest conv layer (e.g. layer 81, see yolov3.md),
+ * for each different properties of yolo input feature map, we use a different type of activations.
+ * If we call 13 x 13 x 75 as a tensor, then we total have l.batch tensors to yolo layer.
+ * Here n=3, means for a yolo layer we have 3 anchors.
+ * entry = 0 or 4, 0 means we get tx entry, 4 means we get confidence entry.
+ *
+ *  When l.batch=1, the l.output scheme:
+ *       ________
+ *      /       /|
+ *     /-------| |
+ *    /       /| |
+ *   /-------| | /
+ *  /       /| |/ <--- anchor3, depth=(4+l.classes+1), n=2
+ * /-------/ | /  
+ * |       | |/ <--- anchor 2, depth=(4+l.classes+1), n=1
+ * |13 x 13| /
+ * |l.w*l.h|/  <--- anchor 1, depth=(4+l.classes+1), n=0
+ * /-------/
+ *
+ *  For an anchor area:
+ *
+ *     /-------| 
+ *    /       /| 
+ *   /-------| | 
+ *  /       /| |
+ * /-------/ | /  
+ * |       | |/ <- confidence (1 number) and classes probability (20 numbers, 20 classes)
+ * |13 x 13| /   - entry = 4
+ * |l.w*l.h|/  <--- coordinate for an object, tx, ty, tw, th. (4 numbers)
+ * /-------/     -- entry = 0
+ *
+ * The l.input and l.output have the same data size, but the meaning is different.
+ *
+ *
+ */
 static int entry_index(layer l, int batch, int location, int entry)
 {
-    int n =   location / (l.w*l.h);
-    int loc = location % (l.w*l.h);
+    int n =   location / (l.w*l.h); // call from 178,182: location = n * l.w * l.h
+    int loc = location % (l.w*l.h); // call from 178,182: loc = 0 always
     return batch*l.outputs + n*l.w*l.h*(4+l.classes+1) + entry*l.w*l.h + loc;
 }
 
 void forward_yolo_layer(const layer l, network net)
 {
     int i,j,b,t,n;
-    memcpy(l.output, net.input, l.outputs*l.batch*sizeof(float));
+    memcpy(l.output, net.input, l.outputs*l.batch*sizeof(float)); // copy @param 2 to @param 1
 
 #ifndef GPU
     for (b = 0; b < l.batch; ++b){
         for(n = 0; n < l.n; ++n){
             int index = entry_index(l, b, n*l.w*l.h, 0);
+            /* why 2? Since here to activate tx and ty */
+            /* TODO, why here leave out tw, th?*/
             activate_array(l.output + index, 2*l.w*l.h, LOGISTIC);
-            index = entry_index(l, b, n*l.w*l.h, 4);
+            index = entry_index(l, b, n*l.w*l.h, 4); // we get the index of confidence
+            /* 1 + l.classes is the depth of confidence and class probability 
+             * in feature map
+             */
             activate_array(l.output + index, (1+l.classes)*l.w*l.h, LOGISTIC);
         }
     }
 #endif
 
-    memset(l.delta, 0, l.outputs * l.batch * sizeof(float));
+    memset(l.delta, 0, l.outputs * l.batch * sizeof(float)); // initialize l.delta to 0
     if(!net.train) return;
-    float avg_iou = 0;
+    float avg_iou = 0; // average IOU
     float recall = 0;
     float recall75 = 0;
     float avg_cat = 0;
     float avg_obj = 0;
-    float avg_anyobj = 0;
+    float avg_anyobj = 0; // average confidences in an image, use to print only
     int count = 0;
     int class_count = 0;
     *(l.cost) = 0;
@@ -165,22 +222,35 @@ void forward_yolo_layer(const layer l, network net)
                     float best_iou = 0;
                     int best_t = 0;
                     for(t = 0; t < l.max_boxes; ++t){
+                        /* get the truth coordinates of an object. net.truth is the
+                         * a start pointer to an area storaged all truth coordinates.
+                         * max_boxex=90, meaning our yolo net only has ability to 
+                         * deal with an image almost contains 90 objects.
+                         * l.truths, total truth coordinates and class index. Since
+                         * max_boxes=90, tx,ty,tw,th,c, l.truths=90*5=450
+                         * 1, is stride. reference box.c
+                         */
                         box truth = float_to_box(net.truth + t*(4 + 1) + b*l.truths, 1);
-                        if(!truth.x) break;
+                        /* suppose we have only 1 object in an image, so
+                         * [tx1, ty1, tw1, th1, c1, 0, 0, ..., all zeros]
+                         * In other words, we only store truths, others are 0
+                         */
+                        if(!truth.x) break; // break out l.mat_boxes
                         float iou = box_iou(pred, truth);
                         if (iou > best_iou) {
                             best_iou = iou;
                             best_t = t;
                         }
                     }
+                    /* get confidence in output datum for each (i, j)*/
                     int obj_index = entry_index(l, b, n*l.w*l.h + j*l.w + i, 4);
-                    avg_anyobj += l.output[obj_index];
-                    l.delta[obj_index] = 0 - l.output[obj_index];
+                    avg_anyobj += l.output[obj_index]; // sum over all confidences
+                    l.delta[obj_index] = 0 - l.output[obj_index]; // get negative
                     if (best_iou > l.ignore_thresh) {
-                        l.delta[obj_index] = 0;
+                        l.delta[obj_index] = 0; // we only need the best_iou and its correspondent delta
                     }
-                    if (best_iou > l.truth_thresh) {
-                        l.delta[obj_index] = 1 - l.output[obj_index];
+                    if (best_iou > l.truth_thresh) { // we successfully predict
+                        l.delta[obj_index] = 1 - l.output[obj_index]; // get delta
 
                         int class = net.truth[best_t*(4 + 1) + b*l.truths + 4];
                         if (l.map) class = l.map[class];
@@ -223,7 +293,7 @@ void forward_yolo_layer(const layer l, network net)
                 l.delta[obj_index] = 1 - l.output[obj_index];
 
                 int class = net.truth[t*(4 + 1) + b*l.truths + 4];
-                if (l.map) class = l.map[class];
+                if (l.map) class = l.map[class];// only yolo9000.cfg use it
                 int class_index = entry_index(l, b, mask_n*l.w*l.h + j*l.w + i, 4 + 1);
                 delta_yolo_class(l.output, l.delta, class_index, class, l.classes, l.w*l.h, &avg_cat);
 
