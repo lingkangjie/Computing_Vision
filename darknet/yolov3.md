@@ -192,4 +192,53 @@ A piece of `2008_000015.xml`:
 ## Details of yolo layer
 In theory, the input size of yolo layer ( layer 82) is 13 x 13. However, if set `jitter` and `random=1` in `yolov3_voc.cfg` file, means for a new batch images to be trained, we randomly resize image and resize network at the same time. So the input to yolo layer (layer 82) may not be 13 x 13. For an example, if the input resized image is 512 x 512, the input size of layer 82 (yolo layer) is 16 x 16. More details please check `detector.c:79:resize_network()`.
 
-Okey, now let's go deep in yolo layer. See `yolo_layer.c` and `box.c`
+Okey, now let's go deep in yolo layer. See `yolo_layer.c` and `box.c`. If you want to re-train the pre-trained weights, set `max_batches` bigger than `get_current_batch(num) == 32013312`. Otherwise, the procedure just saves `yolov3.weights` (237M) to `backup` folder.
+
+> gdb ./darknet
+> (gdb) b detector.c:62
+> (gdb) run detector train cfg/voc.data cfg/yolov3-voc.cfg /data/yolov3.weights
+> (gdb) set net-\>max\_batches=33333333
+> (gdb) b forward\_yolo\_layer
+> (gdb) c
+
+To quickly debug and only check what is going on the yolo layer, you can also use `yolov3-tiny.cfg`, and down load `yolov3-tiny.weights` (33.79M)
+> wget https://pjreddie.com/media/files/yolov3-tiny.weights
+
+> gdb ./darknet
+> (gdb) b detector.c:62
+> (gdb) run detector train cfg/voc.data cfg/yolov3-tiny.cfg /data/yolov3-tiny.weights
+> (gdb) set net-\>max\_batches=40001111
+> (gdb) b forward\_yolo\_layer
+> (gdb) c
+
+## Yolo-tiny Network Architecture
+```
+layer     filters    size              input                output
+
+1 max               2 x 2 / 2   416 x 416 x  16   ->   208 x 208 x  16
+2 conv      32      3 x 3 / 1   208 x 208 x  16   ->   208 x 208 x  32  0.399 BFLOPs
+3 max               2 x 2 / 2   208 x 208 x  32   ->   104 x 104 x  32
+4 conv      64      3 x 3 / 1   104 x 104 x  32   ->   104 x 104 x  64  0.399 BFLOPs
+5 max               2 x 2 / 2   104 x 104 x  64   ->    52 x  52 x  64
+6 conv     128      3 x 3 / 1    52 x  52 x  64   ->    52 x  52 x 128  0.399 BFLOPs
+7 max               2 x 2 / 2    52 x  52 x 128   ->    26 x  26 x 128
+8 conv     256      3 x 3 / 1    26 x  26 x 128   ->    26 x  26 x 256  0.399 BFLOPs
+9 max               2 x 2 / 2    26 x  26 x 256   ->    13 x  13 x 256
+10 conv    512      3 x 3 / 1    13 x  13 x 256   ->    13 x  13 x 512  0.399 BFLOPs
+11 max              2 x 2 / 1    13 x  13 x 512   ->    13 x  13 x 512
+12 conv   1024      3 x 3 / 1    13 x  13 x 512   ->    13 x  13 x1024  1.595 BFLOPs
+13 conv    256      1 x 1 / 1    13 x  13 x1024   ->    13 x  13 x 256  0.089 BFLOPs
+14 conv    512      3 x 3 / 1    13 x  13 x 256   ->    13 x  13 x 512  0.399 BFLOPs
+15 conv    255      1 x 1 / 1    13 x  13 x 512   ->    13 x  13 x 255  0.044 BFLOPs
+16 yolo
+17 route  13
+18 conv    128  1 x 1 / 1    13 x  13 x 256   ->    13 x  13 x 128  0.011 BFLOPs
+```
+
+## Evaluate mAP
+If you want to run Yolo-Tiny network, modify `names` in `./cfg/voc.data` to `names = data/coco.names`
+> vim Makefile
+> set DEBUG=0
+> ./darknet detector valid cfg/voc.data cfg/yolov3-tiny.cfg data/yolov3-tiny.weights results\_voc.txt
+
+

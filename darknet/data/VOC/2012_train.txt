@@ -1,0 +1,5 @@
+/home/lkj/data/VOCdevkit/VOC2012/JPEGImages/2008_000008.jpg
+/home/lkj/data/VOCdevkit/VOC2012/JPEGImages/2008_000015.jpg
+/home/lkj/data/VOCdevkit/VOC2012/JPEGImages/2008_000019.jpg
+/home/lkj/data/VOCdevkit/VOC2012/JPEGImages/2008_000023.jpg
+/home/lkj/data/VOCdevkit/VOC2012/JPEGImages/2008_000028.jpg

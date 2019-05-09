@@ -105,16 +105,21 @@ box get_yolo_box(float *x, float *biases, int n, int index, int i, int j, int lw
     return b;
 }
 
+/** \brief Compute the loss for box
+ *
+ */
 float delta_yolo_box(box truth, float *x, float *biases, int n, int index, int i, int j, int lw, int lh, int w, int h, float *delta, float scale, int stride)
 {
     box pred = get_yolo_box(x, biases, n, index, i, j, lw, lh, w, h, stride);
     float iou = box_iou(pred, truth);
 
+    // the diff between truth box and anchor box
     float tx = (truth.x*lw - i);
     float ty = (truth.y*lh - j);
     float tw = log(truth.w*w / biases[2*n]);
     float th = log(truth.h*h / biases[2*n + 1]);
 
+    // the diff between current predition and previous predition
     delta[index + 0*stride] = scale * (tx - x[index + 0*stride]);
     delta[index + 1*stride] = scale * (ty - x[index + 1*stride]);
     delta[index + 2*stride] = scale * (tw - x[index + 2*stride]);
@@ -123,6 +128,12 @@ float delta_yolo_box(box truth, float *x, float *biases, int n, int index, int i
 }
 
 
+/** \brief  To compute the loss for class
+ *
+ * In Darknet, denoted t as truth, y as predict, define:
+ * delta = -loss_derivative = - (y-t) = 1-y ( if t==1)
+ * delta = -loss_derivative = - (y-t) = 0-y ( if t!=1)
+ */
 void delta_yolo_class(float *output, float *delta, int index, int class, int classes, int stride, float *avg_cat)
 {
     int n;
@@ -249,19 +260,27 @@ void forward_yolo_layer(const layer l, network net)
                     if (best_iou > l.ignore_thresh) {
                         l.delta[obj_index] = 0; // we only need the best_iou and its correspondent delta
                     }
-                    if (best_iou > l.truth_thresh) { // we successfully predict
+                    if (best_iou > l.truth_thresh) { // bigger than threshold, l.truth_thresh always == 1, these piece of code may not be accessed? (TODO)
+                        // confidence target = 1
                         l.delta[obj_index] = 1 - l.output[obj_index]; // get delta
 
                         int class = net.truth[best_t*(4 + 1) + b*l.truths + 4];
-                        if (l.map) class = l.map[class];
+                        if (l.map) class = l.map[class];  // only used in yolo9000
                         int class_index = entry_index(l, b, n*l.w*l.h + j*l.w + i, 4 + 1);
+                        // compute gradient of classes
                         delta_yolo_class(l.output, l.delta, class_index, class, l.classes, l.w*l.h, 0);
+                        // comput gradient of box
                         box truth = float_to_box(net.truth + best_t*(4 + 1) + b*l.truths, 1);
                         delta_yolo_box(truth, l.output, l.biases, l.mask[n], box_index, i, j, l.w, l.h, net.w, net.h, l.delta, (2-truth.w*truth.h), l.w*l.h);
                     }
                 }
             }
         }
+        // after we have compute an image in the current batch, we reach here
+        
+        /* Find the most IOU of anchors between the truth box.
+         * That is to say, which anchor will responsible for prediction.
+         */
         for(t = 0; t < l.max_boxes; ++t){
             box truth = float_to_box(net.truth + t*(4 + 1) + b*l.truths, 1);
 
@@ -272,10 +291,10 @@ void forward_yolo_layer(const layer l, network net)
             j = (truth.y * l.h);
             box truth_shift = truth;
             truth_shift.x = truth_shift.y = 0;
-            for(n = 0; n < l.total; ++n){
+            for(n = 0; n < l.total; ++n){ // l.total=9, 9 anchors
                 box pred = {0};
-                pred.w = l.biases[2*n]/net.w;
-                pred.h = l.biases[2*n+1]/net.h;
+                pred.w = l.biases[2*n]/net.w; // get even index
+                pred.h = l.biases[2*n+1]/net.h; // get odd index
                 float iou = box_iou(pred, truth_shift);
                 if (iou > best_iou){
                     best_iou = iou;
@@ -283,13 +302,15 @@ void forward_yolo_layer(const layer l, network net)
                 }
             }
 
+            // return the index of value(best_n) in array(l.mask), check utils.c
             int mask_n = int_index(l.mask, best_n, l.n);
-            if(mask_n >= 0){
+            if(mask_n >= 0){ // if we successfully get the 'responsible' anchor, we begin to calculate its box, class, predict loss
                 int box_index = entry_index(l, b, mask_n*l.w*l.h + j*l.w + i, 0);
                 float iou = delta_yolo_box(truth, l.output, l.biases, best_n, box_index, i, j, l.w, l.h, net.w, net.h, l.delta, (2-truth.w*truth.h), l.w*l.h);
 
                 int obj_index = entry_index(l, b, mask_n*l.w*l.h + j*l.w + i, 4);
                 avg_obj += l.output[obj_index];
+                /* why delta is target - output? Since YOLO use (-gradient) */
                 l.delta[obj_index] = 1 - l.output[obj_index];
 
                 int class = net.truth[t*(4 + 1) + b*l.truths + 4];
@@ -311,7 +332,7 @@ void forward_yolo_layer(const layer l, network net)
 
 void backward_yolo_layer(const layer l, network net)
 {
-   axpy_cpu(l.batch*l.inputs, 1, l.delta, 1, net.delta, 1);
+   axpy_cpu(l.batch*l.inputs, 1, l.delta, 1, net.delta, 1); // just copy l.delta to net.delta
 }
 
 void correct_yolo_boxes(detection *dets, int n, int w, int h, int netw, int neth, int relative)
