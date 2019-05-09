@@ -1,5 +1,5 @@
 ## Network Architecture
-Using [netron](https://github.com/lutzroeder/netron) tool to visualize, see the [result](/cfg/yolov3-voc.png). The file to visualize locates in `DARKNET_ROOT/cfg/yolov3-voc.cfg`. Another useful light tool is [NN-SVG](http://alexlenail.me/NN-SVG/LeNet.html).
+Using [netron](https://github.com/lutzroeder/netron) tool to visualize, see the [result](./cfg/yolov3-voc.png). The file to visualize locates in `DARKNET_ROOT/cfg/yolov3-voc.cfg`. Another useful light tool is [NN-SVG](http://alexlenail.me/NN-SVG/LeNet.html).
 ```
 layer     filters    size              input                output
     0 conv     32  3 x 3 / 1   416 x 416 x   3   ->   416 x 416 x  32  0.299 BFLOPs
@@ -194,7 +194,7 @@ A piece of `2008_000015.xml`:
 ## Details of yolo layer
 In theory, the input size of yolo layer ( layer 82) is 13 x 13. However, if set `jitter` and `random=1` in `yolov3_voc.cfg` file, means for a new batch images to be trained, we randomly resize image and resize network at the same time. So the input to yolo layer (layer 82) may not be 13 x 13. For an example, if the input resized image is 512 x 512, the input size of layer 82 (yolo layer) is 16 x 16. More details please check `detector.c:79:resize_network()`.
 
-Okey, now let's go deep in yolo layer. See `yolo_layer.c` and `box.c`. If you want to re-train the pre-trained weights, set `max_batches` bigger than `get_current_batch(num) == 32013312`. Otherwise, the procedure just saves `yolov3.weights` (237M) to `backup` folder.
+Okey, now let's go deep in yolo layer. See [yolo_layer.c](./src/yolo_layer.c) and `box.c`. If you want to re-train the pre-trained weights, set `max_batches` bigger than `get_current_batch(num) == 32013312`. Otherwise, the procedure just saves `yolov3.weights` (237M) to `backup` folder.
 
 ```
 $ gdb ./darknet
