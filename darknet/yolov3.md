@@ -111,11 +111,13 @@ layer     filters    size              input                output
   106 yolo
 ```
 Notice: there are total 3 yolo layers, `layer 82`, `layer 94` and `layer 106`. The input feature map of yolo layers are `13 x 13 x 75`, ` 26 x 26 x 75` and `52 x 52 x 75`, at the same time, smaller feature map means bigger receptive field and vice versa. So the detection granularity of objects is becoming more and more fine. The size of input image is `416 x 416`, as the convolved input feature map of yolo layers are `13 x 13 x 75`, ` 26 x 26 x 75` and `52 x 52 x 75`, meaning we apply `416/13=32X`, 16X, and 8X downsample, respectively. We defined 9 prior anchors with size of `anchors = 10,13,  16,30,  33,23,  30,61,  62,45,  59,119,  116,90,  156,198,  373,326`(please check `./cfg/yolov3-voc.cfg` file), which means the anchor has size of 10 pixel x 13 pixel, et al. When execute detection, the center point of anchors is moved pixel by pixel in input feature map. So what kind of input feature map will use which type of anchors? Here is a table:  
+
 | size of feature map | anchors|
 | ------------------- | -------|
 | 13 x 13 x 75        |(116,90),(156,198),(373,326)|
 | 26 x 26 x 75        |(30,61),(62,45),(59,119)|
 | 52 x 52 x 75        |(10,13),(16,30),(33,23)|
+
 You can image that, as the feature map is bigger and bigger, the size of anchors are smaller and smaller, which means that the anchors detect more smaller objects and move stride becomes small (Why? At first, 416/13(feature map size)=32 (piexel)/(a pixel of anchor), if we move a pixel in anchor, meaning we 'see' 32 pixels in input image. If 8X downsample, meaning we only 'see' 8 pixels when we move a step of anchor in the input feature map.)
 
 Why the dept of input feature map of yolo layer is 75? Because in VOC dataset, we have 20 classes, for each class, we want to predict a probability for it, for the maximum probability of a object, we predict a box for that object. For a box, we predict a confidence for it. So we have 20 (classes) + 4 (x, y, w, h of box) + 1 (confidence of box) = 25. There are 3 anchors for a yolo layer, so 25 x 3 = 75.
@@ -194,24 +196,29 @@ In theory, the input size of yolo layer ( layer 82) is 13 x 13. However, if set 
 
 Okey, now let's go deep in yolo layer. See `yolo_layer.c` and `box.c`. If you want to re-train the pre-trained weights, set `max_batches` bigger than `get_current_batch(num) == 32013312`. Otherwise, the procedure just saves `yolov3.weights` (237M) to `backup` folder.
 
-> gdb ./darknet
-> (gdb) b detector.c:62
-> (gdb) run detector train cfg/voc.data cfg/yolov3-voc.cfg /data/yolov3.weights
-> (gdb) set net-\>max\_batches=33333333
-> (gdb) b forward\_yolo\_layer
-> (gdb) c
+```
+$ gdb ./darknet
+(gdb) b detector.c:62
+(gdb) run detector train cfg/voc.data cfg/yolov3-voc.cfg /data/yolov3.weights
+(gdb) set net-\>max\_batches=33333333
+(gdb) b forward\_yolo\_layer
+(gdb) c
+```
 
 To quickly debug and only check what is going on the yolo layer, you can also use `yolov3-tiny.cfg`, and down load `yolov3-tiny.weights` (33.79M)
 > wget https://pjreddie.com/media/files/yolov3-tiny.weights
 
-> gdb ./darknet
-> (gdb) b detector.c:62
-> (gdb) run detector train cfg/voc.data cfg/yolov3-tiny.cfg /data/yolov3-tiny.weights
-> (gdb) set net-\>max\_batches=40001111
-> (gdb) b forward\_yolo\_layer
-> (gdb) c
+```
+$ gdb ./darknet
+(gdb) b detector.c:62
+(gdb) run detector train cfg/voc.data cfg/yolov3-tiny.cfg /data/yolov3-tiny.weights
+(gdb) set net-\>max\_batches=40001111
+(gdb) b forward\_yolo\_layer
+(gdb) c
+```
 
 ## Yolo-tiny Network Architecture
+
 ```
 layer     filters    size              input                output
 
@@ -237,8 +244,11 @@ layer     filters    size              input                output
 
 ## Evaluate mAP
 If you want to run Yolo-Tiny network, modify `names` in `./cfg/voc.data` to `names = data/coco.names`
-> vim Makefile
-> set DEBUG=0
-> ./darknet detector valid cfg/voc.data cfg/yolov3-tiny.cfg data/yolov3-tiny.weights results\_voc.txt
+
+```
+$ vim Makefile
+$ set DEBUG=0
+$ ./darknet detector valid cfg/voc.data cfg/yolov3-tiny.cfg data/yolov3-tiny.weights results\_voc.txt
+```
 
 
