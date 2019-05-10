@@ -1,4 +1,4 @@
-/* Command at 2019-05-07, by lingkangjie */
+/* comment on 2019-05-07, by lingkangjie */
 #include "yolo_layer.h"
 #include "activations.h"
 #include "blas.h"
