@@ -200,8 +200,8 @@ Okey, now let's go deep in yolo layer. See [yolo_layer.c](./src/yolo_layer.c) an
 $ gdb ./darknet
 (gdb) b detector.c:62
 (gdb) run detector train cfg/voc.data cfg/yolov3-voc.cfg /data/yolov3.weights
-(gdb) set net-\>max\_batches=33333333
-(gdb) b forward\_yolo\_layer
+(gdb) set net->max_batches=33333333
+(gdb) b forward_yolo_layer
 (gdb) c
 ```
 
@@ -212,8 +212,8 @@ To quickly debug and only check what is going on the yolo layer, you can also us
 $ gdb ./darknet
 (gdb) b detector.c:62
 (gdb) run detector train cfg/voc.data cfg/yolov3-tiny.cfg /data/yolov3-tiny.weights
-(gdb) set net-\>max\_batches=40001111
-(gdb) b forward\_yolo\_layer
+(gdb) set net->max_batches=40001111
+(gdb) b forward_yolo_layer
 (gdb) c
 ```
 
@@ -249,17 +249,17 @@ If you want to run Yolo-Tiny network, modify `names` in `./cfg/voc.data` to `nam
 $ vim Makefile
   set DEBUG=0
 $ make all -j8
-$ mkdir -p DARKNET\_ROOT/results
-$ ./darknet detector valid cfg/voc.data cfg/yolov3-tiny.cfg data/yolov3-tiny.weights results\_voc.txt
+$ mkdir -p DARKNET_ROOT/results
+$ ./darknet detector valid cfg/voc.data cfg/yolov3-tiny.cfg data/yolov3-tiny.weights results_voc.txt
 ```
 What is mAP(mean Average Precision) just mean of AP of each classes, mAP(class-A, clasa-B) = [AP(class-A) + AP(class-B)] / 2. And AP is the area unger the precision-recall curve. What is Precision and Recall ? Precision-Recall curve just a curve of points (precision, recall).
 
 Precision = true positive / ( true positive + false negative)  
 Recall = tp / (tp + fn)  
 
-x% precision of class-A just meaning that x% of the retrieved results were class-A, and x% recall of class-A just meaning that x% of the class-A were retrieved. More details see the script [compute_map.py](./compute_map.py).
+x% precision of class-A just meaning that x% of the retrieved results were class-A, and x% recall of class-A just meaning that x% of the class-A were retrieved. More details see the script [compute_map.py](./compute_AP.py).
 
 To compute mAP of cat class, run:    
 ```
-$ python2 compute\_AP.py
+$ python2 compute_AP.py
 ```

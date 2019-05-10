@@ -88,6 +88,13 @@ void do_nms_sort(detection *dets, int total, int classes, float thresh)
     }
 }
 
+/** \Brief Return box information from box data array.
+ *
+ * Box array storages infomation in a form of [x1,y1,w1,h1,class_index1,x2,y2...]
+ * @param f an array storaged all box info
+ * @param stride extract by stride
+ * @return b (x, y, w, h) of box
+ */
 box float_to_box(float *f, int stride)
 {
     box b = {0};
@@ -149,6 +156,10 @@ dbox derivative(box a, box b)
     return d;
 }
 
+/** TODO overlap(), box_intersection, box_iou() are three useful functions
+ * I can't image how to languge here, but I can image what is going on and 
+ * how to use those three functions
+ */
 float overlap(float x1, float w1, float x2, float w2)
 {
     float l1 = x1 - w1/2;
